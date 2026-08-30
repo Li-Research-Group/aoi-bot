@@ -22,6 +22,9 @@ concurrency: dry-run
 jobs:
   dry-run:
     runs-on: ubuntu-latest
+    # The dry-run env vars are set per-step, NOT job-wide: the pytest step
+    # must run in a clean env (DRY_RUN=1 would send run_weekly down the
+    # heuristic path and break the tests that stub the Claude call).
     env:
       DRY_RUN: "1"
       SLACK_CHANNEL_ID: ${{ vars.AOI_TEST_CHANNEL_ID }}
@@ -36,7 +39,12 @@ jobs:
 
       - run: pip install -r requirements-dev.txt
 
-      - run: python -m pytest -q
+      - name: Tests (clean env)
+        env:
+          DRY_RUN: ""
+          SLACK_CHANNEL_ID: ""
+          STATE_FILE: ""
+        run: python -m pytest -q
 
       - name: Check the test channel is configured
         run: |

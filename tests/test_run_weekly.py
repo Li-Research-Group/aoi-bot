@@ -7,6 +7,9 @@ import run_weekly
 
 
 def _stub_pipeline(monkeypatch, *, rss, empty_feeds, relevant, acct, log, authors=()):
+    # Pin the real (Claude) path regardless of a DRY_RUN=1 in the ambient
+    # env -- the dry-run workflow runs pytest with that set.
+    monkeypatch.setattr(run_weekly, "DRY_RUN", False)
     monkeypatch.setattr(run_weekly, "fetch_rss_candidates", lambda: (rss, empty_feeds))
     monkeypatch.setattr(run_weekly, "fetch_openalex_journal_candidates", lambda: [])
     monkeypatch.setattr(run_weekly, "fetch_openalex_candidates", lambda: [])
@@ -107,6 +110,7 @@ def test_dry_run_uses_the_heuristic_and_never_calls_claude(monkeypatch):
 
 def test_followed_author_paper_skips_relevance_and_gets_its_own_section(monkeypatch):
     captured = {}
+    monkeypatch.setattr(run_weekly, "DRY_RUN", False)
     monkeypatch.setattr(run_weekly, "load_state", lambda: {"posted": [], "runs": []})
     monkeypatch.setattr(run_weekly, "save_state", lambda s: captured.update(s))
 
