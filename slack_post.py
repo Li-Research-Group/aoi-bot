@@ -1,8 +1,8 @@
 """
-Posts the weekly digest to Slack: one header message, then each paper as
-a threaded reply underneath it. Threading matters because the reaction
-tracker (track_reactions.py) needs a distinct message per paper to attach
-a per-paper thumbs-up/down count to.
+Posts the weekly digest to Slack: a header message, then each paper and
+each section separator as its own top-level channel message (not a
+thread). Each paper is a distinct message so the reaction tracker
+(track_reactions.py) can attach a per-paper thumbs-up/down count by ts.
 """
 
 import datetime
@@ -19,10 +19,8 @@ def _headers() -> dict:
     return {"Authorization": f"Bearer {os.environ['SLACK_BOT_TOKEN']}", "Content-Type": "application/json"}
 
 
-def post_message(text: str, thread_ts: str | None = None) -> dict:
+def post_message(text: str) -> dict:
     payload = {"channel": SLACK_CHANNEL_ID, "text": text}
-    if thread_ts:
-        payload["thread_ts"] = thread_ts
     resp = requests.post(f"{SLACK_API}/chat.postMessage", headers=_headers(), json=payload, timeout=15)
     data = resp.json()
     if not data.get("ok"):
@@ -98,26 +96,26 @@ def post_weekly_digest(
     followed_authors: list[dict] | None = None,
     dry_run: bool = False,
 ) -> list[dict]:
-    """Posts the header + threaded papers. Returns a log of what was
-    posted, for the state file: [{"ts", "doi", "title", "journal",
-    "topics", "posted_date", "source_lane", "published", "title_only",
-    and "matched_authors" for the followed-author section}].
-    The extra fields feed track_reactions.py's per-lane / staleness /
-    title-only / followed-author cuts without it re-deriving them."""
+    """Posts the header, then each paper and section separator as its own
+    top-level message. Returns a log of what was posted, for the state
+    file: [{"ts", "doi", "title", "journal", "topics", "posted_date",
+    "source_lane", "published", "title_only", and "matched_authors" for
+    the followed-author section}]. The extra fields feed
+    track_reactions.py's per-lane / staleness / title-only /
+    followed-author cuts without it re-deriving them."""
     followed_authors = followed_authors or []
     today = datetime.date.today().isoformat()
     total = (sum(len(v) for v in papers_by_topic.values())
              + len(followed_authors) + len(broader_reading))
     prefix = "[DRY RUN] " if dry_run else ""
-    header = post_message(f"*{prefix}Weekly paper digest — {today}* ({total} papers)")
-    thread_ts = header["ts"]
+    post_message(f"*{prefix}Weekly paper digest — {today}* ({total} papers)")
 
     log = []
     for topic, papers in papers_by_topic.items():
         if not papers:
             continue
         for paper in papers:
-            resp = post_message(format_paper_message(paper), thread_ts=thread_ts)
+            resp = post_message(format_paper_message(paper))
             log.append(_log_entry(
                 resp["ts"], today,
                 doi=paper.get("doi"), title=paper["title"],
@@ -128,9 +126,9 @@ def post_weekly_digest(
             ))
 
     if followed_authors:
-        post_message("*`[Followed authors]`* — recent papers by people the group tracks", thread_ts=thread_ts)
+        post_message("*`[Followed authors]`* — recent papers by people the group tracks")
         for paper in followed_authors:
-            resp = post_message(format_followed_author_message(paper), thread_ts=thread_ts)
+            resp = post_message(format_followed_author_message(paper))
             log.append(_log_entry(
                 resp["ts"], today,
                 doi=paper.get("doi"), title=paper["title"],
@@ -141,10 +139,10 @@ def post_weekly_digest(
             ))
 
     if broader_reading:
-        post_message("*`[Broader Reading]`* — from Nature/Science/PNAS news & career sections", thread_ts=thread_ts)
+        post_message("*`[Broader Reading]`* — from Nature/Science/PNAS news & career sections")
         for item in broader_reading:
             link = item.get("url", "")
-            resp = post_message(f"`[Broader Reading]`\n*<{link}|{item['title']}>*", thread_ts=thread_ts)
+            resp = post_message(f"`[Broader Reading]`\n*<{link}|{item['title']}>*")
             log.append(_log_entry(
                 resp["ts"], today,
                 doi=None, title=item["title"],

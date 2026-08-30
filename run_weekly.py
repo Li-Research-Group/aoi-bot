@@ -8,7 +8,8 @@ Flow:
   3. Fetch followed-author candidates and pull them out of the topic pool
      -- they get their own section and bypass relevance scoring
   4. Score remaining topic candidates for relevance with Claude
-  5. Group by topic, cap per topic, post to Slack as header + threaded replies
+  5. Group by topic, cap per topic, post to Slack as a header + one
+     message per paper
   6. Fetch the separate broader-reading feed (no relevance filtering --
      it's curated by source, not by topic match)
   7. Record run stats and update the state file with what was posted

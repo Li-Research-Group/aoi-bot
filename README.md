@@ -9,8 +9,8 @@ outside the tracked journal list), and an OpenAlex query per **followed
 author** (every recent paper by people the group tracks, regardless of
 topic) -- filters the first three for relevance with the Claude API
 (the followed-author lane bypasses that and gets its own digest section),
-and posts a tagged digest to Slack as a header message with each paper as
-a threaded reply -- so people can react 👍/👎 on individual papers. A monthly job reads those reactions back and posts a report --
+and posts a tagged digest to Slack -- a header message, then one message
+per paper -- so people can react 👍/👎 on individual papers. A monthly job reads those reactions back and posts a report --
 the pipeline funnel (collected → scored → relevant → posted, per lane),
 Claude cost per run, dead-feed alerts, engagement rate, the title-only
 vs. abstract cohort split, staleness, and per-journal / per-topic 👍
