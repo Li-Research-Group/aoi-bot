@@ -116,6 +116,32 @@ manually (`workflow_dispatch`) once you've filled in at least a few RSS
 URLs, and check that the digest lands in Slack looking right before
 relying on the Monday cron.
 
+### 6. (Optional) Set up the dry-run channel
+
+The **"Dry run (test channel, no Claude)"** workflow runs the real
+pipeline against a separate private Slack channel, with the Claude
+relevance call swapped for a keyword heuristic -- so it costs **zero
+Claude tokens** and never touches the live channel or
+`state/paper_log.json`. To enable it:
+
+1. Create a private channel (e.g. `aoi-test`) and `/invite` the bot into it.
+2. Add a repository **variable** (not secret) `AOI_TEST_CHANNEL_ID` =
+   that channel's ID, under *Settings > Secrets and variables > Actions
+   > Variables*.
+
+Then trigger it from the Actions tab (`workflow_dispatch`), choosing
+`weekly` or `monthly`. Dry-run posts go to `aoi-test`, the rendered
+output is also written to the run's summary page, and dry-run state
+lives in `state/paper_log.dryrun.json` (committed back so a `monthly`
+dry-run can read reactions left on a prior `weekly` dry-run). It is
+driven by three env vars the workflow sets -- `DRY_RUN=1`,
+`SLACK_CHANNEL_ID`, `STATE_FILE` -- which all default to the production
+values when unset.
+
+Tests run on every push and PR via the **CI** workflow (`pytest`, no
+network, no secrets). Run them locally with
+`pip install -r requirements-dev.txt && python -m pytest`.
+
 ## How the feedback loop works
 
 - React 👍 or 👎 directly on any paper's message in Slack.
@@ -153,18 +179,25 @@ relying on the Monday cron.
 - `MAX_PAPERS_PER_AUTHOR` -- caps the followed-author section per author
   per run (default 3).
 
+Environment overrides (set only by the dry-run workflow; production
+leaves them unset): `SLACK_CHANNEL_ID`, `STATE_FILE`, and `DRY_RUN`
+(when truthy, `run_weekly.py` uses the keyword heuristic instead of
+Claude and labels the digest `[DRY RUN]`).
+
 ## File overview
 
 | File | Purpose |
 |---|---|
 | `config.py` | Journals, topics, feeds, Slack channel -- the only file you should need to edit routinely |
 | `sources.py` | RSS + OpenAlex (journal / keyword / followed-author) fetching, feed parsing, dedupe |
-| `relevance.py` | Claude API relevance scoring (returns kept papers + token/skip accounting) |
+| `relevance.py` | Claude relevance scoring + `heuristic_filter` (the offline keyword stand-in for `DRY_RUN`) |
 | `stats.py` | Pure aggregation: per-run stats record + monthly-report roll-ups (fully unit-tested) |
 | `slack_post.py` | Formats and posts the Slack digest |
-| `state.py` | Reads/writes `state/paper_log.json` (`posted` + `runs`) |
+| `state.py` | Reads/writes the state file (`posted` + `runs`) |
 | `run_weekly.py` | Weekly entry point (wires the above together, writes a run stats record) |
 | `track_reactions.py` | Monthly entry point -- the feedback report |
-| `test_*.py` | `pytest` unit + integration tests (no network); `pip install -r requirements-dev.txt` |
+| `tests/` | `pytest` unit + integration tests (no network); `pip install -r requirements-dev.txt` |
 | `.github/workflows/weekly.yml` | Cron for the weekly digest |
 | `.github/workflows/monthly.yml` | Cron for the monthly report |
+| `.github/workflows/ci.yml` | Runs `pytest` on every push and PR |
+| `.github/workflows/dry-run.yml` | Manual: real pipeline → `aoi-test`, keyword heuristic instead of Claude |

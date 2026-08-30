@@ -22,7 +22,7 @@ from collections import defaultdict
 
 import requests
 
-from config import SLACK_CHANNEL_ID
+from config import SLACK_CHANNEL_ID, DRY_RUN
 from stats import (
     summarize_runs,
     posted_stats,
@@ -114,7 +114,8 @@ def build_report() -> str:
     authors = followed_author_stats(state.get("posted", []), counts, since=cutoff)
     users = tally_reaction_users(reaction_users, UPVOTE_EMOJI, DOWNVOTE_EMOJI)
 
-    L: list[str] = [f"*Monthly aoi-bot report* (last {LOOKBACK_DAYS} days)"]
+    prefix = "[DRY RUN] " if DRY_RUN else ""
+    L: list[str] = [f"*{prefix}Monthly aoi-bot report* (last {LOOKBACK_DAYS} days)"]
 
     # --- Pipeline -----------------------------------------------------
     L += ["", "*Pipeline*"]

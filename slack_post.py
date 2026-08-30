@@ -96,6 +96,7 @@ def post_weekly_digest(
     papers_by_topic: dict[str, list[dict]],
     broader_reading: list[dict],
     followed_authors: list[dict] | None = None,
+    dry_run: bool = False,
 ) -> list[dict]:
     """Posts the header + threaded papers. Returns a log of what was
     posted, for the state file: [{"ts", "doi", "title", "journal",
@@ -107,7 +108,8 @@ def post_weekly_digest(
     today = datetime.date.today().isoformat()
     total = (sum(len(v) for v in papers_by_topic.values())
              + len(followed_authors) + len(broader_reading))
-    header = post_message(f"*Weekly paper digest — {today}* ({total} papers)")
+    prefix = "[DRY RUN] " if dry_run else ""
+    header = post_message(f"*{prefix}Weekly paper digest — {today}* ({total} papers)")
     thread_ts = header["ts"]
 
     log = []

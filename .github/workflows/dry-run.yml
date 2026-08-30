@@ -1,0 +1,74 @@
+name: Dry run (test channel, no Claude)
+
+# Manual-only. Runs the real pipeline against the private "aoi-test"
+# channel with a separate state file, and swaps the Claude relevance call
+# for a keyword heuristic -- so it costs zero Claude tokens and never
+# touches the live "aoi" channel or state/paper_log.json.
+
+on:
+  workflow_dispatch:
+    inputs:
+      job:
+        description: "Which job to dry-run"
+        type: choice
+        options: [weekly, monthly]
+        default: weekly
+
+permissions:
+  contents: write   # to commit state/paper_log.dryrun.json back
+
+concurrency: dry-run
+
+jobs:
+  dry-run:
+    runs-on: ubuntu-latest
+    env:
+      DRY_RUN: "1"
+      SLACK_CHANNEL_ID: ${{ vars.AOI_TEST_CHANNEL_ID }}
+      STATE_FILE: state/paper_log.dryrun.json
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements-dev.txt
+
+      - run: python -m pytest -q
+
+      - name: Check the test channel is configured
+        run: |
+          if [ -z "$SLACK_CHANNEL_ID" ]; then
+            echo "::error::Set the AOI_TEST_CHANNEL_ID repository variable (Settings > Secrets and variables > Actions > Variables) to the aoi-test channel ID."
+            exit 1
+          fi
+
+      - name: Weekly digest (dry run → aoi-test)
+        if: ${{ inputs.job == 'weekly' }}
+        run: |
+          {
+            echo '### Weekly dry run → aoi-test (keyword-matched, not Claude-scored)'
+            echo '```'
+            python run_weekly.py 2>&1
+            echo '```'
+          } | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Monthly report (dry run → aoi-test)
+        if: ${{ inputs.job == 'monthly' }}
+        run: |
+          {
+            echo '### Monthly report dry run → aoi-test'
+            echo '```'
+            python track_reactions.py 2>&1
+            echo '```'
+          } | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit dry-run state
+        run: |
+          git config user.name "aoi-bot"
+          git config user.email "actions@github.com"
+          git add state/paper_log.dryrun.json
+          git diff --staged --quiet || git commit -m "Update dry-run paper log [skip ci]"
+          git push

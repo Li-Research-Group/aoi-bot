@@ -7,12 +7,16 @@ topics or journal list change over time -- this file is the only thing
 you should need to touch for routine adjustments.
 """
 
+import os
+
 # --- Slack -------------------------------------------------------------
 
 # The channel the weekly digest posts to. Use the channel ID (starts with
 # "C..."), not the #name -- right-click the channel in Slack > "View
 # channel details" > scroll down to find the ID.
-SLACK_CHANNEL_ID = "C0BTP4UT4F3"
+# Overridable via the SLACK_CHANNEL_ID env var so the dry-run workflow can
+# point at a test channel without touching this file.
+SLACK_CHANNEL_ID = os.environ.get("SLACK_CHANNEL_ID") or "C0BTP4UT4F3"
 
 # --- Journals ------------------------------------------------------------
 # name -> RSS/Atom feed URL for that journal's latest articles. Grouped by
@@ -193,4 +197,11 @@ BROADER_READING_FEEDS = {
 LOOKBACK_DAYS = 8           # how far back to check for "new" papers each run
 MAX_PAPERS_PER_TOPIC = 4    # cap per topic per week, to keep the digest short
 MAX_PAPERS_PER_AUTHOR = 3   # cap per followed author per run
-STATE_FILE = "state/paper_log.json"
+
+# Overridable via the STATE_FILE env var -- the dry-run workflow points at
+# a separate file so test posts never pollute the real dedupe log.
+STATE_FILE = os.environ.get("STATE_FILE") or "state/paper_log.json"
+
+# Set by the dry-run workflow. When true, run_weekly.py skips the Claude
+# relevance call (keyword heuristic instead) and labels the digest.
+DRY_RUN = os.environ.get("DRY_RUN", "").lower() in ("1", "true", "yes")

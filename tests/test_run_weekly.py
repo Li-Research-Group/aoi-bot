@@ -14,7 +14,7 @@ def _stub_pipeline(monkeypatch, *, rss, empty_feeds, relevant, acct, log, author
     monkeypatch.setattr(run_weekly, "fetch_broader_reading", lambda: [])
     monkeypatch.setattr(run_weekly, "filter_relevant", lambda candidates: (relevant, acct))
     monkeypatch.setattr(run_weekly, "post_weekly_digest",
-                        lambda by_topic, broader, followed_authors=None: log)
+                        lambda by_topic, broader, followed_authors=None, dry_run=False: log)
 
 
 def test_main_records_a_run_with_funnel_and_dead_feed(monkeypatch):
@@ -63,6 +63,48 @@ def test_main_still_records_a_run_on_a_quiet_week(monkeypatch):
     assert runs[0]["empty_feeds"] == ["Green Chemistry", "Energy & Environmental Science"]
 
 
+def test_dry_run_uses_the_heuristic_and_never_calls_claude(monkeypatch):
+    captured = {}
+    monkeypatch.setattr(run_weekly, "load_state", lambda: {"posted": [], "runs": []})
+    monkeypatch.setattr(run_weekly, "save_state", lambda s: captured.update(s))
+    monkeypatch.setattr(run_weekly, "DRY_RUN", True)
+
+    def boom(*a, **k):
+        raise AssertionError("filter_relevant must not be called in a dry run")
+
+    monkeypatch.setattr(run_weekly, "filter_relevant", boom)
+
+    heuristic_calls = []
+
+    def fake_heuristic(candidates):
+        heuristic_calls.append(len(candidates))
+        return ([{**candidates[0], "topics": ["T"], "title_only": False}],
+                {"scored": 1, "skipped_no_abstract": 0, "input_tokens": 0, "output_tokens": 0})
+
+    monkeypatch.setattr(run_weekly, "heuristic_filter", fake_heuristic)
+
+    dry_run_flags = []
+
+    def fake_post(by_topic, broader, followed_authors=None, dry_run=False):
+        dry_run_flags.append(dry_run)
+        return [{"ts": "1", "source_lane": "rss", "topics": ["T"],
+                 "published": "2026-08-01", "posted_date": "2026-08-30", "title_only": False}]
+
+    rss = [{"title": "P", "doi": "10.1/p", "abstract": "x",
+            "source_lane": "rss", "published": "2026-08-01"}]
+    monkeypatch.setattr(run_weekly, "fetch_rss_candidates", lambda: (rss, []))
+    monkeypatch.setattr(run_weekly, "fetch_openalex_journal_candidates", lambda: [])
+    monkeypatch.setattr(run_weekly, "fetch_openalex_candidates", lambda: [])
+    monkeypatch.setattr(run_weekly, "fetch_openalex_author_candidates", lambda: [])
+    monkeypatch.setattr(run_weekly, "fetch_broader_reading", lambda: [])
+    monkeypatch.setattr(run_weekly, "post_weekly_digest", fake_post)
+
+    assert run_weekly.main() == 0
+    assert heuristic_calls == [1]
+    assert dry_run_flags == [True]
+    assert captured["runs"][0]["claude_cost_usd"] == 0.0
+
+
 def test_followed_author_paper_skips_relevance_and_gets_its_own_section(monkeypatch):
     captured = {}
     monkeypatch.setattr(run_weekly, "load_state", lambda: {"posted": [], "runs": []})
@@ -89,7 +131,7 @@ def test_followed_author_paper_skips_relevance_and_gets_its_own_section(monkeypa
 
     passed = {}
 
-    def fake_post(by_topic, broader, followed_authors=None):
+    def fake_post(by_topic, broader, followed_authors=None, dry_run=False):
         passed["followed_authors"] = followed_authors
         return [{"ts": "9", "source_lane": "openalex_author", "topics": ["Followed Authors"],
                  "matched_authors": ["Jane Q. Smith"], "published": "2026-08-01",

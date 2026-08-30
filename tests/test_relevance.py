@@ -4,7 +4,7 @@ Claude token usage -- run_weekly.py feeds those into the run stats record."""
 
 import json
 
-from relevance import filter_relevant
+from relevance import filter_relevant, heuristic_filter
 
 
 class _FakeBlock:
@@ -76,3 +76,38 @@ def test_filter_relevant_skips_abstractless_untracked_journal_without_a_call():
     assert client.calls == []            # never spent a Claude call
     assert acct["scored"] == 0
     assert acct["skipped_no_abstract"] == 1
+
+
+def test_heuristic_filter_matches_topic_keywords_and_spends_no_tokens():
+    papers = [
+        {"title": "Sargassum hydrothermal liquefaction yields",
+         "journal": "Algal Research", "abstract": "Brown seaweed converted via HTL."},
+        {"title": "A study of medieval poetry", "journal": "Some Journal",
+         "abstract": "Nothing to do with the group's topics."},
+    ]
+    kept, acct = heuristic_filter(papers)
+
+    assert [p["title"] for p in kept] == ["Sargassum hydrothermal liquefaction yields"]
+    kept0 = kept[0]
+    assert "Sargassum/Seaweed (HTL, AD, arrested AD)" in kept0["topics"]
+    assert kept0["title_only"] is False
+    assert "keyword" in kept0["reason"].lower()
+    # the whole point: zero Claude usage
+    assert acct == {"scored": 2, "skipped_no_abstract": 0,
+                    "input_tokens": 0, "output_tokens": 0}
+
+
+def test_heuristic_filter_skips_abstractless_untracked_journal():
+    papers = [{"title": "biobinder supply chain", "journal": "Mystery Journal", "abstract": ""}]
+    kept, acct = heuristic_filter(papers)
+    assert kept == []
+    assert acct["skipped_no_abstract"] == 1
+    assert acct["scored"] == 0
+
+
+def test_heuristic_filter_scores_tracked_journal_on_title_alone():
+    papers = [{"title": "Techno-economic analysis methodology for biorefineries",
+               "journal": "Journal of Cleaner Production", "abstract": ""}]
+    kept, acct = heuristic_filter(papers)
+    assert len(kept) == 1
+    assert kept[0]["title_only"] is True

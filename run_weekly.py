@@ -17,8 +17,8 @@ Flow:
 import datetime
 import sys
 
-from config import MAX_PAPERS_PER_TOPIC, BROADER_READING_FEEDS
-from relevance import MODEL, filter_relevant
+from config import MAX_PAPERS_PER_TOPIC, BROADER_READING_FEEDS, DRY_RUN
+from relevance import MODEL, filter_relevant, heuristic_filter
 from sources import (
     fetch_rss_candidates,
     fetch_openalex_journal_candidates,
@@ -106,8 +106,12 @@ def main() -> int:
     by_topic: dict[str, list[dict]] = {}
 
     if candidates:
-        print("Scoring relevance with Claude...")
-        relevant, acct = filter_relevant(candidates)
+        if DRY_RUN:
+            print("DRY RUN -- scoring relevance with the keyword heuristic (no Claude call)...")
+            relevant, acct = heuristic_filter(candidates)
+        else:
+            print("Scoring relevance with Claude...")
+            relevant, acct = filter_relevant(candidates)
         print(f"  {len(relevant)} judged relevant")
         for paper in relevant:
             for topic in paper["topics"]:
@@ -121,7 +125,8 @@ def main() -> int:
 
     log: list[dict] = []
     if any(by_topic.values()) or author_papers or broader:
-        log = post_weekly_digest(by_topic, broader, followed_authors=author_papers)
+        log = post_weekly_digest(by_topic, broader, followed_authors=author_papers,
+                                 dry_run=DRY_RUN)
         append_posted(state, log)
     else:
         print("Nothing to post this week.")

@@ -103,3 +103,39 @@ def filter_relevant(papers: list[dict], client=None) -> tuple[list[dict], dict]:
         "output_tokens": out_tokens,
     }
     return kept, acct
+
+
+# Lowercased keyword -> topic name, for the offline heuristic below.
+_KEYWORD_TOPIC = {
+    kw.lower(): name
+    for name, cfg in TOPICS.items()
+    for kw in cfg["keywords"]
+}
+
+
+def heuristic_filter(papers: list[dict]) -> tuple[list[dict], dict]:
+    """Offline stand-in for filter_relevant used by DRY_RUN: matches each
+    topic's keywords as substrings of the title + abstract. Same
+    (kept, accounting) contract, but spends zero Claude tokens. The
+    grouping is crude -- it exists to exercise the digest/stats path in
+    the dry-run workflow, not to replace real relevance scoring."""
+    kept = []
+    scored = skipped_no_abstract = 0
+    for paper in papers:
+        has_abstract = bool((paper.get("abstract") or "").strip())
+        if not has_abstract and paper.get("journal", "") not in _TRACKED_JOURNALS:
+            skipped_no_abstract += 1
+            continue
+        scored += 1
+        haystack = f"{paper.get('title', '')} {paper.get('abstract', '')}".lower()
+        topics = sorted({
+            topic for kw, topic in _KEYWORD_TOPIC.items() if kw in haystack
+        })
+        if topics:
+            paper["topics"] = topics
+            paper["reason"] = "keyword match (dry run -- not Claude-scored)"
+            paper["title_only"] = not has_abstract
+            kept.append(paper)
+    acct = {"scored": scored, "skipped_no_abstract": skipped_no_abstract,
+            "input_tokens": 0, "output_tokens": 0}
+    return kept, acct
