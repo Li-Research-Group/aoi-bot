@@ -139,7 +139,7 @@ def post_weekly_digest(
             ))
 
     if broader_reading:
-        post_message("*`[Broader Reading]`* — from Nature/Science/PNAS news & career sections")
+        post_message("*`[Broader Reading]`* — from Nature/Science career sections")
         for item in broader_reading:
             link = item.get("url", "")
             resp = post_message(f"`[Broader Reading]`\n*<{link}|{item['title']}>*")
