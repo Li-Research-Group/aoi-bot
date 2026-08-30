@@ -1,14 +1,16 @@
 # Group Paper Feed
 
 Automated weekly literature digest for the group's Slack. Pulls candidate
-papers from three lanes -- journal RSS feeds (fast, same-day coverage for
+papers from four lanes -- journal RSS feeds (fast, same-day coverage for
 journals with a usable feed), an OpenAlex query per tracked journal by
 ISSN (backstop for journals with no feed / a stale feed / a short rolling
-feed), and OpenAlex keyword search per topic (broader net for anything
-outside the tracked journal list) -- filters them for relevance with the
-Claude API, and posts a tagged digest to Slack as a header message with
-each paper as a threaded reply -- so people can react 👍/👎 on individual
-papers. A monthly job reads those reactions back and posts a report --
+feed), OpenAlex keyword search per topic (broader net for anything
+outside the tracked journal list), and an OpenAlex query per **followed
+author** (every recent paper by people the group tracks, regardless of
+topic) -- filters the first three for relevance with the Claude API
+(the followed-author lane bypasses that and gets its own digest section),
+and posts a tagged digest to Slack as a header message with each paper as
+a threaded reply -- so people can react 👍/👎 on individual papers. A monthly job reads those reactions back and posts a report --
 the pipeline funnel (collected → scored → relevant → posted, per lane),
 Claude cost per run, dead-feed alerts, engagement rate, the title-only
 vs. abstract cohort split, staleness, and per-journal / per-topic 👍
@@ -85,6 +87,19 @@ Two maps drive journal coverage:
   field of the first result). Keep the keys in sync with `JOURNALS` where
   a journal is in both.
 
+### 4b. Followed authors (`FOLLOWED_AUTHORS` in `config.py`)
+
+Optional. `name -> OpenAlex author ID or ORCID` for people whose every
+recent paper you want to see, on-topic or not. Either works: an OpenAlex
+ID from `https://api.openalex.org/authors?search=<name>` (the tail of the
+`id` field, `A5023888391`), or a bare ORCID (`0000-0003-2078-1126`) --
+the ORCID is easier to verify. These papers get their
+own **Followed authors** section in the digest, capped at
+`MAX_PAPERS_PER_AUTHOR` per run, and skip the relevance filter (so a
+prolific author is capped, not scored away). A followed author's paper is
+pulled out of the topic pipeline before scoring -- it shows once, in the
+authors section. Leave the map empty to disable the lane.
+
 For the **Broader Reading** feeds (`BROADER_READING_FEEDS` in
 `config.py`), use the *News & Comment* or *Careers* section feeds for
 Nature/Science, not their research-article feeds:
@@ -115,17 +130,19 @@ relying on the Monday cron.
     title-only (Elsevier) cohort 👍 rates, per-tag volume, and the
     most-upvoted / net-downvoted papers.
   - **By journal / by topic** -- papers posted and 👍 rate.
-  - **Participation** -- reactions given per person (a participation
-    view, deliberately not a per-person 👍-vs-👎 scoreboard).
+  - **Followed authors** -- papers posted and 👍 rate per followed
+    author, so you can see which follows are paying off.
+  - **Participation** -- reactions given per person, by initials only (a
+    participation view, deliberately not a per-person 👍-vs-👎 scoreboard).
 - This is a report for a human to act on, not an auto-pilot: if a
   journal is consistently near 0% upvoted after a couple months, that's
   a signal to drop it from `config.py` (or narrow its topic's keywords).
-  If a specific author keeps showing up with upvotes, that's a signal to
-  add an author-specific OpenAlex query for them.
+  If a specific author keeps showing up with upvotes -- in the digest or
+  the by-journal breakdown -- add them to `FOLLOWED_AUTHORS`.
 - Adjusting the pipeline going forward is just editing `config.py` --
   add/remove journals under `JOURNALS`, tweak keyword lists or add new
-  topics under `TOPICS`. No other file should need to change for routine
-  tuning.
+  topics under `TOPICS`, add people to `FOLLOWED_AUTHORS`. No other file
+  should need to change for routine tuning.
 
 ## Tuning knobs (in `config.py`)
 
@@ -133,13 +150,15 @@ relying on the Monday cron.
   (default 8, to comfortably cover a 7-day gap between runs).
 - `MAX_PAPERS_PER_TOPIC` -- caps the weekly digest length per topic
   (default 4).
+- `MAX_PAPERS_PER_AUTHOR` -- caps the followed-author section per author
+  per run (default 3).
 
 ## File overview
 
 | File | Purpose |
 |---|---|
 | `config.py` | Journals, topics, feeds, Slack channel -- the only file you should need to edit routinely |
-| `sources.py` | RSS + OpenAlex (journal + keyword) fetching, feed parsing, dedupe |
+| `sources.py` | RSS + OpenAlex (journal / keyword / followed-author) fetching, feed parsing, dedupe |
 | `relevance.py` | Claude API relevance scoring (returns kept papers + token/skip accounting) |
 | `stats.py` | Pure aggregation: per-run stats record + monthly-report roll-ups (fully unit-tested) |
 | `slack_post.py` | Formats and posts the Slack digest |

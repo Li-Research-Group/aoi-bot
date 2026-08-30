@@ -5,11 +5,13 @@ Flow:
   1. Fetch candidates from RSS (fast lane) + OpenAlex journal-by-ISSN
      (backstop) + OpenAlex keyword search (broad lane)
   2. Dedupe, and drop anything already posted before (state file)
-  3. Score remaining candidates for relevance with Claude
-  4. Group by topic, cap per topic, post to Slack as header + threaded replies
-  5. Fetch the separate broader-reading feed (no relevance filtering --
+  3. Fetch followed-author candidates and pull them out of the topic pool
+     -- they get their own section and bypass relevance scoring
+  4. Score remaining topic candidates for relevance with Claude
+  5. Group by topic, cap per topic, post to Slack as header + threaded replies
+  6. Fetch the separate broader-reading feed (no relevance filtering --
      it's curated by source, not by topic match)
-  6. Update the state file with what was posted this run
+  7. Record run stats and update the state file with what was posted
 """
 
 import datetime
@@ -21,6 +23,7 @@ from sources import (
     fetch_rss_candidates,
     fetch_openalex_journal_candidates,
     fetch_openalex_candidates,
+    fetch_openalex_author_candidates,
     dedupe,
     _parse_feed,
 )
@@ -47,6 +50,10 @@ def fetch_broader_reading() -> list[dict]:
     return items
 
 
+def _key(paper: dict) -> str:
+    return paper.get("doi") or paper["title"].strip().lower()
+
+
 def main() -> int:
     state = load_state()
     seen_keys = already_posted_keys(state)
@@ -64,59 +71,65 @@ def main() -> int:
     openalex_papers = fetch_openalex_candidates()
     print(f"  {len(openalex_papers)} candidates from OpenAlex keyword search")
 
+    print("Fetching followed-author candidates...")
+    author_papers = dedupe(fetch_openalex_author_candidates())
+    print(f"  {len(author_papers)} candidates from followed authors")
+
     collected = {
         "rss": len(rss_papers),
         "openalex_journal": len(journal_papers),
         "openalex_keyword": len(openalex_papers),
+        "openalex_author": len(author_papers),
     }
 
     # Order matters for dedupe (keeps the first seen): RSS first -- it carries
     # abstracts for Nature/ACS that OpenAlex sometimes lacks -- then the
     # journal lane (canonical journal name), then the broad keyword lane.
-    deduped = dedupe(rss_papers + journal_papers + openalex_papers)
-    after_dedupe = len(deduped)
-    candidates = [
-        p for p in deduped
-        if (p.get("doi") or p["title"].strip().lower()) not in seen_keys
-    ]
-    already_posted_removed = after_dedupe - len(candidates)
-    print(f"{len(candidates)} new candidates after dedupe + already-posted filter")
+    topic_pool = rss_papers + journal_papers + openalex_papers
+    deduped = dedupe(topic_pool)
+    duplicates_removed = len(topic_pool) - len(deduped)
+
+    # Followed-author papers get their own section and bypass relevance, so
+    # pull them out of the topic pool before scoring -- no double-post, no
+    # wasted Claude call.
+    author_papers = [p for p in author_papers if _key(p) not in seen_keys]
+    author_keys = {_key(p) for p in author_papers}
+
+    new_from_topics = [p for p in deduped if _key(p) not in seen_keys]
+    already_posted_removed = len(deduped) - len(new_from_topics)
+    candidates = [p for p in new_from_topics if _key(p) not in author_keys]
+    print(f"{len(candidates)} new topic candidates, {len(author_papers)} followed-author papers")
 
     # Defaults so a bail-out path still produces an honest run record.
     acct = {"scored": 0, "skipped_no_abstract": 0, "input_tokens": 0, "output_tokens": 0}
     relevant: list[dict] = []
-    log: list[dict] = []
+    by_topic: dict[str, list[dict]] = {}
 
-    if not candidates:
-        print("Nothing new this week.")
-        broader = fetch_broader_reading()
-        if broader:
-            log = post_weekly_digest({}, broader)
-            append_posted(state, log)
-    else:
+    if candidates:
         print("Scoring relevance with Claude...")
         relevant, acct = filter_relevant(candidates)
         print(f"  {len(relevant)} judged relevant")
-
-        # Group by topic, respecting the per-topic cap
-        by_topic: dict[str, list[dict]] = {}
         for paper in relevant:
             for topic in paper["topics"]:
                 by_topic.setdefault(topic, [])
                 if len(by_topic[topic]) < MAX_PAPERS_PER_TOPIC:
                     by_topic[topic].append(paper)
+    else:
+        print("No new topic candidates this week.")
 
-        broader = fetch_broader_reading()
-        if any(by_topic.values()) or broader:
-            log = post_weekly_digest(by_topic, broader)
-            append_posted(state, log)
-        else:
-            print("Nothing to post after filtering.")
+    broader = fetch_broader_reading()
+
+    log: list[dict] = []
+    if any(by_topic.values()) or author_papers or broader:
+        log = post_weekly_digest(by_topic, broader, followed_authors=author_papers)
+        append_posted(state, log)
+    else:
+        print("Nothing to post this week.")
 
     run_record = build_run_record(
         date=today,
         collected=collected,
-        after_dedupe=after_dedupe,
+        duplicates_removed=duplicates_removed,
         already_posted_removed=already_posted_removed,
         scored=acct["scored"],
         skipped_no_abstract=acct["skipped_no_abstract"],

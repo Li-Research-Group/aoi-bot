@@ -47,7 +47,7 @@ def build_run_record(
     *,
     date: str,
     collected: dict,
-    after_dedupe: int,
+    duplicates_removed: int,
     already_posted_removed: int,
     scored: int,
     skipped_no_abstract: int,
@@ -58,12 +58,15 @@ def build_run_record(
     model: str,
     empty_feeds: list[str],
 ) -> dict:
-    """Assemble one run's stats record for state["runs"]."""
-    collected_total = sum(collected.values())
+    """Assemble one run's stats record for state["runs"].
+
+    `duplicates_removed` is the cross-lane dedupe count over the topic
+    lanes (rss + openalex_journal + openalex_keyword); the followed-author
+    lane is handled separately and doesn't feed it."""
     return {
         "date": date,
         "collected": dict(collected),
-        "duplicates_removed": collected_total - after_dedupe,
+        "duplicates_removed": duplicates_removed,
         "already_posted_removed": already_posted_removed,
         "scored": scored,
         "skipped_no_abstract": skipped_no_abstract,
@@ -141,6 +144,27 @@ def tally_reaction_users(reaction_users_by_ts: dict, up_emoji: str, down_emoji: 
                 continue
             for uid in r.get("users", []):
                 out.setdefault(uid, {"up": 0, "down": 0})[key] += 1
+    return out
+
+
+def followed_author_stats(posted: list[dict], reactions: dict, since: str) -> dict:
+    """Per followed author: papers posted this window and their 👍 rate --
+    the signal for whether a given follow is paying off. Keyed by the
+    name in `matched_authors`; only `source_lane == "openalex_author"`
+    entries count."""
+    out: dict = {}
+    for e in posted:
+        if e.get("posted_date", "") < since or e.get("source_lane") != "openalex_author":
+            continue
+        u, d = reactions.get(e["ts"], (0, 0))
+        for name in e.get("matched_authors") or ["(unknown)"]:
+            a = out.setdefault(name, {"n": 0, "up": 0, "down": 0})
+            a["n"] += 1
+            a["up"] += u
+            a["down"] += d
+    for a in out.values():
+        votes = a["up"] + a["down"]
+        a["upvote_rate"] = round(a["up"] / votes, 4) if votes else None
     return out
 
 

@@ -23,7 +23,13 @@ from collections import defaultdict
 import requests
 
 from config import SLACK_CHANNEL_ID
-from stats import summarize_runs, posted_stats, tally_reaction_users, initials
+from stats import (
+    summarize_runs,
+    posted_stats,
+    tally_reaction_users,
+    followed_author_stats,
+    initials,
+)
 from state import load_state
 
 SLACK_API = "https://slack.com/api"
@@ -105,6 +111,7 @@ def build_report() -> str:
 
     pipeline = summarize_runs(state.get("runs", []), since=cutoff)
     posted = posted_stats(state.get("posted", []), counts, since=cutoff)
+    authors = followed_author_stats(state.get("posted", []), counts, since=cutoff)
     users = tally_reaction_users(reaction_users, UPVOTE_EMOJI, DOWNVOTE_EMOJI)
 
     L: list[str] = [f"*Monthly aoi-bot report* (last {LOOKBACK_DAYS} days)"]
@@ -181,6 +188,13 @@ def build_report() -> str:
 
     L += ["", "*By journal:*"] + _rate_lines(by_journal)
     L += ["", "*By topic:*"] + _rate_lines(by_topic)
+
+    # --- Followed authors ----------------------------------------
+    if authors:
+        L += ["", "*Followed authors* (own lane, bypasses relevance)"]
+        for name, c in sorted(authors.items(), key=lambda kv: -kv[1]["n"]):
+            rate = "no votes yet" if c["upvote_rate"] is None else f"{_pct(c['upvote_rate'])} upvoted"
+            L.append(f"  - {name}: {_n_papers(c['n'])}, {rate}")
 
     # --- Participation ---------------------------------------------
     if users:

@@ -58,14 +58,55 @@ def format_paper_message(paper: dict) -> str:
     return "\n".join(line for line in lines if line)
 
 
-def post_weekly_digest(papers_by_topic: dict[str, list[dict]], broader_reading: list[dict]) -> list[dict]:
+def format_followed_author_message(paper: dict) -> str:
+    who = ", ".join(paper.get("matched_authors", [])) or "followed author"
+    author_list = paper.get("authors", []) or []
+    authors = ", ".join(author_list[:3]) + (" et al." if len(author_list) > 3 else "")
+    link = paper.get("url") or (f"https://doi.org/{paper['doi']}" if paper.get("doi") else "")
+    cite = f"_{paper.get('journal', '')}_ ({paper.get('published') or 'n.d.'})"
+    if authors:
+        cite = f"{authors} — {cite}"
+    lines = [
+        f"`[Followed: {who}]`",
+        f"*<{link}|{_oneline(paper.get('title', ''))}>*",
+        cite,
+    ]
+    return "\n".join(line for line in lines if line)
+
+
+def _log_entry(ts, today, *, doi, title, journal, topics, source_lane,
+               published, title_only=False, matched_authors=None) -> dict:
+    entry = {
+        "ts": ts,
+        "doi": doi,
+        "title": title,
+        "journal": journal,
+        "topics": topics,
+        "posted_date": today,
+        "source_lane": source_lane,
+        "published": published,
+        "title_only": title_only,
+    }
+    if matched_authors:
+        entry["matched_authors"] = matched_authors
+    return entry
+
+
+def post_weekly_digest(
+    papers_by_topic: dict[str, list[dict]],
+    broader_reading: list[dict],
+    followed_authors: list[dict] | None = None,
+) -> list[dict]:
     """Posts the header + threaded papers. Returns a log of what was
     posted, for the state file: [{"ts", "doi", "title", "journal",
-    "topics", "posted_date", "source_lane", "published", "title_only"}].
-    The last three feed track_reactions.py's per-lane / staleness /
-    title-only-cohort cuts without it having to re-derive them."""
+    "topics", "posted_date", "source_lane", "published", "title_only",
+    and "matched_authors" for the followed-author section}].
+    The extra fields feed track_reactions.py's per-lane / staleness /
+    title-only / followed-author cuts without it re-deriving them."""
+    followed_authors = followed_authors or []
     today = datetime.date.today().isoformat()
-    total = sum(len(v) for v in papers_by_topic.values()) + len(broader_reading)
+    total = (sum(len(v) for v in papers_by_topic.values())
+             + len(followed_authors) + len(broader_reading))
     header = post_message(f"*Weekly paper digest — {today}* ({total} papers)")
     thread_ts = header["ts"]
 
@@ -75,37 +116,38 @@ def post_weekly_digest(papers_by_topic: dict[str, list[dict]], broader_reading: 
             continue
         for paper in papers:
             resp = post_message(format_paper_message(paper), thread_ts=thread_ts)
-            log.append(
-                {
-                    "ts": resp["ts"],
-                    "doi": paper.get("doi"),
-                    "title": paper["title"],
-                    "journal": paper.get("journal", ""),
-                    "topics": paper.get("topics", []),
-                    "posted_date": today,
-                    "source_lane": paper.get("source_lane", ""),
-                    "published": paper.get("published", ""),
-                    "title_only": bool(paper.get("title_only")),
-                }
-            )
+            log.append(_log_entry(
+                resp["ts"], today,
+                doi=paper.get("doi"), title=paper["title"],
+                journal=paper.get("journal", ""), topics=paper.get("topics", []),
+                source_lane=paper.get("source_lane", ""),
+                published=paper.get("published", ""),
+                title_only=bool(paper.get("title_only")),
+            ))
+
+    if followed_authors:
+        post_message("*`[Followed authors]`* — recent papers by people the group tracks", thread_ts=thread_ts)
+        for paper in followed_authors:
+            resp = post_message(format_followed_author_message(paper), thread_ts=thread_ts)
+            log.append(_log_entry(
+                resp["ts"], today,
+                doi=paper.get("doi"), title=paper["title"],
+                journal=paper.get("journal", ""), topics=["Followed Authors"],
+                source_lane=paper.get("source_lane", "openalex_author"),
+                published=paper.get("published", ""),
+                matched_authors=paper.get("matched_authors", []),
+            ))
 
     if broader_reading:
         post_message("*`[Broader Reading]`* — from Nature/Science/PNAS news & career sections", thread_ts=thread_ts)
         for item in broader_reading:
             link = item.get("url", "")
             resp = post_message(f"`[Broader Reading]`\n*<{link}|{item['title']}>*", thread_ts=thread_ts)
-            log.append(
-                {
-                    "ts": resp["ts"],
-                    "doi": None,
-                    "title": item["title"],
-                    "journal": item.get("source", "Broader Reading"),
-                    "topics": ["Broader Reading"],
-                    "posted_date": today,
-                    "source_lane": "rss",
-                    "published": "",
-                    "title_only": False,
-                }
-            )
+            log.append(_log_entry(
+                resp["ts"], today,
+                doi=None, title=item["title"],
+                journal=item.get("source", "Broader Reading"), topics=["Broader Reading"],
+                source_lane="rss", published="",
+            ))
 
     return log

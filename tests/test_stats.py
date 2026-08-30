@@ -8,6 +8,7 @@ from stats import (
     summarize_runs,
     posted_stats,
     tally_reaction_users,
+    followed_author_stats,
 )
 
 
@@ -40,7 +41,7 @@ def test_build_run_record_derives_duplicates_lanes_and_cost():
     rec = build_run_record(
         date="2026-08-30",
         collected={"rss": 40, "openalex_journal": 100, "openalex_keyword": 30},
-        after_dedupe=120,
+        duplicates_removed=50,
         already_posted_removed=10,
         scored=110,
         skipped_no_abstract=20,
@@ -53,7 +54,6 @@ def test_build_run_record_derives_duplicates_lanes_and_cost():
     )
     assert rec["date"] == "2026-08-30"
     assert rec["collected"] == {"rss": 40, "openalex_journal": 100, "openalex_keyword": 30}
-    # 170 collected - 120 after dedupe
     assert rec["duplicates_removed"] == 50
     assert rec["already_posted_removed"] == 10
     assert rec["scored"] == 110
@@ -148,6 +148,27 @@ def test_initials_reduces_names_to_letters():
     assert initials("zoe.yalin.li") == "ZYL"
     assert initials("Zoe") == "Z"
     assert initials("   ") == "?"
+
+
+def test_followed_author_stats_groups_by_matched_author():
+    posted = [
+        {"ts": "a", "source_lane": "openalex_author", "matched_authors": ["Jane Smith"],
+         "posted_date": "2026-08-10", "title": "P1"},
+        {"ts": "b", "source_lane": "openalex_author", "matched_authors": ["Jane Smith"],
+         "posted_date": "2026-08-11", "title": "P2"},
+        {"ts": "c", "source_lane": "openalex_author", "matched_authors": ["Bob Lee"],
+         "posted_date": "2026-08-12", "title": "P3"},
+        {"ts": "d", "source_lane": "rss", "topics": ["X"],
+         "posted_date": "2026-08-12", "title": "not an author paper"},
+    ]
+    reactions = {"a": (3, 0), "b": (0, 1), "c": (0, 0), "d": (5, 5)}
+    s = followed_author_stats(posted, reactions, since="2026-08-01")
+
+    assert set(s) == {"Jane Smith", "Bob Lee"}
+    assert s["Jane Smith"]["n"] == 2
+    assert s["Jane Smith"]["upvote_rate"] == round(3 / 4, 4)  # up 3, down 1
+    assert s["Bob Lee"]["n"] == 1
+    assert s["Bob Lee"]["upvote_rate"] is None  # no votes
 
 
 def test_tally_reaction_users_counts_up_and_down_per_user():

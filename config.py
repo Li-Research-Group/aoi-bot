@@ -164,6 +164,21 @@ TOPICS = {
     },
 }
 
+# --- Followed authors -------------------------------------------------
+# name -> OpenAlex author ID ("A5023888391") OR ORCID ("0000-0003-2078-1126").
+# Every recent paper by these people is surfaced in its own digest section
+# regardless of topic match -- a true "follow" -- capped at
+# MAX_PAPERS_PER_AUTHOR per run. Find an OpenAlex ID at
+# https://api.openalex.org/authors?search=<name> (the "id" field of the
+# best match, tail after the last slash); an ORCID works just as well and
+# is easier to verify. A followed author's paper is pulled out of the
+# topic pipeline before relevance scoring, so it shows in the
+# Followed-authors section only, never twice.
+FOLLOWED_AUTHORS: dict[str, str] = {
+    # Corinne Scown (LBNL / JBEI) -- TEA & LCA of biofuels and bioproducts.
+    "Corinne Scown": "0000-0003-2078-1126",  # ORCID
+}
+
 # --- Broader-reading feed (separate category, not a research-topic match) --
 # News/Career/Comment feeds -- NOT the research-article feeds for these
 # journals. Kept structurally separate so cadence/scope can be tuned later
@@ -175,6 +190,7 @@ BROADER_READING_FEEDS = {
 
 # --- Pipeline knobs --------------------------------------------------------
 
-LOOKBACK_DAYS = 8          # how far back to check for "new" papers each run
-MAX_PAPERS_PER_TOPIC = 4   # cap per topic per week, to keep the digest short
+LOOKBACK_DAYS = 8           # how far back to check for "new" papers each run
+MAX_PAPERS_PER_TOPIC = 4    # cap per topic per week, to keep the digest short
+MAX_PAPERS_PER_AUTHOR = 3   # cap per followed author per run
 STATE_FILE = "state/paper_log.json"

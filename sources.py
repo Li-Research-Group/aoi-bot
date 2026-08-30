@@ -38,7 +38,14 @@ import xml.etree.ElementTree as ET
 
 import requests
 
-from config import JOURNALS, JOURNAL_ISSNS, TOPICS, LOOKBACK_DAYS
+from config import (
+    JOURNALS,
+    JOURNAL_ISSNS,
+    TOPICS,
+    LOOKBACK_DAYS,
+    FOLLOWED_AUTHORS,
+    MAX_PAPERS_PER_AUTHOR,
+)
 
 OPENALEX_ENDPOINT = "https://api.openalex.org/works"
 # OpenAlex's "polite pool" -- faster, more consistent rate limits.
@@ -386,6 +393,38 @@ def fetch_openalex_candidates() -> list[dict]:
             )
             results.extend(_openalex_to_paper(w, lane="openalex_keyword") for w in works)
             time.sleep(0.25)  # be polite -- OpenAlex polite pool is 10 req/s
+    return results
+
+
+def fetch_openalex_author_candidates(authors: dict | None = None, get=None) -> list[dict]:
+    """Followed-author lane: every recent paper by a person in
+    FOLLOWED_AUTHORS, by OpenAlex author ID, newest first and capped at
+    MAX_PAPERS_PER_AUTHOR per run. These bypass the relevance filter
+    (run_weekly pulls them out of the topic pool first) and get their own
+    digest section. `authors` / `get` are injection points for testing."""
+    authors = FOLLOWED_AUTHORS if authors is None else authors
+    get = _openalex_get if get is None else get
+    cutoff = _cutoff_date().isoformat()
+    results = []
+    for name, ident in authors.items():
+        if not ident or ident.startswith("FILL_IN"):
+            continue
+        # A hyphen means it's an ORCID (0000-0003-2078-1126); otherwise it's
+        # a bare OpenAlex author ID (A5023888391). OpenAlex filters on either.
+        field = "authorships.author.orcid" if "-" in ident else "authorships.author.id"
+        works = get(
+            {
+                "filter": f"{field}:{ident},from_publication_date:{cutoff}",
+                "per-page": MAX_PAPERS_PER_AUTHOR,
+                "sort": "publication_date:desc",
+            },
+            label=f"author {name}",
+        )
+        for work in works:
+            paper = _openalex_to_paper(work, lane="openalex_author")
+            paper["matched_authors"] = [name]
+            results.append(paper)
+        time.sleep(0.25)  # be polite -- OpenAlex polite pool is 10 req/s
     return results
 
 
