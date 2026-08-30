@@ -25,6 +25,8 @@ code doesn't care which lane a paper came from:
 """
 
 import datetime
+import html
+import re
 import time
 import urllib.parse
 import urllib.request
@@ -72,56 +74,133 @@ def fetch_rss_candidates() -> list[dict]:
 
 
 def _parse_feed(feed_url: str) -> list[dict]:
-    """Minimal RSS/Atom parser -- avoids adding feedparser as a dependency.
-    Handles the common subset of fields (title, link, description, pubDate,
-    dc:creator) that publisher feeds use."""
+    """Fetch a feed URL and hand the bytes to _parse_feed_xml (split out so
+    the parser can be tested against saved feed samples without a network
+    call -- that's how the RSC bug below was originally caught)."""
     req = urllib.request.Request(feed_url, headers={"User-Agent": "aoi-bot/1.0"})
     with urllib.request.urlopen(req, timeout=20) as resp:
         raw = resp.read()
+    return _parse_feed_xml(raw)
+
+
+# Namespaces seen across the publisher families we track.
+_FEED_NS = {
+    "atom": "http://www.w3.org/2005/Atom",
+    "dc": "http://purl.org/dc/elements/1.1/",
+}
+
+_DOI_RE = re.compile(r"10\.\d{4,9}/[^\s\"'<>&]+")
+_DOI_LINE_RE = re.compile(r"\bDOI:\s*10\.\d{4,9}/[^\s\"'<>&]+", re.IGNORECASE)
+_RSS_BOILERPLATE_RE = re.compile(r"the content of this rss feed.*", re.IGNORECASE | re.DOTALL)
+_TAG_RE = re.compile(r"<[^>]+>")
+
+
+def _parse_feed_xml(raw: bytes) -> list[dict]:
+    """Minimal RSS/Atom parser -- avoids adding feedparser as a dependency.
+    Handles the common subset of fields (title, link, description, pubDate,
+    dc:creator) that publisher feeds use.
+
+    Chained element lookups use explicit `is not None` checks, never
+    `a.find(...) or b.find(...)`: an ElementTree element with text but no
+    child elements is falsy, so the `or` form silently skips a populated
+    <description>. RSC feeds hit exactly this -- the whole abstract sits in
+    <description> as escaped text with no sub-elements -- producing an empty
+    abstract for every entry, which then gets dropped by the relevance
+    filter for having no abstract to judge."""
     root = ET.fromstring(raw)
 
-    ns = {"atom": "http://www.w3.org/2005/Atom", "dc": "http://purl.org/dc/elements/1.1/"}
-    items = root.findall(".//item") or root.findall("atom:entry", ns)
+    items = root.findall(".//item")
+    if not items:
+        items = root.findall(".//atom:entry", _FEED_NS)
 
     entries = []
     for item in items:
         title_el = item.find("title")
+        if title_el is None:
+            title_el = item.find("atom:title", _FEED_NS)
         title = (title_el.text or "").strip() if title_el is not None else ""
 
         link_el = item.find("link")
-        if link_el is not None and link_el.text:
+        if link_el is None:
+            link_el = item.find("atom:link", _FEED_NS)
+        if link_el is not None and link_el.text and link_el.text.strip():
             url = link_el.text.strip()
         elif link_el is not None:
             url = link_el.get("href", "")
         else:
             url = ""
 
-        desc_el = item.find("description") or item.find("atom:summary", ns)
-        abstract = (desc_el.text or "").strip() if desc_el is not None else ""
+        desc_el = item.find("description")
+        if desc_el is None:
+            desc_el = item.find("dc:description", _FEED_NS)
+        if desc_el is None:
+            desc_el = item.find("atom:summary", _FEED_NS)
+        raw_desc = (desc_el.text or "") if desc_el is not None else ""
 
-        date_el = item.find("pubDate") or item.find("atom:updated", ns)
-        published = _parse_date(date_el.text) if date_el is not None and date_el.text else None
+        date_el = item.find("pubDate")
+        if date_el is None:
+            date_el = item.find("dc:date", _FEED_NS)
+        if date_el is None:
+            date_el = item.find("atom:updated", _FEED_NS)
+        published = (
+            _parse_date(date_el.text) if date_el is not None and date_el.text else None
+        )
 
-        creator_el = item.find("dc:creator", ns)
-        authors = [creator_el.text.strip()] if creator_el is not None and creator_el.text else []
+        # RSC lists one <dc:creator> per author, so .findall(), not .find().
+        authors = [
+            el.text.strip()
+            for el in item.findall("dc:creator", _FEED_NS)
+            if el.text and el.text.strip()
+        ]
 
         entries.append(
             {
                 "title": title,
                 "url": url,
-                "abstract": abstract,
+                "abstract": _clean_description(raw_desc),
                 "published": published,
                 "authors": authors,
-                "doi": None,
+                "doi": _extract_doi(raw_desc),
             }
         )
     return entries
 
 
+def _extract_doi(text: str) -> str | None:
+    """Pull a DOI out of free text -- RSC embeds it in the description body
+    (e.g. 'DOI: 10.1039/D6EE03332F') rather than in a dedicated field."""
+    if not text:
+        return None
+    match = _DOI_RE.search(text)
+    if not match:
+        return None
+    return match.group(0).rstrip(".,;)").strip() or None
+
+
+def _clean_description(raw: str) -> str:
+    """Strip HTML tags, unescape entities, and drop the publisher copyright
+    boilerplate ('The content of this RSS Feed (c) ...') that RSC and others
+    append, so the text handed to Claude for relevance scoring is clean."""
+    if not raw:
+        return ""
+    text = _RSS_BOILERPLATE_RE.sub("", raw)
+    text = _TAG_RE.sub(" ", text)
+    text = html.unescape(text)
+    text = _DOI_LINE_RE.sub("", text)  # DOI is captured separately by _extract_doi
+    return re.sub(r"\s+", " ", text).strip()
+
+
 def _parse_date(raw: str) -> datetime.date | None:
-    for fmt in ("%a, %d %b %Y %H:%M:%S %z", "%a, %d %b %Y %H:%M:%S %Z", "%Y-%m-%dT%H:%M:%S%z"):
+    raw = raw.strip()
+    for fmt in (
+        "%a, %d %b %Y %H:%M:%S %z",
+        "%a, %d %b %Y %H:%M:%S %Z",
+        "%Y-%m-%dT%H:%M:%S%z",
+        "%Y-%m-%dT%H:%M:%S",
+        "%Y-%m-%d",
+    ):
         try:
-            return datetime.datetime.strptime(raw.strip(), fmt).date()
+            return datetime.datetime.strptime(raw, fmt).date()
         except ValueError:
             continue
     return None
