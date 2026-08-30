@@ -66,18 +66,30 @@ def _cutoff_date() -> datetime.date:
     return datetime.date.today() - datetime.timedelta(days=LOOKBACK_DAYS)
 
 
-def fetch_rss_candidates() -> list[dict]:
-    """Fetch recent entries from every configured journal RSS feed."""
+def fetch_rss_candidates(journals: dict | None = None, parse=None) -> tuple[list[dict], list[str]]:
+    """Fetch recent entries from every configured journal RSS feed.
+
+    Returns (candidates, empty_feeds) -- empty_feeds is the list of journal
+    names whose feed errored or returned zero items this run, which
+    track_reactions.py rolls up into a dead-feed alert. `journals` / `parse`
+    are injection points for testing; production callers pass neither."""
     cutoff = _cutoff_date()
+    journals = JOURNALS if journals is None else journals
+    parse = _parse_feed if parse is None else parse
     results = []
-    for journal_name, feed_url in JOURNALS.items():
+    empty_feeds = []
+    for journal_name, feed_url in journals.items():
         if not feed_url or feed_url.startswith("FILL_IN"):
             continue
         try:
-            entries = _parse_feed(feed_url)
+            entries = parse(feed_url)
         except Exception as exc:  # noqa: BLE001 -- log and keep going
             print(f"[warn] failed to fetch feed for {journal_name}: {exc}")
+            empty_feeds.append(journal_name)
             continue
+
+        if not entries:
+            empty_feeds.append(journal_name)
 
         dated = [e for e in entries if e["published"]]
         if entries and not dated:
@@ -100,7 +112,7 @@ def fetch_rss_candidates() -> list[dict]:
                     "source_lane": "rss",
                 }
             )
-    return results
+    return results, empty_feeds
 
 
 def _parse_feed(feed_url: str) -> list[dict]:
@@ -349,7 +361,7 @@ def fetch_openalex_journal_candidates() -> list[dict]:
             label=f"journal {name}",
         )
         for work in works:
-            paper = _openalex_to_paper(work)
+            paper = _openalex_to_paper(work, lane="openalex_journal")
             paper["journal"] = name
             results.append(paper)
         time.sleep(0.25)  # be polite -- OpenAlex polite pool is 10 req/s
@@ -372,12 +384,12 @@ def fetch_openalex_candidates() -> list[dict]:
                 },
                 label=f"keyword '{keyword}'",
             )
-            results.extend(_openalex_to_paper(w) for w in works)
+            results.extend(_openalex_to_paper(w, lane="openalex_keyword") for w in works)
             time.sleep(0.25)  # be polite -- OpenAlex polite pool is 10 req/s
     return results
 
 
-def _openalex_to_paper(work: dict) -> dict:
+def _openalex_to_paper(work: dict, lane: str = "openalex") -> dict:
     # Every level here can be present-but-null in an OpenAlex record, so
     # coalesce with `or {}` before each .get() rather than chaining.
     authors = [
@@ -394,7 +406,7 @@ def _openalex_to_paper(work: dict) -> dict:
         "url": work.get("id") or "",
         "abstract": abstract,
         "published": work.get("publication_date") or "",
-        "source_lane": "openalex",
+        "source_lane": lane,
     }
 
 

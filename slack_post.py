@@ -60,8 +60,10 @@ def format_paper_message(paper: dict) -> str:
 
 def post_weekly_digest(papers_by_topic: dict[str, list[dict]], broader_reading: list[dict]) -> list[dict]:
     """Posts the header + threaded papers. Returns a log of what was
-    posted, for the state file: [{"ts": ..., "doi": ..., "title": ...,
-    "journal": ..., "topics": [...]}]."""
+    posted, for the state file: [{"ts", "doi", "title", "journal",
+    "topics", "posted_date", "source_lane", "published", "title_only"}].
+    The last three feed track_reactions.py's per-lane / staleness /
+    title-only-cohort cuts without it having to re-derive them."""
     today = datetime.date.today().isoformat()
     total = sum(len(v) for v in papers_by_topic.values()) + len(broader_reading)
     header = post_message(f"*Weekly paper digest — {today}* ({total} papers)")
@@ -81,6 +83,9 @@ def post_weekly_digest(papers_by_topic: dict[str, list[dict]], broader_reading: 
                     "journal": paper.get("journal", ""),
                     "topics": paper.get("topics", []),
                     "posted_date": today,
+                    "source_lane": paper.get("source_lane", ""),
+                    "published": paper.get("published", ""),
+                    "title_only": bool(paper.get("title_only")),
                 }
             )
 
@@ -97,6 +102,9 @@ def post_weekly_digest(papers_by_topic: dict[str, list[dict]], broader_reading: 
                     "journal": item.get("source", "Broader Reading"),
                     "topics": ["Broader Reading"],
                     "posted_date": today,
+                    "source_lane": "rss",
+                    "published": "",
+                    "title_only": False,
                 }
             )
 

@@ -7,8 +7,6 @@ instead of everything a broad keyword search turns up.
 import json
 import os
 
-import anthropic
-
 from config import JOURNALS, JOURNAL_ISSNS, TOPICS
 
 MODEL = "claude-sonnet-4-6"
@@ -43,8 +41,9 @@ relevant if the title clearly and specifically points to one of the topics.
 """
 
 
-def score_paper(client: anthropic.Anthropic, paper: dict) -> dict:
-    """Returns {"relevant": bool, "topics": [...], "reason": str}."""
+def score_paper(client, paper: dict) -> tuple[dict, tuple[int, int]]:
+    """Returns ({"relevant": bool, "topics": [...], "reason": str},
+    (input_tokens, output_tokens)) -- the token counts feed the run stats."""
     abstract = (paper.get("abstract") or "").strip()
     body = (
         f"Abstract: {abstract}"
@@ -58,30 +57,49 @@ def score_paper(client: anthropic.Anthropic, paper: dict) -> dict:
         system=_SYSTEM_PROMPT,
         messages=[{"role": "user", "content": user_content}],
     )
+    usage = getattr(response, "usage", None)
+    tokens = (getattr(usage, "input_tokens", 0) or 0, getattr(usage, "output_tokens", 0) or 0)
     text = "".join(block.text for block in response.content if block.type == "text")
     try:
         result = json.loads(text.strip())
     except json.JSONDecodeError:
         print(f"[warn] could not parse relevance response for '{paper['title'][:60]}': {text[:200]}")
-        return {"relevant": False, "topics": [], "reason": "parse error"}
-    return result
+        return {"relevant": False, "topics": [], "reason": "parse error"}, tokens
+    return result, tokens
 
 
-def filter_relevant(papers: list[dict]) -> list[dict]:
+def filter_relevant(papers: list[dict], client=None) -> tuple[list[dict], dict]:
     """Runs score_paper over every candidate and attaches the result.
-    Returns only papers judged relevant, each with a "topics" and "reason"
-    field added."""
-    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+
+    Returns (kept, accounting) where kept is the papers judged relevant
+    (each with "topics"/"reason"/"title_only" added) and accounting is
+    {"scored", "skipped_no_abstract", "input_tokens", "output_tokens"}
+    for the run stats record. `client` is injected in tests; production
+    callers omit it and a real Anthropic client is built here."""
+    if client is None:
+        import anthropic
+        client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
     kept = []
+    scored = skipped_no_abstract = in_tokens = out_tokens = 0
     for paper in papers:
         has_abstract = bool((paper.get("abstract") or "").strip())
         # No abstract + not a tracked journal -> skip (see _TRACKED_JOURNALS).
         if not has_abstract and paper.get("journal", "") not in _TRACKED_JOURNALS:
+            skipped_no_abstract += 1
             continue
-        result = score_paper(client, paper)
+        result, (ti, to) = score_paper(client, paper)
+        scored += 1
+        in_tokens += ti
+        out_tokens += to
         if result.get("relevant") and result.get("topics"):
             paper["topics"] = result["topics"]
             paper["reason"] = result.get("reason", "")
             paper["title_only"] = not has_abstract
             kept.append(paper)
-    return kept
+    acct = {
+        "scored": scored,
+        "skipped_no_abstract": skipped_no_abstract,
+        "input_tokens": in_tokens,
+        "output_tokens": out_tokens,
+    }
+    return kept, acct

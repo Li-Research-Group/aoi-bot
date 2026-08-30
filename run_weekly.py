@@ -12,9 +12,11 @@ Flow:
   6. Update the state file with what was posted this run
 """
 
+import datetime
 import sys
 
 from config import MAX_PAPERS_PER_TOPIC, BROADER_READING_FEEDS
+from relevance import MODEL, filter_relevant
 from sources import (
     fetch_rss_candidates,
     fetch_openalex_journal_candidates,
@@ -22,9 +24,9 @@ from sources import (
     dedupe,
     _parse_feed,
 )
-from relevance import filter_relevant
+from stats import build_run_record
 from slack_post import post_weekly_digest
-from state import load_state, save_state, already_posted_keys, append_posted
+from state import load_state, save_state, already_posted_keys, append_posted, append_run
 
 
 def fetch_broader_reading() -> list[dict]:
@@ -48,10 +50,11 @@ def fetch_broader_reading() -> list[dict]:
 def main() -> int:
     state = load_state()
     seen_keys = already_posted_keys(state)
+    today = datetime.date.today().isoformat()
 
     print("Fetching RSS candidates...")
-    rss_papers = fetch_rss_candidates()
-    print(f"  {len(rss_papers)} candidates from RSS")
+    rss_papers, empty_feeds = fetch_rss_candidates()
+    print(f"  {len(rss_papers)} candidates from RSS ({len(empty_feeds)} feeds returned nothing)")
 
     print("Fetching OpenAlex journal candidates...")
     journal_papers = fetch_openalex_journal_candidates()
@@ -61,15 +64,28 @@ def main() -> int:
     openalex_papers = fetch_openalex_candidates()
     print(f"  {len(openalex_papers)} candidates from OpenAlex keyword search")
 
+    collected = {
+        "rss": len(rss_papers),
+        "openalex_journal": len(journal_papers),
+        "openalex_keyword": len(openalex_papers),
+    }
+
     # Order matters for dedupe (keeps the first seen): RSS first -- it carries
     # abstracts for Nature/ACS that OpenAlex sometimes lacks -- then the
     # journal lane (canonical journal name), then the broad keyword lane.
-    candidates = dedupe(rss_papers + journal_papers + openalex_papers)
+    deduped = dedupe(rss_papers + journal_papers + openalex_papers)
+    after_dedupe = len(deduped)
     candidates = [
-        p for p in candidates
+        p for p in deduped
         if (p.get("doi") or p["title"].strip().lower()) not in seen_keys
     ]
+    already_posted_removed = after_dedupe - len(candidates)
     print(f"{len(candidates)} new candidates after dedupe + already-posted filter")
+
+    # Defaults so a bail-out path still produces an honest run record.
+    acct = {"scored": 0, "skipped_no_abstract": 0, "input_tokens": 0, "output_tokens": 0}
+    relevant: list[dict] = []
+    log: list[dict] = []
 
     if not candidates:
         print("Nothing new this week.")
@@ -77,31 +93,43 @@ def main() -> int:
         if broader:
             log = post_weekly_digest({}, broader)
             append_posted(state, log)
-            save_state(state)
-        return 0
+    else:
+        print("Scoring relevance with Claude...")
+        relevant, acct = filter_relevant(candidates)
+        print(f"  {len(relevant)} judged relevant")
 
-    print("Scoring relevance with Claude...")
-    relevant = filter_relevant(candidates)
-    print(f"  {len(relevant)} judged relevant")
+        # Group by topic, respecting the per-topic cap
+        by_topic: dict[str, list[dict]] = {}
+        for paper in relevant:
+            for topic in paper["topics"]:
+                by_topic.setdefault(topic, [])
+                if len(by_topic[topic]) < MAX_PAPERS_PER_TOPIC:
+                    by_topic[topic].append(paper)
 
-    # Group by topic, respecting the per-topic cap
-    by_topic: dict[str, list[dict]] = {}
-    for paper in relevant:
-        for topic in paper["topics"]:
-            by_topic.setdefault(topic, [])
-            if len(by_topic[topic]) < MAX_PAPERS_PER_TOPIC:
-                by_topic[topic].append(paper)
+        broader = fetch_broader_reading()
+        if any(by_topic.values()) or broader:
+            log = post_weekly_digest(by_topic, broader)
+            append_posted(state, log)
+        else:
+            print("Nothing to post after filtering.")
 
-    broader = fetch_broader_reading()
-
-    if not any(by_topic.values()) and not broader:
-        print("Nothing to post after filtering.")
-        return 0
-
-    log = post_weekly_digest(by_topic, broader)
-    append_posted(state, log)
+    run_record = build_run_record(
+        date=today,
+        collected=collected,
+        after_dedupe=after_dedupe,
+        already_posted_removed=already_posted_removed,
+        scored=acct["scored"],
+        skipped_no_abstract=acct["skipped_no_abstract"],
+        relevant=len(relevant),
+        posted_log=log,
+        claude_input_tokens=acct["input_tokens"],
+        claude_output_tokens=acct["output_tokens"],
+        model=MODEL,
+        empty_feeds=empty_feeds,
+    )
+    append_run(state, run_record)
     save_state(state)
-    print(f"Posted {len(log)} messages, state saved.")
+    print(f"Posted {len(log)} messages, run recorded, state saved.")
     return 0
 
 

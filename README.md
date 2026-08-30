@@ -8,9 +8,12 @@ feed), and OpenAlex keyword search per topic (broader net for anything
 outside the tracked journal list) -- filters them for relevance with the
 Claude API, and posts a tagged digest to Slack as a header message with
 each paper as a threaded reply -- so people can react 👍/👎 on individual
-papers. A monthly job reads those reactions back and posts a leaderboard
-of which journals/topics are actually earning their keep, so you can
-adjust the config over time based on real signal instead of a guess.
+papers. A monthly job reads those reactions back and posts a report --
+the pipeline funnel (collected → scored → relevant → posted, per lane),
+Claude cost per run, dead-feed alerts, engagement rate, the title-only
+vs. abstract cohort split, staleness, and per-journal / per-topic 👍
+rates -- so you can adjust the config over time based on real signal
+instead of a guess.
 
 Coverage note: OpenAlex carries abstracts for ACS, Springer Nature and
 Wiley but not Elsevier, and Elsevier RSS feeds carry no abstract either --
@@ -29,6 +32,9 @@ reason: OpenAlex lags RSC badly and `feeds.rsc.org` is a stale mirror.
    - `chat:write` (post messages)
    - `reactions:read` (read reaction counts)
    - `channels:history` (or `groups:history` if the channel is private)
+   - `users:read` (resolve reactor IDs to initials for the monthly
+     report's participation line -- names are reduced to initials, never
+     shown in full)
 3. Install the app to your workspace, then copy the **Bot User OAuth
    Token** (starts with `xoxb-`).
 4. Invite the bot to your group's channel: `/invite @your-bot-name` in
@@ -98,9 +104,19 @@ relying on the Monday cron.
 ## How the feedback loop works
 
 - React 👍 or 👎 directly on any paper's message in Slack.
-- On the 1st of each month, the "Monthly feedback report" workflow posts
-  a breakdown by journal and by topic: how many papers each contributed
-  this month, and what fraction were upvoted.
+- On the 1st of each month, the "Monthly feedback report" workflow posts:
+  - **Pipeline** -- across the month's runs: the collected → scored →
+    relevant → posted funnel with yield %, papers posted by lane,
+    cross-lane duplicates removed, average Claude cost per run, and a
+    ⚠️ alert for any feed that returned nothing on *every* run (likely
+    breakage). Sourced from `state["runs"]`, written each weekly run.
+  - **Posted papers** -- count, engagement rate (% of papers that got
+    any reaction), median publish→post lag, the abstract-scored vs.
+    title-only (Elsevier) cohort 👍 rates, per-tag volume, and the
+    most-upvoted / net-downvoted papers.
+  - **By journal / by topic** -- papers posted and 👍 rate.
+  - **Participation** -- reactions given per person (a participation
+    view, deliberately not a per-person 👍-vs-👎 scoreboard).
 - This is a report for a human to act on, not an auto-pilot: if a
   journal is consistently near 0% upvoted after a couple months, that's
   a signal to drop it from `config.py` (or narrow its topic's keywords).
@@ -124,10 +140,12 @@ relying on the Monday cron.
 |---|---|
 | `config.py` | Journals, topics, feeds, Slack channel -- the only file you should need to edit routinely |
 | `sources.py` | RSS + OpenAlex (journal + keyword) fetching, feed parsing, dedupe |
-| `relevance.py` | Claude API relevance scoring |
+| `relevance.py` | Claude API relevance scoring (returns kept papers + token/skip accounting) |
+| `stats.py` | Pure aggregation: per-run stats record + monthly-report roll-ups (fully unit-tested) |
 | `slack_post.py` | Formats and posts the Slack digest |
-| `state.py` | Reads/writes `state/paper_log.json` |
-| `run_weekly.py` | Weekly entry point (wires the above together) |
-| `track_reactions.py` | Monthly entry point -- reaction leaderboard |
+| `state.py` | Reads/writes `state/paper_log.json` (`posted` + `runs`) |
+| `run_weekly.py` | Weekly entry point (wires the above together, writes a run stats record) |
+| `track_reactions.py` | Monthly entry point -- the feedback report |
+| `test_*.py` | `pytest` unit + integration tests (no network); `pip install -r requirements-dev.txt` |
 | `.github/workflows/weekly.yml` | Cron for the weekly digest |
 | `.github/workflows/monthly.yml` | Cron for the monthly report |
