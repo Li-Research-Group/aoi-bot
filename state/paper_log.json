@@ -1,3 +1,219 @@
 {
-  "posted": []
+  "posted": [
+    {
+      "ts": "1788054986.887289",
+      "doi": "10.1021/acsenvironau.6c00173",
+      "title": "In Situ Photochemical\nUtilization of Endogenous Biotreatment-Derived\nSpecies toward Sustainable Micropollutant Abatement in Water",
+      "journal": "ACS Environmental Au",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-08-30"
+    },
+    {
+      "ts": "1788054987.007019",
+      "doi": "10.1021/acsestengg.6c00525",
+      "title": "Exogenous Folate\nSupplementation Weakens Cross-Feeding\nand Enriches Marine Anammox Bacteria in Marine Wastewater Treatment",
+      "journal": "ACS ES&T Engineering",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-08-30"
+    },
+    {
+      "ts": "1788054987.130359",
+      "doi": "10.1038/s41893-026-01928-2",
+      "title": "A membraneless electrochemical system for alcohol-laden wastewater upcycling",
+      "journal": "Nature Sustainability",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-08-30"
+    },
+    {
+      "ts": "1788054987.261279",
+      "doi": "10.1021/acs.est.6c06214",
+      "title": "Machine-Learning-Assisted Auto-Fluorescence Cell-Sorting-Based Fast Differentiation and Quantification of Extracellular Polymeric Substances in the Microalgae and Bacteria Consortium",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-08-30"
+    },
+    {
+      "ts": "1788054987.382789",
+      "doi": "10.1021/acssuschemeng.6c06727",
+      "title": "CAPE-OPEN-Enabled Physics-Informed Surrogate Modeling and Techno-Economic Assessment of Membrane-Based Methane Dehydroaromatization",
+      "journal": "ACS Sustainable Chemistry & Engineering",
+      "topics": [
+        "Process Modeling Tools (BioSTEAM/QSDsan-like)",
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-08-30"
+    },
+    {
+      "ts": "1788054987.505709",
+      "doi": "10.5281/zenodo.21764183",
+      "title": "AlgaMetrix: open-source techno-economic analysis and life-cycle assessment for microalgae and aquatic protist biomass",
+      "journal": "Open MIND",
+      "topics": [
+        "Process Modeling Tools (BioSTEAM/QSDsan-like)",
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-08-30"
+    },
+    {
+      "ts": "1788054987.626189",
+      "doi": "10.1021/acssuschemeng.6c06727",
+      "title": "CAPE-OPEN-Enabled Physics-Informed Surrogate Modeling and Techno-Economic Assessment of Membrane-Based Methane Dehydroaromatization",
+      "journal": "ACS Sustainable Chemistry & Engineering",
+      "topics": [
+        "Process Modeling Tools (BioSTEAM/QSDsan-like)",
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-08-30"
+    },
+    {
+      "ts": "1788054987.754559",
+      "doi": "10.1007/s44498-026-00170-5",
+      "title": "Robust policy evaluation in material flow analysis under deep uncertainty",
+      "journal": "Journal of Industrial Ecology",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-08-30"
+    },
+    {
+      "ts": "1788054987.885519",
+      "doi": "10.1016/j.jclepro.2026.149235",
+      "title": "A cradle-to-grave life cycle assessment of United States\u2019 grain and pulse carbon footprint using Bayesian machine learning and global uncertainty analysis",
+      "journal": "Journal of Cleaner Production",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-08-30"
+    },
+    {
+      "ts": "1788054988.071009",
+      "doi": "10.5281/zenodo.21764183",
+      "title": "AlgaMetrix: open-source techno-economic analysis and life-cycle assessment for microalgae and aquatic protist biomass",
+      "journal": "Open MIND",
+      "topics": [
+        "Process Modeling Tools (BioSTEAM/QSDsan-like)",
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-08-30"
+    },
+    {
+      "ts": "1788054988.191269",
+      "doi": "10.1016/j.jclepro.2026.149260",
+      "title": "Sustainability assessment of concrete pavement overlays reinforced with hybrid recycled and manufactured steel fibers",
+      "journal": "Journal of Cleaner Production",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-08-30"
+    },
+    {
+      "ts": "1788054988.317399",
+      "doi": "10.1007/s44416-026-00113-0",
+      "title": "Durability-integrated cradle-to-cradle life cycle and cost assessment of hybrid-treated recycled aggregate concrete in central Europe",
+      "journal": "Discover Concrete and Cement",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-08-30"
+    },
+    {
+      "ts": "1788054988.440129",
+      "doi": "10.3390/pr14172768",
+      "title": "Life-Cycle Assessment of Underground Lining Concrete Incorporating Recycled Aggregates: Key Factors for Green Building Materials from Dispersed Waste",
+      "journal": "Processes",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-08-30"
+    },
+    {
+      "ts": "1788054988.559759",
+      "doi": "10.1016/j.eiar.2026.108691",
+      "title": "Knowledge graph-enhanced carbon impact assessment of construction and demolition waste with large language model-based decision support",
+      "journal": "Environmental Impact Assessment Review",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-08-30"
+    },
+    {
+      "ts": "1788054988.679289",
+      "doi": "10.6084/m9.figshare.33368466",
+      "title": "A comprehensive review of seaweed macroalgae as a biodiesel feedstock for transportation fuel in diesel engines",
+      "journal": "Figshare",
+      "topics": [
+        "Sargassum/Seaweed (HTL, AD, arrested AD)"
+      ],
+      "posted_date": "2026-08-30"
+    },
+    {
+      "ts": "1788054988.848519",
+      "doi": "10.1177/03611981261476043",
+      "title": "Integrating Bio-Based Materials and Alternative Fuels in Flexible Pavement Life Cycle Assessment",
+      "journal": "Transportation Research Record Journal of the Transportation Research Board",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-08-30"
+    },
+    {
+      "ts": "1788054988.974859",
+      "doi": "10.1038/s41467-026-76965-8",
+      "title": "The potential of syngas as a central mediator for a carbon-agnostic circular economy",
+      "journal": "Nature Communications",
+      "topics": [
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-08-30"
+    },
+    {
+      "ts": "1788054989.111369",
+      "doi": "10.1016/j.indcrop.2026.124246",
+      "title": "Duckweed as a multifunctional industrial biomass: Advances in cultivation, processing, valorization, and circular bioeconomy potential",
+      "journal": "Industrial Crops and Products",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-08-30"
+    },
+    {
+      "ts": "1788054989.344919",
+      "doi": null,
+      "title": "What employers are looking for in the age of AI \u2014 and four ways to provide it",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-08-30"
+    },
+    {
+      "ts": "1788054989.467669",
+      "doi": null,
+      "title": "A guide to securing your first research fellowship: what reviewers are looking for",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-08-30"
+    },
+    {
+      "ts": "1788054989.597709",
+      "doi": null,
+      "title": "How one researcher captured a vanished world of UK government science",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-08-30"
+    }
+  ]
 }
