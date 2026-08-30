@@ -36,22 +36,13 @@ JOURNALS = {
     "Environmental Science & Technology": "https://pubs.acs.org/rss/esthag/asap.xml",
     "Environmental Science & Technology Letters": "https://pubs.acs.org/rss/estlcu/asap.xml",
 
-    # Elsevier / ScienceDirect -- RSS link in the journal page sidebar
-    "Algal Research": "https://rss.sciencedirect.com/publication/science/22119264",
-    "Bioresource Technology": "https://rss.sciencedirect.com/publication/science/09608524",
-    "Computers & Chemical Engineering": "https://rss.sciencedirect.com/publication/science/00981354",
-    "Construction and Building Materials": "https://rss.sciencedirect.com/publication/science/09500618",
-    "Journal of Cleaner Production": "https://rss.sciencedirect.com/publication/science/09596526",
-    "Resources, Conservation and Recycling": "https://rss.sciencedirect.com/publication/science/09213449",
-    "Resources, Conservation and Recycling Advances": "https://rss.sciencedirect.com/publication/science/26673789",
-    "Waste Management": "https://rss.sciencedirect.com/publication/science/0956053X",
-    "Waste Management Bulletin": "https://rss.sciencedirect.com/publication/science/29497507",
-    "Water Research": "https://rss.sciencedirect.com/publication/science/00431354",
-    "Water Research X": "https://rss.sciencedirect.com/publication/science/25899147",
+    # Elsevier / ScienceDirect journals are covered by the OpenAlex journal
+    # lane (JOURNAL_ISSNS) instead of RSS: their feeds carry no abstract,
+    # no date and no DOI, so an RSS entry can't be filtered or scored.
 
     # Springer Nature (nature.com) -- https://www.nature.com/<journal-code>/rss
+    # (Nature Communications deliberately omitted -- too broad, ~all off-topic)
     "Nature Chemical Engineering": "https://www.nature.com/natchemeng/rss",
-    "Nature Communications": "https://www.nature.com/ncomms/rss",
     "Nature Energy": "https://www.nature.com/nenergy/rss",
     "Nature Sustainability": "https://www.nature.com/natsustain/rss",
     "Nature Water": "https://www.nature.com/natwater/rss",
@@ -59,6 +50,49 @@ JOURNALS = {
     # Springer Nature (SpringerLink) -- link.springer.com/search.rss?facet-journal-id=<id>
     # (JIE moved from Wiley to Springer Nature for 2026-2030; journal id 44498)
     "Journal of Industrial Ecology": "https://link.springer.com/search.rss?facet-content-type=Article&facet-journal-id=44498&channel-name=Journal+of+Industrial+Ecology",
+}
+
+# --- Journal ISSNs (OpenAlex journal lane) -----------------------------
+# name -> ISSN-L. Every tracked journal, queried directly from OpenAlex by
+# ISSN each run. This backstops the RSS lane: it covers journals with no
+# usable feed (all the Elsevier titles), a stale feed (RSC's feeds.rsc.org
+# mirror), or a rolling feed that only shows the last ~10 articles (ACS),
+# and it gives every paper a canonical DOI so the lanes dedupe cleanly.
+# OpenAlex has abstracts for ACS / Springer Nature / Wiley but NOT Elsevier
+# -- Elsevier papers arrive with title + DOI + date only, and relevance.py
+# scores those on the title alone (only tracked journals get that fallback).
+# Keep the keys in sync with JOURNALS where a journal appears in both.
+JOURNAL_ISSNS = {
+    # RSC
+    "Energy & Environmental Science": "1754-5692",
+    "Green Chemistry": "1463-9262",
+    # ACS
+    "ACS Engineering Au": "2694-2488",
+    "ACS Environmental Au": "2694-2518",
+    "ACS ES&T Engineering": "2690-0645",
+    "ACS ES&T Water": "2690-0637",
+    "ACS Sustainable Chemistry & Engineering": "2168-0485",
+    "ACS Sustainable Resource Management": "2837-1445",
+    "Environmental Science & Technology": "0013-936X",
+    "Environmental Science & Technology Letters": "2328-8930",
+    # Elsevier / ScienceDirect (OpenAlex-only; no abstracts available)
+    "Algal Research": "2211-9264",
+    "Bioresource Technology": "0960-8524",
+    "Computers & Chemical Engineering": "0098-1354",
+    "Construction and Building Materials": "0950-0618",
+    "Journal of Cleaner Production": "0959-6526",
+    "Resources, Conservation and Recycling": "0921-3449",
+    "Resources, Conservation and Recycling Advances": "2667-3789",
+    "Waste Management": "0956-053X",
+    "Waste Management Bulletin": "2949-7507",
+    "Water Research": "0043-1354",
+    "Water Research X": "2589-9147",
+    # Springer Nature
+    "Journal of Industrial Ecology": "1088-1980",
+    "Nature Chemical Engineering": "2948-1198",
+    "Nature Energy": "2058-7546",
+    "Nature Sustainability": "2398-9629",
+    "Nature Water": "2731-6084",
 }
 
 # --- Topics --------------------------------------------------------------

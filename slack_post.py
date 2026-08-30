@@ -36,10 +36,13 @@ def format_paper_message(paper: dict) -> str:
         authors += " et al."
     tags = " ".join(f"`[{t}]`" for t in paper.get("topics", []))
     link = paper.get("url") or (f"https://doi.org/{paper['doi']}" if paper.get("doi") else "")
+    meta = f"{authors} — _{paper.get('journal', '')}_ ({paper.get('published', 'n.d.')})"
+    if paper.get("title_only"):
+        meta += "  ·  _matched on title only (no abstract available)_"
     lines = [
         f"{tags}",
         f"*<{link}|{paper['title']}>*",
-        f"{authors} — _{paper.get('journal', '')}_ ({paper.get('published', 'n.d.')})",
+        meta,
     ]
     if paper.get("reason"):
         lines.append(f"> {paper['reason']}")

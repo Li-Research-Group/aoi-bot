@@ -1,14 +1,24 @@
 # Group Paper Feed
 
 Automated weekly literature digest for the group's Slack. Pulls candidate
-papers from journal RSS feeds (fast, guaranteed same-day coverage for
-known journals) and OpenAlex topic search (broader net for anything
-outside the tracked journal list), filters them for relevance with the
+papers from three lanes -- journal RSS feeds (fast, same-day coverage for
+journals with a usable feed), an OpenAlex query per tracked journal by
+ISSN (backstop for journals with no feed / a stale feed / a short rolling
+feed), and OpenAlex keyword search per topic (broader net for anything
+outside the tracked journal list) -- filters them for relevance with the
 Claude API, and posts a tagged digest to Slack as a header message with
 each paper as a threaded reply -- so people can react 👍/👎 on individual
 papers. A monthly job reads those reactions back and posts a leaderboard
 of which journals/topics are actually earning their keep, so you can
 adjust the config over time based on real signal instead of a guess.
+
+Coverage note: OpenAlex carries abstracts for ACS, Springer Nature and
+Wiley but not Elsevier, and Elsevier RSS feeds carry no abstract either --
+so Elsevier papers (Bioresource Technology, Water Research, Journal of
+Cleaner Production, ...) reach the pipeline with title + DOI + date only.
+`relevance.py` scores those on the title alone (tracked journals only) and
+the digest flags them "matched on title only". RSC is thin for a different
+reason: OpenAlex lags RSC badly and `feeds.rsc.org` is a stale mirror.
 
 ## One-time setup
 
@@ -42,37 +52,32 @@ In the repo's **Settings > Secrets and variables > Actions**, add:
 That's it for infrastructure -- GitHub Actions runs the two workflows on
 their own schedule from here, no server needed.
 
-### 4. Fill in the RSS feed URLs in `config.py`
+### 4. Journals in `config.py`
 
-Every entry currently says `"FILL_IN_RSS_URL"`. Here's where to find each
-publisher's feed:
+Two maps drive journal coverage:
 
-- **ACS journals** (Sustainable Chem & Eng, ES&T, ES&T Water, ES&T
-  Engineering, ES&T Letters): go to the journal's homepage on
-  pubs.acs.org, look for the RSS icon (usually near "Current Issue" or
-  in the page footer) -- ACS publishes an "ASAP" feed that fires the
-  moment an article goes live, which is the one you want, not the
-  issue-based feed.
-- **Elsevier / ScienceDirect journals** (Bioresource Technology, Journal
-  of Cleaner Production, Algal Research, Water Research, Water Research
-  X, Computers & Chemical Engineering, Resources Conservation and
-  Recycling, Waste Management): on the journal's ScienceDirect page,
-  there's an RSS link in the right-hand sidebar or under "Guide for
-  Authors" navigation.
-- **RSC journals** (Green Chemistry, Energy & Environmental Science):
-  pubs.rsc.org journal homepages have an RSS link near the top of the
-  page, usually labeled "RSS Feed" or via the "Latest articles" tab.
-- **Wiley** (Journal of Industrial Ecology): the journal's Wiley Online
-  Library homepage has an RSS link under "Get New Content Alerts" or in
-  the page footer.
-- **Nature journals** (Nature Water, Nature Sustainability, Nature
-  Energy): `https://www.nature.com/<journal-code>.rss` -- e.g.
-  `https://www.nature.com/nwater.rss`. Check the journal's homepage
-  footer to confirm the exact code.
+- **`JOURNALS`** -- name -> RSS feed URL, for journals with a usable feed.
+  Feed URL patterns per publisher:
+  - **ACS**: `https://pubs.acs.org/rss/<code>/asap.xml` -- the "ASAP" feed
+    (fires on publication), not the issue feed.
+  - **RSC**: `http://feeds.rsc.org/rss/<code>`. Note this mirror lags; the
+    live `pubs.rsc.org` feed is Cloudflare-blocked to scripts.
+  - **Nature (nature.com)**: `https://www.nature.com/<code>/rss` -- these
+    are RSS 1.0 / RDF and carry the abstract in `<content:encoded>`.
+  - **SpringerLink** (e.g. Journal of Industrial Ecology, journal id
+    44498): `https://link.springer.com/search.rss?facet-content-type=Article&facet-journal-id=<id>&channel-name=<name>`
+  - **Elsevier / ScienceDirect**: intentionally omitted -- their feeds
+    carry no abstract, date, or DOI. Covered by `JOURNAL_ISSNS` instead
+    (title-only; see the coverage note above).
+  - **Nature Communications**: intentionally omitted from both maps -- too
+    broad, almost everything is off-topic.
 
-If a publisher makes this hard to find, search "`<journal name> RSS
-feed`" -- nearly all of them have one, it's just not always prominently
-linked.
+- **`JOURNAL_ISSNS`** -- name -> ISSN-L for *every* tracked journal.
+  Queried directly from OpenAlex by ISSN each run, as a backstop to the
+  RSS lane. Find an ISSN-L with
+  `https://api.openalex.org/sources?search=<journal name>` (the `issn_l`
+  field of the first result). Keep the keys in sync with `JOURNALS` where
+  a journal is in both.
 
 For the **Broader Reading** feeds (`BROADER_READING_FEEDS` in
 `config.py`), use the *News & Comment* or *Careers* section feeds for
@@ -118,7 +123,7 @@ relying on the Monday cron.
 | File | Purpose |
 |---|---|
 | `config.py` | Journals, topics, feeds, Slack channel -- the only file you should need to edit routinely |
-| `sources.py` | RSS + OpenAlex fetching, dedupe |
+| `sources.py` | RSS + OpenAlex (journal + keyword) fetching, feed parsing, dedupe |
 | `relevance.py` | Claude API relevance scoring |
 | `slack_post.py` | Formats and posts the Slack digest |
 | `state.py` | Reads/writes `state/paper_log.json` |

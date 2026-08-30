@@ -1,15 +1,17 @@
 """
-Pulls candidate papers from two lanes:
+Pulls candidate papers from three lanes:
 
-1. Journal RSS feeds (fast lane) -- guarantees same-day coverage for the
-   journals we know matter, independent of any aggregator's ingestion lag.
-2. OpenAlex topic search (broad lane) -- catches relevant papers outside
-   the tracked journal list, using keyword queries per topic. OpenAlex is
-   fully open, covers essentially any registered DOI (including paywalled
-   publishers like ACS -- it indexes metadata, not full text, so paywalls
-   don't block discovery), and updates daily.
+1. Journal RSS feeds (fast lane) -- same-day coverage for journals with a
+   usable feed (Nature, ACS, RSC, the SpringerLink JIE feed), independent
+   of any aggregator's ingestion lag.
+2. OpenAlex journal lane -- every tracked journal queried by ISSN. Backstops
+   lane 1: covers journals with no usable feed (Elsevier), a stale feed
+   (RSC's mirror), or a rolling feed that only shows the last ~10 articles
+   (ACS), and gives every paper a canonical DOI so the lanes dedupe cleanly.
+3. OpenAlex keyword lane (broad) -- per-topic keyword search across all of
+   OpenAlex, for relevant work outside the tracked journal list.
 
-Both lanes return a plain list of dicts with the same shape so downstream
+All lanes return a plain list of dicts with the same shape so downstream
 code doesn't care which lane a paper came from:
 
     {
@@ -22,20 +24,25 @@ code doesn't care which lane a paper came from:
         "published": "YYYY-MM-DD",
         "source_lane": "rss" | "openalex",
     }
+
+OpenAlex has abstracts for ACS / Springer Nature / Wiley but not Elsevier,
+so Elsevier papers arrive with title + DOI + date only; relevance.py scores
+those on the title alone (tracked journals only).
 """
 
 import datetime
 import html
 import re
 import time
-import urllib.parse
 import xml.etree.ElementTree as ET
 
 import requests
 
-from config import JOURNALS, TOPICS, LOOKBACK_DAYS
+from config import JOURNALS, JOURNAL_ISSNS, TOPICS, LOOKBACK_DAYS
 
 OPENALEX_ENDPOINT = "https://api.openalex.org/works"
+# OpenAlex's "polite pool" -- faster, more consistent rate limits.
+_OPENALEX_MAILTO = "yalin.li@rutgers.edu"
 
 # One pooled session with browser-ish defaults. Nature and SpringerLink feeds
 # sit behind a cookie/redirect bot check: a bare urllib request is served an
@@ -46,9 +53,13 @@ _HTTP.headers.update(
     {"User-Agent": "aoi-bot/1.0 (+https://github.com/Li-Research-Group/aoi-bot)"}
 )
 
-# Feeds that carry no per-item date at all (ScienceDirect) can't be filtered
-# by the lookback window, so cap how many of their ~100-item backlog we take.
+# Feeds that carry no per-item date at all can't be filtered by the lookback
+# window, so cap how many of their backlog we take.
 _MAX_UNDATED_PER_FEED = 25
+
+# Cap per journal per run for the OpenAlex journal lane -- keeps a
+# high-volume journal from dominating a single run.
+_MAX_JOURNAL_WORKS = 50
 
 
 def _cutoff_date() -> datetime.date:
@@ -134,9 +145,9 @@ _RSC_LICENSE_RE = re.compile(
 # Nature prefixes the abstract with e.g. "Nature Water, Published online: 28
 # August 2026; doi:10.1038/...;" -- strip up to and including that semicolon.
 _PUBLISHED_ONLINE_PREFIX_RE = re.compile(r"^.{0,100}?Published online:[^;]*;\s*", re.IGNORECASE)
-# ScienceDirect feeds carry no abstract -- just "Publication date: ... /
-# Source: ... / Author(s): ...". Drop it so the entry has an empty abstract
-# and the relevance filter skips it instead of spending a Claude call.
+# Elsevier-style metadata-only body ("Publication date: ... / Source: ... /
+# Author(s): ...") with no actual abstract -- trim to empty. (The Elsevier
+# RSS feeds themselves are gone, but keep this in case a feed regresses.)
 _SCIENCEDIRECT_META_RE = re.compile(r"^Publication date:.*", re.IGNORECASE)
 _LEADING_LABEL_RE = re.compile(r"^(Abstract|Summary)\s+", re.IGNORECASE)
 
@@ -291,30 +302,71 @@ def _parse_date(raw: str) -> datetime.date | None:
     return None
 
 
-def fetch_openalex_candidates() -> list[dict]:
-    """Query OpenAlex per topic keyword set for recent works."""
+def _openalex_get(params: dict, label: str) -> list[dict]:
+    """One OpenAlex /works query -> list of raw work dicts. Retries once on a
+    429/5xx; other errors are logged and swallowed so a single bad query
+    doesn't abort the run."""
+    params = {**params, "mailto": _OPENALEX_MAILTO}
+    for attempt in (1, 2):
+        try:
+            resp = _HTTP.get(OPENALEX_ENDPOINT, params=params, timeout=30)
+            if resp.status_code in (429, 500, 502, 503) and attempt == 1:
+                time.sleep(5)
+                continue
+            resp.raise_for_status()
+            return resp.json().get("results", [])
+        except Exception as exc:  # noqa: BLE001
+            if attempt == 1:
+                time.sleep(5)
+                continue
+            print(f"[warn] OpenAlex query failed for {label}: {exc}")
+            return []
+    return []
+
+
+def fetch_openalex_journal_candidates() -> list[dict]:
+    """Journal lane: every tracked journal in JOURNAL_ISSNS, straight from
+    OpenAlex by ISSN. Backstops the RSS lane. The journal name is forced to
+    our canonical form so the monthly by-journal report stays consistent."""
     cutoff = _cutoff_date().isoformat()
     results = []
-    for topic_name, cfg in TOPICS.items():
-        for keyword in cfg["keywords"]:
-            params = {
-                "search": keyword,
-                "filter": f"from_publication_date:{cutoff}",
-                "per-page": 10,
+    for name, issn in JOURNAL_ISSNS.items():
+        if not issn or issn.startswith("FILL_IN"):
+            continue
+        works = _openalex_get(
+            {
+                "filter": f"primary_location.source.issn:{issn},from_publication_date:{cutoff}",
+                "per-page": _MAX_JOURNAL_WORKS,
                 "sort": "publication_date:desc",
-            }
-            url = f"{OPENALEX_ENDPOINT}?{urllib.parse.urlencode(params)}"
-            try:
-                resp = requests.get(url, timeout=20, headers={"User-Agent": "aoi-bot/1.0 (mailto:yalin.li@rutgers.edu)"})
-                resp.raise_for_status()
-                data = resp.json()
-            except Exception as exc:  # noqa: BLE001
-                print(f"[warn] OpenAlex query failed for '{keyword}': {exc}")
-                continue
+            },
+            label=f"journal {name}",
+        )
+        for work in works:
+            paper = _openalex_to_paper(work)
+            paper["journal"] = name
+            results.append(paper)
+        time.sleep(0.25)  # be polite -- OpenAlex polite pool is 10 req/s
+    return results
 
-            for work in data.get("results", []):
-                results.append(_openalex_to_paper(work))
-            time.sleep(0.2)  # be polite to the API
+
+def fetch_openalex_candidates() -> list[dict]:
+    """Keyword lane: OpenAlex search per topic keyword, for relevant work
+    outside the tracked journal list."""
+    cutoff = _cutoff_date().isoformat()
+    results = []
+    for cfg in TOPICS.values():
+        for keyword in cfg["keywords"]:
+            works = _openalex_get(
+                {
+                    "search": keyword,
+                    "filter": f"from_publication_date:{cutoff}",
+                    "per-page": 10,
+                    "sort": "publication_date:desc",
+                },
+                label=f"keyword '{keyword}'",
+            )
+            results.extend(_openalex_to_paper(w) for w in works)
+            time.sleep(0.25)  # be polite -- OpenAlex polite pool is 10 req/s
     return results
 
 

@@ -2,7 +2,8 @@
 Entry point for the weekly GitHub Actions run.
 
 Flow:
-  1. Fetch candidates from RSS (fast lane) + OpenAlex (broad lane)
+  1. Fetch candidates from RSS (fast lane) + OpenAlex journal-by-ISSN
+     (backstop) + OpenAlex keyword search (broad lane)
   2. Dedupe, and drop anything already posted before (state file)
   3. Score remaining candidates for relevance with Claude
   4. Group by topic, cap per topic, post to Slack as header + threaded replies
@@ -14,7 +15,13 @@ Flow:
 import sys
 
 from config import MAX_PAPERS_PER_TOPIC, BROADER_READING_FEEDS
-from sources import fetch_rss_candidates, fetch_openalex_candidates, dedupe, _parse_feed
+from sources import (
+    fetch_rss_candidates,
+    fetch_openalex_journal_candidates,
+    fetch_openalex_candidates,
+    dedupe,
+    _parse_feed,
+)
 from relevance import filter_relevant
 from slack_post import post_weekly_digest
 from state import load_state, save_state, already_posted_keys, append_posted
@@ -46,11 +53,18 @@ def main() -> int:
     rss_papers = fetch_rss_candidates()
     print(f"  {len(rss_papers)} candidates from RSS")
 
-    print("Fetching OpenAlex candidates...")
-    openalex_papers = fetch_openalex_candidates()
-    print(f"  {len(openalex_papers)} candidates from OpenAlex")
+    print("Fetching OpenAlex journal candidates...")
+    journal_papers = fetch_openalex_journal_candidates()
+    print(f"  {len(journal_papers)} candidates from OpenAlex journal scan")
 
-    candidates = dedupe(rss_papers + openalex_papers)
+    print("Fetching OpenAlex keyword candidates...")
+    openalex_papers = fetch_openalex_candidates()
+    print(f"  {len(openalex_papers)} candidates from OpenAlex keyword search")
+
+    # Order matters for dedupe (keeps the first seen): RSS first -- it carries
+    # abstracts for Nature/ACS that OpenAlex sometimes lacks -- then the
+    # journal lane (canonical journal name), then the broad keyword lane.
+    candidates = dedupe(rss_papers + journal_papers + openalex_papers)
     candidates = [
         p for p in candidates
         if (p.get("doi") or p["title"].strip().lower()) not in seen_keys
