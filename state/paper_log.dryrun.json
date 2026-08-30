@@ -1,0 +1,107 @@
+{
+  "posted": [
+    {
+      "ts": "1788097042.581509",
+      "doi": "10.1016/j.hal.2026.103149",
+      "title": "Thermal signature of Sargassum aggregations from Landsat 9 observations.",
+      "journal": "PubMed",
+      "topics": [
+        "Sargassum/Seaweed (HTL, AD, arrested AD)"
+      ],
+      "posted_date": "2026-08-30",
+      "source_lane": "openalex_keyword",
+      "published": "2026-09-01",
+      "title_only": false
+    },
+    {
+      "ts": "1788097042.725189",
+      "doi": "10.5281/zenodo.22150467",
+      "title": "OFFSHORE DEVELOPMENT OF PIMIENTA FORMATION SHALE",
+      "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+      "topics": [
+        "Sargassum/Seaweed (HTL, AD, arrested AD)"
+      ],
+      "posted_date": "2026-08-30",
+      "source_lane": "openalex_keyword",
+      "published": "2026-08-28",
+      "title_only": false
+    },
+    {
+      "ts": "1788097042.877789",
+      "doi": "10.37275/nasetjournal.v6i1.77",
+      "title": "Green energy-assisted versus conventional solvent extraction for the recovery of phenolic antioxidants from marine macroalgae: A meta-analysis",
+      "journal": "Natural Sciences Engineering and Technology Journal",
+      "topics": [
+        "Sargassum/Seaweed (HTL, AD, arrested AD)"
+      ],
+      "posted_date": "2026-08-30",
+      "source_lane": "openalex_keyword",
+      "published": "2026-08-28",
+      "title_only": false
+    },
+    {
+      "ts": "1788097043.148179",
+      "doi": null,
+      "title": "What employers are looking for in the age of AI \u2014 and four ways to provide it",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-08-30",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1788097043.266569",
+      "doi": null,
+      "title": "A guide to securing your first research fellowship: what reviewers are looking for",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-08-30",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1788097043.391499",
+      "doi": null,
+      "title": "How one researcher captured a vanished world of UK government science",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-08-30",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    }
+  ],
+  "runs": [
+    {
+      "date": "2026-08-30",
+      "collected": {
+        "rss": 41,
+        "openalex_journal": 207,
+        "openalex_keyword": 205,
+        "openalex_author": 0
+      },
+      "duplicates_removed": 65,
+      "already_posted_removed": 0,
+      "scored": 367,
+      "skipped_no_abstract": 21,
+      "relevant": 3,
+      "posted": 6,
+      "posted_by_lane": {
+        "openalex_keyword": 3,
+        "rss": 3
+      },
+      "claude_input_tokens": 0,
+      "claude_output_tokens": 0,
+      "claude_cost_usd": 0.0,
+      "empty_feeds": []
+    }
+  ]
+}
