@@ -30,23 +30,32 @@ def post_message(text: str, thread_ts: str | None = None) -> dict:
     return data
 
 
+def _oneline(s: str) -> str:
+    """Collapse whitespace/newlines -- a stray newline in a title breaks the
+    `<url|text>` link markup and garbles everything after it."""
+    return " ".join((s or "").split())
+
+
 def format_paper_message(paper: dict) -> str:
-    authors = ", ".join(paper.get("authors", [])[:3])
-    if len(paper.get("authors", [])) > 3:
-        authors += " et al."
+    author_list = paper.get("authors", []) or []
+    authors = ", ".join(author_list[:3]) + (" et al." if len(author_list) > 3 else "")
     tags = " ".join(f"`[{t}]`" for t in paper.get("topics", []))
     link = paper.get("url") or (f"https://doi.org/{paper['doi']}" if paper.get("doi") else "")
-    meta = f"{authors} — _{paper.get('journal', '')}_ ({paper.get('published', 'n.d.')})"
+
+    cite = f"_{paper.get('journal', '')}_ ({paper.get('published') or 'n.d.'})"
+    if authors:
+        cite = f"{authors} — {cite}"
     if paper.get("title_only"):
-        meta += "  ·  _matched on title only (no abstract available)_"
+        cite += "  ·  _matched on title only (no abstract available)_"
+
     lines = [
-        f"{tags}",
-        f"*<{link}|{paper['title']}>*",
-        meta,
+        tags,
+        f"*<{link}|{_oneline(paper.get('title', ''))}>*",
+        cite,
     ]
     if paper.get("reason"):
-        lines.append(f"> {paper['reason']}")
-    return "\n".join(lines)
+        lines.append(f"> {_oneline(paper['reason'])}")
+    return "\n".join(line for line in lines if line)
 
 
 def post_weekly_digest(papers_by_topic: dict[str, list[dict]], broader_reading: list[dict]) -> list[dict]:

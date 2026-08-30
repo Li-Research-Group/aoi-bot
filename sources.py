@@ -238,8 +238,15 @@ def _parse_feed_xml(raw: bytes) -> list[dict]:
     return entries
 
 
+def _collapse_ws(s: str | None) -> str:
+    """Flatten any run of whitespace (incl. newlines) to a single space.
+    Feed and OpenAlex titles often wrap across lines -- left raw, the
+    newlines break Slack's `<url|text>` link markup."""
+    return re.sub(r"\s+", " ", s).strip() if s else ""
+
+
 def _text(el) -> str:
-    return (el.text or "").strip() if el is not None else ""
+    return _collapse_ws(el.text) if el is not None else ""
 
 
 def _normalize_doi(raw: str | None) -> str | None:
@@ -380,7 +387,7 @@ def _openalex_to_paper(work: dict) -> dict:
     source = (work.get("primary_location") or {}).get("source") or {}
     abstract = _reconstruct_abstract(work.get("abstract_inverted_index"))
     return {
-        "title": work.get("title") or "",
+        "title": _collapse_ws(work.get("title")),
         "authors": [a for a in authors if a],
         "journal": source.get("display_name") or "",
         "doi": _normalize_doi(work.get("doi")),
