@@ -16,7 +16,7 @@ import os
 # channel details" > scroll down to find the ID.
 # Overridable via the SLACK_CHANNEL_ID env var so the dry-run workflow can
 # point at a test channel without touching this file.
-SLACK_CHANNEL_ID = os.environ.get("SLACK_CHANNEL_ID") or "C0BTP4UT4F3" # aoi: C05M84JAZUZ; aoi-test: C0BTP4UT4F3
+SLACK_CHANNEL_ID = os.environ.get("SLACK_CHANNEL_ID") or "C05M84JAZUZ" # aoi: C05M84JAZUZ; aoi-test: C0BTP4UT4F3
 
 # --- Journals ------------------------------------------------------------
 # name -> RSS/Atom feed URL for that journal's latest articles. Grouped by
