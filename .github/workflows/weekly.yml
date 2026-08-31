@@ -2,10 +2,10 @@ name: Weekly articles of interest (AOI) digest
 
 on:
   schedule:
-    # Runs every Monday at 12:00 UTC. Adjust the cron to land 1-2 days
+    # Runs every Monday at 16:00 UTC. Adjust the cron to land 1-2 days
     # before your group meeting -- see README for how to convert to your
     # local timezone.
-    - cron: "0 12 * * 1"
+    - cron: "0 16 * * 1"
   workflow_dispatch: {}  # lets you trigger a run manually from the Actions tab
 
 permissions:
