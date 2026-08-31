@@ -214,6 +214,216 @@
         "Broader Reading"
       ],
       "posted_date": "2026-08-30"
+    },
+    {
+      "ts": "1788188345.511929",
+      "doi": "10.1021/acsestengg.6c00224",
+      "title": "Decoding Wolffia : A Predictive Model for Duckweed Growth and Nutrient Uptake for Resource Recovery from Wastewater in Tropical Countries",
+      "journal": "ACS ES&T Engineering",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-08-31",
+      "source_lane": "rss",
+      "published": "2026-08-29",
+      "title_only": false
+    },
+    {
+      "ts": "1788188345.689039",
+      "doi": "10.1016/j.biortech.2026.135723",
+      "title": "Emerging chemical and biological contaminants fate and removal in a full-scale multi-cell integrated constructed wetland",
+      "journal": "Bioresource Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-08-31",
+      "source_lane": "openalex_journal",
+      "published": "2026-08-25",
+      "title_only": false
+    },
+    {
+      "ts": "1788188345.878029",
+      "doi": "10.3389/frmst.2026.1918400",
+      "title": "Phosphate-rich municipal wastewater treatment using magnetite nanoparticles dispersed oakwood biochar-assisted pretreatment followed by air-gap membrane distillation",
+      "journal": "Frontiers in Membrane Science and Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-08-31",
+      "source_lane": "openalex_keyword",
+      "published": "2026-08-27",
+      "title_only": false
+    },
+    {
+      "ts": "1788188346.048529",
+      "doi": "10.1038/s41598-026-67829-8",
+      "title": "A two-layer diffusion-reaction model for quantifying internal carbon loop efficiency in algal-bacterial biofilms",
+      "journal": "Scientific Reports",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-08-31",
+      "source_lane": "openalex_keyword",
+      "published": "2026-08-30",
+      "title_only": false
+    },
+    {
+      "ts": "1788188346.152989",
+      "doi": "10.1021/acs.est.6c02401",
+      "title": "Decarbonization, Dematerialization, and Economic Gains in Circular Economy for Construction and Demolition Waste Management in Europe",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-08-31",
+      "source_lane": "rss",
+      "published": "2026-08-30",
+      "title_only": false
+    },
+    {
+      "ts": "1788188346.360669",
+      "doi": "10.1016/j.jclepro.2026.149305",
+      "title": "A low-energy natural carbonation pathway for fully recycled self-compacting concrete: mechanical performance and life-cycle carbon assessment",
+      "journal": "Journal of Cleaner Production",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-08-31",
+      "source_lane": "openalex_journal",
+      "published": "2026-08-29",
+      "title_only": true
+    },
+    {
+      "ts": "1788188346.460459",
+      "doi": "10.1016/j.cscm.2026.e06470",
+      "title": "Optimizing wollastonite treatment to enhance sustainability and reduce carbon emissions in cement-based materials",
+      "journal": "Case Studies in Construction Materials",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-08-31",
+      "source_lane": "openalex_keyword",
+      "published": "2026-08-29",
+      "title_only": false
+    },
+    {
+      "ts": "1788188346.600569",
+      "doi": "10.1371/journal.pone.0355961",
+      "title": "Sustainable engineered cementitious composites incorporating recycled materials: Experimental validation and life cycle assessment",
+      "journal": "PLoS ONE",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-08-31",
+      "source_lane": "openalex_keyword",
+      "published": "2026-08-28",
+      "title_only": false
+    },
+    {
+      "ts": "1788188346.764459",
+      "doi": "10.3390/polym18172107",
+      "title": "Climate-Impact Uncertainty in Bio-Asphalt\u2013Rubber Binders: Probabilistic Cradle-to-Gate Screening of Bio-Oil Inventory and Crumb Rubber Allocation",
+      "journal": "Polymers",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)",
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-08-31",
+      "source_lane": "openalex_keyword",
+      "published": "2026-08-30",
+      "title_only": false
+    },
+    {
+      "ts": "1788188346.900439",
+      "doi": "10.3390/polym18172107",
+      "title": "Climate-Impact Uncertainty in Bio-Asphalt\u2013Rubber Binders: Probabilistic Cradle-to-Gate Screening of Bio-Oil Inventory and Crumb Rubber Allocation",
+      "journal": "Polymers",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)",
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-08-31",
+      "source_lane": "openalex_keyword",
+      "published": "2026-08-30",
+      "title_only": false
+    },
+    {
+      "ts": "1788188347.036649",
+      "doi": "10.25781/kaust-v895k",
+      "title": "Low-Carbon Hydrogen Production from Methane Pyrolysis: Technology Prioritization under Uncertainty, Life-Cycle Assessment, and Export Competitiveness for Saudi Arabia",
+      "journal": "Open MIND",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-08-31",
+      "source_lane": "openalex_keyword",
+      "published": "2026-08-27",
+      "title_only": false
+    },
+    {
+      "ts": "1788188347.267829",
+      "doi": null,
+      "title": "What\u2019s your lab\u2019s archetype? The answer could inform how you use AI",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-08-31",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1788188347.392359",
+      "doi": null,
+      "title": "What employers are looking for in the age of AI \u2014 and four ways to provide it",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-08-31",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1788188347.571909",
+      "doi": null,
+      "title": "A guide to securing your first research fellowship: what reviewers are looking for",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-08-31",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    }
+  ],
+  "runs": [
+    {
+      "date": "2026-08-31",
+      "collected": {
+        "rss": 42,
+        "openalex_journal": 206,
+        "openalex_keyword": 201,
+        "openalex_author": 0
+      },
+      "duplicates_removed": 71,
+      "already_posted_removed": 11,
+      "scored": 354,
+      "skipped_no_abstract": 13,
+      "relevant": 10,
+      "posted": 14,
+      "posted_by_lane": {
+        "rss": 5,
+        "openalex_journal": 2,
+        "openalex_keyword": 7
+      },
+      "claude_input_tokens": 265657,
+      "claude_output_tokens": 17199,
+      "claude_cost_usd": 1.055,
+      "empty_feeds": []
     }
   ]
 }
