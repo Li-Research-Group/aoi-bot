@@ -179,8 +179,15 @@ TOPICS = {
 # topic pipeline before relevance scoring, so it shows in the
 # Followed-authors section only, never twice.
 FOLLOWED_AUTHORS: dict[str, str] = {
-    # Corinne Scown (LBNL / JBEI) -- TEA & LCA of biofuels and bioproducts.
-    "Corinne Scown": "0000-0003-2078-1126",  # ORCID
+    "Corinne D. Scown": "A5018132574",  # OpenAlex ID; "0000-0003-2078-1126" (ORCID)
+    "Nawa Raj Baral": "A5017030250",  # OpenAlex ID; "0000-0002-0942-9183" (ORCID)
+    "Ling Tao": "A5041565027",  # OpenAlex ID; "0000-0003-1063-1984" (ORCID)
+    "Troy R. Hawkins": "A5067282665",  # OpenAlex ID; "0000-0001-6897-175X" (ORCID)
+    "Eric C. D. Tan": "A5003973429",  # OpenAlex ID; "0000-0002-9110-2410" (ORCID)
+    "Jeremy S. Guest": "A5002067592",  # OpenAlex ID; "0000-0003-2489-2579" (ORCID)
+    "Jun‐Jie Zhu": "A5076508755",  # OpenAlex ID; "0000-0002-7546-2870" (ORCID)
+    "Lieve M. L. Laurens": "A5077655975",  # OpenAlex ID; "0000-0003-4930-3267" (ORCID)
+    "Baikun Li": "A5011230897",  # OpenAlex ID; "0000-0002-5623-5912" (ORCID)
 }
 
 # --- Broader-reading feed (separate category, not a research-topic match) --
