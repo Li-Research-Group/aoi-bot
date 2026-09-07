@@ -437,6 +437,110 @@
       "source_lane": "rss",
       "published": "",
       "title_only": false
+    },
+    {
+      "ts": "1788810593.859119",
+      "doi": "10.1021/acsestwater.6c00558",
+      "title": "Wastewater Resistance Dynamics: Antibiotic\u2013Disinfectant Interaction Patterns, Surveillance, and Emerging Containment Strategies",
+      "journal": "ACS ES&T Water",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-09-07",
+      "source_lane": "rss",
+      "published": "2026-09-04",
+      "title_only": false
+    },
+    {
+      "ts": "1788810594.202729",
+      "doi": "10.1021/acs.est.6c09442",
+      "title": "Nationwide Assessment of De Facto Wastewater Reuse Reveals Vulnerable Drinking Water Systems and Infrastructure Gaps",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-09-07",
+      "source_lane": "rss",
+      "published": "2026-09-06",
+      "title_only": false
+    },
+    {
+      "ts": "1788810594.471579",
+      "doi": "10.1038/s41893-026-01921-9",
+      "title": "3D-printed living materials for anammox\u2013denitrification coupling in wastewater treatment",
+      "journal": "Nature Sustainability",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-09-07",
+      "source_lane": "rss",
+      "published": "2026-09-07",
+      "title_only": false
+    },
+    {
+      "ts": "1788810594.733119",
+      "doi": "10.1038/s44221-026-00704-y",
+      "title": "Emerging contaminant stress promotes greenhouse gas production through microbial defence\u2013energy trade-off in receiving rivers",
+      "journal": "Nature Water",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-09-07",
+      "source_lane": "rss",
+      "published": "2026-09-07",
+      "title_only": false
+    },
+    {
+      "ts": "1788810595.002089",
+      "doi": "10.1007/s44498-026-00157-2",
+      "title": "Quality-aware automation for LCI database mapping",
+      "journal": "Journal of Industrial Ecology",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-09-07",
+      "source_lane": "rss",
+      "published": "2026-09-07",
+      "title_only": false
+    },
+    {
+      "ts": "1788810595.522269",
+      "doi": null,
+      "title": "How contemporary academic structures constrain scientific creativity and hold back early-career researchers",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-09-07",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1788810595.799089",
+      "doi": null,
+      "title": "Science is a process not a product",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-09-07",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1788810596.066439",
+      "doi": null,
+      "title": "Europe should adapt, not copy, China\u2019s practical PhD",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-09-07",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
     }
   ],
   "runs": [
@@ -484,6 +588,28 @@
       "claude_input_tokens": 256247,
       "claude_output_tokens": 16465,
       "claude_cost_usd": 1.0157,
+      "empty_feeds": []
+    },
+    {
+      "date": "2026-09-07",
+      "collected": {
+        "rss": 49,
+        "openalex_journal": 0,
+        "openalex_keyword": 0,
+        "openalex_author": 0
+      },
+      "duplicates_removed": 0,
+      "already_posted_removed": 0,
+      "scored": 49,
+      "skipped_no_abstract": 0,
+      "relevant": 6,
+      "posted": 8,
+      "posted_by_lane": {
+        "rss": 8
+      },
+      "claude_input_tokens": 38052,
+      "claude_output_tokens": 2489,
+      "claude_cost_usd": 0.1515,
       "empty_feeds": []
     }
   ]
