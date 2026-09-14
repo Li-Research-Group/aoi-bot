@@ -541,6 +541,275 @@
       "source_lane": "rss",
       "published": "",
       "title_only": false
+    },
+    {
+      "ts": "1789417738.657259",
+      "doi": "10.1021/acssusresmgt.6c00173",
+      "title": "Critical Valuation of Fire-Induced Losses at Municipal Solid Waste Dumpsites: An Innovative Environmentally Weighted Net Present Value Framework for Viability Assessment of Reclamation Projects",
+      "journal": "ACS Sustainable Resource Management",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-09-14",
+      "source_lane": "rss",
+      "published": "2026-09-09",
+      "title_only": false
+    },
+    {
+      "ts": "1789417738.762009",
+      "doi": "10.1007/s44498-026-00169-y",
+      "title": "Life cycle assessment of battery cell production in the context of the European Union batteries regulation: the influence of data aggregation and multifunctionality handling",
+      "journal": "Journal of Industrial Ecology",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-09-14",
+      "source_lane": "rss",
+      "published": "2026-09-14",
+      "title_only": false
+    },
+    {
+      "ts": "1789417738.863709",
+      "doi": "10.1021/acssuschemeng.6c04434",
+      "title": "E-Factor Meets Climate-Factor: Translating Waste into Global Warming Potential for Early-Stage (Bio)catalytic Reactions",
+      "journal": "ACS Sustainable Chemistry & Engineering",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-09-14",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-07",
+      "title_only": false
+    },
+    {
+      "ts": "1789417738.972069",
+      "doi": "10.1016/j.wasman.2026.115847",
+      "title": "Integrating life cycle assessment and environmental life cycle costing to evaluate used cooking oil valorisation routes",
+      "journal": "Waste Management",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-09-14",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-12",
+      "title_only": false
+    },
+    {
+      "ts": "1789417739.126909",
+      "doi": "10.1007/s44498-026-00176-z",
+      "title": "Scenario based dynamic material flow analysis of Dutch macro infrastructure stocks: assessing future material demand and circularity potentials",
+      "journal": "Journal of Industrial Ecology",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-09-14",
+      "source_lane": "rss",
+      "published": "2026-09-08",
+      "title_only": false
+    },
+    {
+      "ts": "1789417739.227149",
+      "doi": "10.1021/acs.est.6c06705",
+      "title": "How Long Do Buildings Live: A Systematic Review and Meta-Analysis of Global Building Lifetimes",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-09-14",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-08",
+      "title_only": false
+    },
+    {
+      "ts": "1789417739.327279",
+      "doi": "10.1016/j.conbuildmat.2026.148098",
+      "title": "Performance enhancement of fully recycled fine aggregate mortar through synergistic binder optimization and curing humidity regulation",
+      "journal": "Construction and Building Materials",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-09-14",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-09",
+      "title_only": true
+    },
+    {
+      "ts": "1789417739.423479",
+      "doi": "10.1016/j.conbuildmat.2026.148105",
+      "title": "The influence of microwave-thermal assisted treatment of recycled concrete aggregate (RCA) on the mechanical properties and fracture behavior of cement concrete",
+      "journal": "Construction and Building Materials",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-09-14",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-08",
+      "title_only": true
+    },
+    {
+      "ts": "1789417739.520409",
+      "doi": "10.1021/acsestengg.6c00413",
+      "title": "Insights into the Microbial Community Dynamics during Seeding and Its Role in Developing Biological Activated Carbon Filter for Simultaneous Biodegradation of Organics, Nitrogen, and Emerging Contaminants from Secondary Effluent",
+      "journal": "ACS ES&T Engineering",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-09-14",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-08",
+      "title_only": false
+    },
+    {
+      "ts": "1789417739.633489",
+      "doi": "10.1021/acsestwater.6c00925",
+      "title": "Boiling Away Emerging Pollutants: Ancient Wisdom for Modern Drinking Water Safety",
+      "journal": "ACS ES&T Water",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)",
+        "Hydrothermal Microplastic Degradation"
+      ],
+      "posted_date": "2026-09-14",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-08",
+      "title_only": false
+    },
+    {
+      "ts": "1789417739.741839",
+      "doi": "10.1021/acs.est.6c05370",
+      "title": "Mechanistic Insights into Synergistic VFA and NH3 Recovery Using a Hybrid BPMED\u2013HFMC System",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-09-14",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-12",
+      "title_only": false
+    },
+    {
+      "ts": "1789417739.837509",
+      "doi": "10.1021/acs.est.6c08224",
+      "title": "Dual-Granule Biotechnology Mediated by S0 and Anammox toward Sustainable Wastewater Treatment Even at Winter Low Temperatures",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-09-14",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-10",
+      "title_only": false
+    },
+    {
+      "ts": "1789417740.980829",
+      "doi": "10.1021/acsestwater.6c00925",
+      "title": "Boiling Away Emerging Pollutants: Ancient Wisdom for Modern Drinking Water Safety",
+      "journal": "ACS ES&T Water",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)",
+        "Hydrothermal Microplastic Degradation"
+      ],
+      "posted_date": "2026-09-14",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-08",
+      "title_only": false
+    },
+    {
+      "ts": "1789417741.144449",
+      "doi": "10.1021/acs.est.6c01363",
+      "title": "A Circular Economy Approach for Nutrient Redistribution and Renewable Energy Production",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-09-14",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-10",
+      "title_only": false
+    },
+    {
+      "ts": "1789417741.262489",
+      "doi": "10.2166/9781789065404_0001",
+      "title": "Sustainable wastewater management in the era of smart and circular systems",
+      "journal": "IWA Publishing eBooks",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-09-14",
+      "source_lane": "openalex_keyword",
+      "published": "2026-09-12",
+      "title_only": false
+    },
+    {
+      "ts": "1789417741.363889",
+      "doi": "10.1016/j.compchemeng.2026.109889",
+      "title": "Process architect: an AI-assisted native-solver platform for early-stage chemical process simulation and TEA/LCA screening",
+      "journal": "Computers & Chemical Engineering",
+      "topics": [
+        "Process Modeling Tools (BioSTEAM/QSDsan-like)"
+      ],
+      "posted_date": "2026-09-14",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-07",
+      "title_only": true
+    },
+    {
+      "ts": "1789417741.643149",
+      "doi": "10.1093/ismeco/ycag262",
+      "title": "Carbohydrate-active enzyme architectures reflect distinct fungal and bacterial strategies for lignocellulose conversion to volatile fatty acids",
+      "journal": "ISME Communications",
+      "topics": [
+        "Sargassum/Seaweed (HTL, AD, arrested AD)"
+      ],
+      "posted_date": "2026-09-14",
+      "source_lane": "openalex_keyword",
+      "published": "2026-09-10",
+      "title_only": false
+    },
+    {
+      "ts": "1789417741.765159",
+      "doi": "10.17608/k6.auckland.33716620.v1",
+      "title": "Techno Mechanistic Carbon- Economic Modelling of Bio-Binders in NZ Transport Infrastructure",
+      "journal": "University of Auckland Data Repository",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-09-14",
+      "source_lane": "openalex_keyword",
+      "published": "2026-09-13",
+      "title_only": false
+    },
+    {
+      "ts": "1789417742.015399",
+      "doi": "10.1088/2634-4505/aea641",
+      "title": "Cost, emissions, and material flow implications of designing electric vehicle components for recyclability",
+      "journal": "Environmental Research Infrastructure and Sustainability",
+      "topics": [
+        "Followed Authors"
+      ],
+      "posted_date": "2026-09-14",
+      "source_lane": "openalex_author",
+      "published": "2026-09-11",
+      "title_only": false,
+      "matched_authors": [
+        "Corinne D. Scown"
+      ]
+    },
+    {
+      "ts": "1789417742.126599",
+      "doi": "10.1021/acs.est.6c06561",
+      "title": "Stage-Dependent Dynamics of Soil Antibiotic Resistance Genes under Long-Term Pollutant Exposure",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Followed Authors"
+      ],
+      "posted_date": "2026-09-14",
+      "source_lane": "openalex_author",
+      "published": "2026-09-10",
+      "title_only": false,
+      "matched_authors": [
+        "Jun\u2010Jie Zhu"
+      ]
     }
   ],
   "runs": [
@@ -610,6 +879,31 @@
       "claude_input_tokens": 38052,
       "claude_output_tokens": 2489,
       "claude_cost_usd": 0.1515,
+      "empty_feeds": []
+    },
+    {
+      "date": "2026-09-14",
+      "collected": {
+        "rss": 55,
+        "openalex_journal": 284,
+        "openalex_keyword": 208,
+        "openalex_author": 2
+      },
+      "duplicates_removed": 116,
+      "already_posted_removed": 3,
+      "scored": 415,
+      "skipped_no_abstract": 11,
+      "relevant": 26,
+      "posted": 20,
+      "posted_by_lane": {
+        "rss": 3,
+        "openalex_journal": 12,
+        "openalex_keyword": 3,
+        "openalex_author": 2
+      },
+      "claude_input_tokens": 341653,
+      "claude_output_tokens": 21096,
+      "claude_cost_usd": 1.3414,
       "empty_feeds": []
     }
   ]
