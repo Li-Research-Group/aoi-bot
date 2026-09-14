@@ -11,6 +11,7 @@ import os
 import requests
 
 from config import SLACK_CHANNEL_ID
+from sources import dedupe
 
 SLACK_API = "https://slack.com/api"
 
@@ -105,25 +106,30 @@ def post_weekly_digest(
     followed-author cuts without it re-deriving them."""
     followed_authors = followed_authors or []
     today = datetime.date.today().isoformat()
-    total = (sum(len(v) for v in papers_by_topic.values())
-             + len(followed_authors) + len(broader_reading))
+
+    # A paper relevant to more than one topic lands in more than one
+    # papers_by_topic bucket -- each topic's MAX_PAPERS_PER_TOPIC cap in
+    # run_weekly.py is judged independently -- but it must only be posted
+    # (and counted) once; format_paper_message already renders every
+    # matched topic as a tag on that single message, so deduping here loses
+    # no category information, just the repeat post.
+    topic_papers = dedupe([paper for papers in papers_by_topic.values() for paper in papers])
+
+    total = len(topic_papers) + len(followed_authors) + len(broader_reading)
     prefix = "[DRY RUN] " if dry_run else ""
     post_message(f"*{prefix}Weekly paper digest — {today}* ({total} papers)")
 
     log = []
-    for topic, papers in papers_by_topic.items():
-        if not papers:
-            continue
-        for paper in papers:
-            resp = post_message(format_paper_message(paper))
-            log.append(_log_entry(
-                resp["ts"], today,
-                doi=paper.get("doi"), title=paper["title"],
-                journal=paper.get("journal", ""), topics=paper.get("topics", []),
-                source_lane=paper.get("source_lane", ""),
-                published=paper.get("published", ""),
-                title_only=bool(paper.get("title_only")),
-            ))
+    for paper in topic_papers:
+        resp = post_message(format_paper_message(paper))
+        log.append(_log_entry(
+            resp["ts"], today,
+            doi=paper.get("doi"), title=paper["title"],
+            journal=paper.get("journal", ""), topics=paper.get("topics", []),
+            source_lane=paper.get("source_lane", ""),
+            published=paper.get("published", ""),
+            title_only=bool(paper.get("title_only")),
+        ))
 
     if followed_authors:
         post_message("*`[Followed authors]`* — recent papers by people the group tracks")

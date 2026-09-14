@@ -154,9 +154,27 @@ TOPICS = {
         "journals": ["Resources, Conservation and Recycling", "Waste Management", "Journal of Cleaner Production"],
     },
     "Water/Wastewater Treatment (teaching)": {
+        # "description" (optional on any topic) is free text shown to Claude
+        # in addition to "keywords" -- use it when keyword matching alone
+        # can't express the nuance (e.g. a paper that's topically on-keyword
+        # but not actually a fit, or a fit that doesn't share any keyword).
+        "description": (
+            "Papers useful for teaching undergrad/grad water & wastewater "
+            "treatment concepts. Include: drinking-water or wastewater "
+            "quality/contaminant *occurrence* and exposure studies "
+            "(especially New Jersey or other regionally-grounded case "
+            "studies), public-health-relevant contaminants (PFAS, "
+            "microplastics, pathogens), and broadly accessible treatment "
+            "process papers. Exclude narrow, highly specialized process-"
+            "engineering or resource-recovery research (e.g. a novel "
+            "hybrid membrane/electrochemical reactor design) -- that's "
+            "research-frontier work, not teaching material, even though it "
+            "matches the keywords below."
+        ),
         "keywords": [
             "novel wastewater treatment process", "emerging contaminant removal",
-            "resource recovery wastewater",
+            "resource recovery wastewater", "drinking water",
+            "emerging contaminant occurrence", "New Jersey water quality",
         ],
         "journals": ["ACS ES&T Water", "ACS ES&T Engineering", "Water Research", "Water Research X"],
     },

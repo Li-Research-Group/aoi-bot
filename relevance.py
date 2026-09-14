@@ -17,9 +17,17 @@ MODEL = "claude-sonnet-4-6"
 # too noisy.
 _TRACKED_JOURNALS = set(JOURNALS) | set(JOURNAL_ISSNS)
 
-_TOPIC_DESCRIPTIONS = "\n".join(
-    f"- {name}: {', '.join(cfg['keywords'])}" for name, cfg in TOPICS.items()
-)
+def _topic_line(name: str, cfg: dict) -> str:
+    keywords = ", ".join(cfg["keywords"])
+    if cfg.get("description"):
+        # Free text takes priority -- it can express inclusion/exclusion
+        # nuance a bare keyword list can't -- but keywords are still shown
+        # as examples.
+        return f"- {name}: {cfg['description']} (example terms: {keywords})"
+    return f"- {name}: {keywords}"
+
+
+_TOPIC_DESCRIPTIONS = "\n".join(_topic_line(name, cfg) for name, cfg in TOPICS.items())
 
 _SYSTEM_PROMPT = f"""You screen research paper abstracts for a research group's weekly \
 literature digest. The group's topics are:
