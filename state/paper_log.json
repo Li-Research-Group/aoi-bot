@@ -810,6 +810,285 @@
       "matched_authors": [
         "Jun\u2010Jie Zhu"
       ]
+    },
+    {
+      "ts": "1790023145.579699",
+      "doi": "10.1021/acs.est.6c12374",
+      "title": "Regulating Microplastics in Drinking Water: Treatment First, Measurement in Parallel",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-09-21",
+      "source_lane": "rss",
+      "published": "2026-09-20",
+      "title_only": true
+    },
+    {
+      "ts": "1790023145.763289",
+      "doi": "10.1021/acsestwater.6c00609",
+      "title": "Large Seasonal Variation in Microplastic Concentration from the Truckee River, United States",
+      "journal": "ACS ES&T Water",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-09-21",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-15",
+      "title_only": false
+    },
+    {
+      "ts": "1790023145.981709",
+      "doi": "10.1021/acs.est.6c06569",
+      "title": "Trifluoroacetic Acid Competitively Inhibits Lactate Dehydrogenase to Disrupt Endothelial Glycolysis and Impair Vascular Development",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-09-21",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-17",
+      "title_only": false
+    },
+    {
+      "ts": "1790023146.156059",
+      "doi": "10.1021/acs.est.6c10006",
+      "title": "Spatially Explicit Assessment of Pathogen-Related Health Impacts in Life Cycle Assessment",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "New TEA/LCA Methods",
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-09-21",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-16",
+      "title_only": false
+    },
+    {
+      "ts": "1790023146.337649",
+      "doi": "10.1007/s44498-026-00186-x",
+      "title": "Toward process-based inventory data for Portland clinker substitutes",
+      "journal": "Journal of Industrial Ecology",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-09-21",
+      "source_lane": "rss",
+      "published": "2026-09-18",
+      "title_only": false
+    },
+    {
+      "ts": "1790023146.518399",
+      "doi": "10.1016/j.resconrec.2026.109167",
+      "title": "Upcycling waste concrete powder into cement-free construction materials through low-dosage micron-sized polyethylene and hot-pressing",
+      "journal": "Resources, Conservation and Recycling",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-09-21",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-19",
+      "title_only": false
+    },
+    {
+      "ts": "1790023146.690789",
+      "doi": "10.1016/j.wasman.2026.115866",
+      "title": "Carbonation of recycled concrete fines as a treatment for promoting their recycling as supplementary cementitious material: influence of initial moisture on CO2 uptake and reactivity",
+      "journal": "Waste Management",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-09-21",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-16",
+      "title_only": false
+    },
+    {
+      "ts": "1790023146.877219",
+      "doi": "10.1007/s44274-026-01001-x",
+      "title": "A scientometric and literature review of global trends and valorisation strategies for construction and demolition waste",
+      "journal": "Discover Environment",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-09-21",
+      "source_lane": "openalex_keyword",
+      "published": "2026-09-17",
+      "title_only": false
+    },
+    {
+      "ts": "1790023147.080659",
+      "doi": "10.1016/j.jclepro.2026.149299",
+      "title": "Industrial thermal energy supply options: A multifactor evaluation framework",
+      "journal": "Journal of Cleaner Production",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-09-21",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-19",
+      "title_only": false
+    },
+    {
+      "ts": "1790023147.260899",
+      "doi": "10.1016/j.jclepro.2026.149515",
+      "title": "Integrated life cycle and techno-economic assessment of rice straw-based bioethanol production in India with on-site enzyme integration",
+      "journal": "Journal of Cleaner Production",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-09-21",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-19",
+      "title_only": false
+    },
+    {
+      "ts": "1790023147.442299",
+      "doi": "10.1016/j.jclepro.2026.149495",
+      "title": "Assessing absolute sustainability: An analysis of impact assessment tools",
+      "journal": "Journal of Cleaner Production",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-09-21",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-18",
+      "title_only": false
+    },
+    {
+      "ts": "1790023147.629369",
+      "doi": "10.1016/j.biortech.2026.135880",
+      "title": "Controversial challenges in the transition to energy- and carbon-neutral municipal wastewater management",
+      "journal": "Bioresource Technology",
+      "topics": [
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-09-21",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-17",
+      "title_only": false
+    },
+    {
+      "ts": "1790023147.804619",
+      "doi": "10.1590/scielopreprints.16654",
+      "title": "Solid Waste Valorization: Concepts, Principles, Valorization Techniques, and Integrated Waste Management",
+      "journal": "",
+      "topics": [
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-09-21",
+      "source_lane": "openalex_keyword",
+      "published": "2026-09-16",
+      "title_only": false
+    },
+    {
+      "ts": "1790023147.998769",
+      "doi": "10.5281/zenodo.22841871",
+      "title": "WASTE TIRE COMPOSITION AND ENVIRONMENTAL IMPACTS: A SYSTEMATIC REVIEW OF CHEMICAL CONSTITUENTS, RELEASE PATHWAYS, AND POLLUTION RISKS",
+      "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+      "topics": [
+        "Hydrothermal Microplastic Degradation",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-09-21",
+      "source_lane": "openalex_keyword",
+      "published": "2026-09-19",
+      "title_only": false
+    },
+    {
+      "ts": "1790023148.177249",
+      "doi": "10.1002/aic.70670",
+      "title": "Hydrogen\u2010dependent carbon\u2013cost boundaries in catalytic hydropyrolysis of cellulose\u2010rich textile waste to aromatics",
+      "journal": "AIChE Journal",
+      "topics": [
+        "New TEA/LCA Methods",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-09-21",
+      "source_lane": "openalex_keyword",
+      "published": "2026-09-19",
+      "title_only": false
+    },
+    {
+      "ts": "1790023148.359149",
+      "doi": "10.1016/j.jclepro.2026.149506",
+      "title": "From molecular architecture to rheological differentiation: Multiscale regulation of asphalt by waste colza oil-derived polymers",
+      "journal": "Journal of Cleaner Production",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-09-21",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-19",
+      "title_only": false
+    },
+    {
+      "ts": "1790023148.542869",
+      "doi": "10.1016/j.jclepro.2026.149467",
+      "title": "Innovative valorization of low molecular weight lignin/SBS composite modifier for sustainable pavement construction: Antioxidant and rheological evolution during long-term aging",
+      "journal": "Journal of Cleaner Production",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-09-21",
+      "source_lane": "openalex_keyword",
+      "published": "2026-09-13",
+      "title_only": false
+    },
+    {
+      "ts": "1790023148.896439",
+      "doi": "10.1016/j.jclepro.2026.149453",
+      "title": "A conceptual framework for uncertainty-informed system boundary expansion in life cycle assessment",
+      "journal": "Journal of Cleaner Production",
+      "topics": [
+        "Followed Authors"
+      ],
+      "posted_date": "2026-09-21",
+      "source_lane": "openalex_author",
+      "published": "2026-09-16",
+      "title_only": false,
+      "matched_authors": [
+        "Corinne D. Scown"
+      ]
+    },
+    {
+      "ts": "1790023149.245279",
+      "doi": null,
+      "title": "How do I change labs gracefully during my PhD?",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-09-21",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1790023149.424619",
+      "doi": null,
+      "title": "How research funding took me out of the lab and into leadership",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-09-21",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1790023149.632739",
+      "doi": null,
+      "title": "Staying in academia after extended leave",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-09-21",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
     }
   ],
   "runs": [
@@ -904,6 +1183,31 @@
       "claude_input_tokens": 341653,
       "claude_output_tokens": 21096,
       "claude_cost_usd": 1.3414,
+      "empty_feeds": []
+    },
+    {
+      "date": "2026-09-21",
+      "collected": {
+        "rss": 52,
+        "openalex_journal": 316,
+        "openalex_keyword": 230,
+        "openalex_author": 1
+      },
+      "duplicates_removed": 100,
+      "already_posted_removed": 2,
+      "scored": 483,
+      "skipped_no_abstract": 12,
+      "relevant": 25,
+      "posted": 21,
+      "posted_by_lane": {
+        "rss": 5,
+        "openalex_journal": 10,
+        "openalex_keyword": 5,
+        "openalex_author": 1
+      },
+      "claude_input_tokens": 466138,
+      "claude_output_tokens": 24424,
+      "claude_cost_usd": 1.7648,
       "empty_feeds": []
     }
   ]
