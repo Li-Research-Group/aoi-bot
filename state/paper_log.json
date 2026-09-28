@@ -1089,6 +1089,258 @@
       "source_lane": "rss",
       "published": "",
       "title_only": false
+    },
+    {
+      "ts": "1790632709.769989",
+      "doi": "10.1021/acs.est.6c05424",
+      "title": "A Spatially Explicit Societal Life Cycle Cost Framework for Sustainable Biographite Production in the United States",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-09-28",
+      "source_lane": "rss",
+      "published": "2026-09-26",
+      "title_only": false
+    },
+    {
+      "ts": "1790632709.911619",
+      "doi": "10.1007/s44498-026-00180-3",
+      "title": "Generic model for determining the environmental impact of process steam supply",
+      "journal": "Journal of Industrial Ecology",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-09-28",
+      "source_lane": "rss",
+      "published": "2026-09-26",
+      "title_only": false
+    },
+    {
+      "ts": "1790632710.050639",
+      "doi": "10.1007/s44498-026-00163-4",
+      "title": "A natural-language interface for parameter-level scenario analysis in parameterised life cycle assessment models",
+      "journal": "Journal of Industrial Ecology",
+      "topics": [
+        "New TEA/LCA Methods",
+        "Process Modeling Tools (BioSTEAM/QSDsan-like)"
+      ],
+      "posted_date": "2026-09-28",
+      "source_lane": "rss",
+      "published": "2026-09-23",
+      "title_only": false
+    },
+    {
+      "ts": "1790632710.188769",
+      "doi": "10.1021/acs.est.6c12624",
+      "title": "Using Multimodal Large Language Models for Extracting Structured Life-Cycle Inventory Data from Scientific Literature",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-09-28",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-24",
+      "title_only": false
+    },
+    {
+      "ts": "1790632710.334259",
+      "doi": "10.1038/s44221-026-00712-y",
+      "title": "Make the invisible visible by strengthening utility literacy to sustain water services",
+      "journal": "Nature Water",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-09-28",
+      "source_lane": "rss",
+      "published": "2026-09-25",
+      "title_only": false
+    },
+    {
+      "ts": "1790632710.481639",
+      "doi": "10.1021/acsestwater.6c00639",
+      "title": "Multivariable Investigation of Physicochemical Drivers Influencing Opportunistic Pathogens in Drinking Water",
+      "journal": "ACS ES&T Water",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-09-28",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-23",
+      "title_only": false
+    },
+    {
+      "ts": "1790632710.634489",
+      "doi": "10.1021/acs.est.6c11071",
+      "title": "Unveiling the Underexplored Neurotoxicity of 2,6-Dichloro-1,4-benzoquinone: Insights from Network Toxicology and In Vivo Models",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-09-28",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-24",
+      "title_only": false
+    },
+    {
+      "ts": "1790632710.809909",
+      "doi": "10.1021/acs.est.6c03113",
+      "title": "Maternal Epigenetic Signatures Linking Prenatal Serum PFAS Concentrations to Birth Size in an African American Maternal\u2013Child Cohort",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-09-28",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-23",
+      "title_only": false
+    },
+    {
+      "ts": "1790632710.983099",
+      "doi": "10.1016/j.conbuildmat.2026.148249",
+      "title": "Laboratory-scale particle-level evaluation of MSWIFA-RCA granulated artificial aggregates with 2D\u20133D morphology-assisted screening",
+      "journal": "Construction and Building Materials",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-09-28",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-23",
+      "title_only": false
+    },
+    {
+      "ts": "1790632711.131629",
+      "doi": "10.1016/j.jclepro.2026.149261",
+      "title": "Chemical upcycling method for complete binder replacement from recycled asphalt shingle (RAS) binder using renewable chemistry",
+      "journal": "Journal of Cleaner Production",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-09-28",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-24",
+      "title_only": true
+    },
+    {
+      "ts": "1790632711.278919",
+      "doi": "10.62943/rig.v5n2.2026.614",
+      "title": "Bioaceite de pir\u00f3lisis de biomasa como rejuvenecedor de ligantes envejecidos y mezclas con RAP: revisi\u00f3n sistem\u00e1tica",
+      "journal": "Revista Ingenio global.",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-09-28",
+      "source_lane": "openalex_keyword",
+      "published": "2026-09-23",
+      "title_only": false
+    },
+    {
+      "ts": "1790632711.434649",
+      "doi": "10.1016/j.jclepro.2026.149483",
+      "title": "Greenhouse gas and economic assessments of biochar-based composite panels from forest residues",
+      "journal": "Journal of Cleaner Production",
+      "topics": [
+        "New TEA/LCA Methods",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-09-28",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-22",
+      "title_only": false
+    },
+    {
+      "ts": "1790632711.587169",
+      "doi": "10.1016/j.nxmate.2026.103641",
+      "title": "Integrating bioplastics into waste management: barriers and pathways to a circular economy",
+      "journal": "Next Materials",
+      "topics": [
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-09-28",
+      "source_lane": "openalex_keyword",
+      "published": "2026-09-26",
+      "title_only": false
+    },
+    {
+      "ts": "1790632711.758969",
+      "doi": "10.1016/j.biombioe.2026.110132",
+      "title": "Impact of pH and organic loading rate on carboxylate production and microbial communities during semi-continuous anaerobic fermentation of macroalgae",
+      "journal": "Biomass and Bioenergy",
+      "topics": [
+        "Sargassum/Seaweed (HTL, AD, arrested AD)"
+      ],
+      "posted_date": "2026-09-28",
+      "source_lane": "openalex_keyword",
+      "published": "2026-09-24",
+      "title_only": false
+    },
+    {
+      "ts": "1790632711.910529",
+      "doi": "10.20937/rica.55718",
+      "title": "Sargassum spp. process and fermentation to obtain additive (EtOH) for a fuel-saving device attached to vehicles",
+      "journal": "Revista Internacional de Contaminaci\u00f3n Ambiental",
+      "topics": [
+        "Sargassum/Seaweed (HTL, AD, arrested AD)"
+      ],
+      "posted_date": "2026-09-28",
+      "source_lane": "openalex_keyword",
+      "published": "2026-09-23",
+      "title_only": false
+    },
+    {
+      "ts": "1790632712.234649",
+      "doi": "10.26434/chemrxiv.15009222/v1",
+      "title": "Data-driven models for performance prediction in a microalgae-based wastewater treatment process",
+      "journal": "ChemRxiv",
+      "topics": [
+        "Followed Authors"
+      ],
+      "posted_date": "2026-09-28",
+      "source_lane": "openalex_author",
+      "published": "2026-09-22",
+      "title_only": false,
+      "matched_authors": [
+        "Jeremy S. Guest"
+      ]
+    },
+    {
+      "ts": "1790632712.565359",
+      "doi": null,
+      "title": "How do I rekindle my motivation for earning my PhD?",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-09-28",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1790632712.748169",
+      "doi": null,
+      "title": "About to give your first lecture? Read this first",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-09-28",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1790632712.927659",
+      "doi": null,
+      "title": "How do I change labs gracefully during my PhD?",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-09-28",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
     }
   ],
   "runs": [
@@ -1208,6 +1460,31 @@
       "claude_input_tokens": 466138,
       "claude_output_tokens": 24424,
       "claude_cost_usd": 1.7648,
+      "empty_feeds": []
+    },
+    {
+      "date": "2026-09-28",
+      "collected": {
+        "rss": 53,
+        "openalex_journal": 340,
+        "openalex_keyword": 237,
+        "openalex_author": 1
+      },
+      "duplicates_removed": 113,
+      "already_posted_removed": 0,
+      "scored": 509,
+      "skipped_no_abstract": 7,
+      "relevant": 21,
+      "posted": 19,
+      "posted_by_lane": {
+        "rss": 7,
+        "openalex_journal": 7,
+        "openalex_keyword": 4,
+        "openalex_author": 1
+      },
+      "claude_input_tokens": 508104,
+      "claude_output_tokens": 25811,
+      "claude_cost_usd": 1.9115,
       "empty_feeds": []
     }
   ]
