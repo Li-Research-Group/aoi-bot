@@ -1341,6 +1341,381 @@
       "source_lane": "rss",
       "published": "",
       "title_only": false
+    },
+    {
+      "ts": "1791239995.623869",
+      "doi": "10.1021/acssuschemeng.6c02262",
+      "title": "Technoeconomic and Life Cycle Analyses of the Co-production of Olefins, Aromatics, and Alkanes Using Microwave-Assisted Conversion of Polypropylene Plastic Waste",
+      "journal": "ACS Sustainable Chemistry & Engineering",
+      "topics": [
+        "New TEA/LCA Methods",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "rss",
+      "published": "2026-10-02",
+      "title_only": false
+    },
+    {
+      "ts": "1791239995.767969",
+      "doi": "10.1007/s44498-026-00183-0",
+      "title": "Re-evaluating ecoinvent\u2019s suitability for direct product material footprint calculation",
+      "journal": "Journal of Industrial Ecology",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "rss",
+      "published": "2026-10-05",
+      "title_only": false
+    },
+    {
+      "ts": "1791239995.926859",
+      "doi": "10.1021/acsestwater.6c00580",
+      "title": "Global Harmonization of Life Cycle Assessments for Small- and Medium-Scale Wastewater Treatment",
+      "journal": "ACS ES&T Water",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-01",
+      "title_only": false
+    },
+    {
+      "ts": "1791239996.104739",
+      "doi": "10.1016/j.conbuildmat.2026.148413",
+      "title": "Probabilistic sustainability assessment of utilizing steel slag in asphalt pavement under varying stabilization pretreatment scenarios",
+      "journal": "Construction and Building Materials",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-01",
+      "title_only": false
+    },
+    {
+      "ts": "1791239996.294909",
+      "doi": "10.1016/j.bcab.2026.104271",
+      "title": "Microbial Cellulose in the Circular Packaging Economy: A Critical Review of Production, Functionalization, and Techno-Economic Scale-up Barriers",
+      "journal": "Biocatalysis and Agricultural Biotechnology",
+      "topics": [
+        "New TEA/LCA Methods",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-01",
+      "title_only": false
+    },
+    {
+      "ts": "1791239996.435969",
+      "doi": "10.1021/acssusresmgt.6c00149",
+      "title": "People\u2019s Water Data: Design and Validation of a Scalable Decentralized Framework for Monitoring Drinking Water Safety",
+      "journal": "ACS Sustainable Resource Management",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "rss",
+      "published": "2026-09-28",
+      "title_only": false
+    },
+    {
+      "ts": "1791239996.590299",
+      "doi": "10.1021/acsestwater.6c00554",
+      "title": "Ecological Risk of Down-the-Drain Fiproles and Imidacloprid in California Wastewater-Receiving Streams",
+      "journal": "ACS ES&T Water",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-28",
+      "title_only": false
+    },
+    {
+      "ts": "1791239996.735649",
+      "doi": "10.1021/acsestwater.6c00886",
+      "title": "Per- and Polyfluoroalkyl Substances in Surface Water and Fluvial Sediments of a Rural Gulf Coast Watershed: A Year-long Spatiotemporal Assessment",
+      "journal": "ACS ES&T Water",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-28",
+      "title_only": false
+    },
+    {
+      "ts": "1791239996.917059",
+      "doi": "10.1021/acs.est.6c08680",
+      "title": "Haloacetic Acid Disinfection Byproducts in Follicular Fluid and In Vitro Fertilization Outcomes: A Prospective Cohort Study in China",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-02",
+      "title_only": false
+    },
+    {
+      "ts": "1791239997.059559",
+      "doi": "10.1016/j.conbuildmat.2026.148416",
+      "title": "Influence of intrinsic biochar properties on the rheological, ageing, and storage stability behaviour of bitumen",
+      "journal": "Construction and Building Materials",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-01",
+      "title_only": false
+    },
+    {
+      "ts": "1791239997.212109",
+      "doi": "10.1016/j.wasman.2026.115902",
+      "title": "Thermochemical valorisation of sheep manure into bio-oil for asphalt binder modification",
+      "journal": "Waste Management",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-29",
+      "title_only": false
+    },
+    {
+      "ts": "1791239997.351559",
+      "doi": "10.1016/j.esd.2026.102140",
+      "title": "Bio-bitumen development from rice husk bio-oil: Mechanical performance optimisation, cradle-to-gate LCA, and rural biomass valorisation",
+      "journal": "Energy Sustainable Development/Energy for sustainable development",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-01",
+      "title_only": false
+    },
+    {
+      "ts": "1791239997.513499",
+      "doi": "10.6084/m9.figshare.33968758.v1",
+      "title": "Data for Process and Systems Modeling of Hydrothermal Liquefaction for Fuels and Bioproducts from Wet Organic Wastes.",
+      "journal": "Figshare",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)",
+        "New TEA/LCA Methods",
+        "Process Modeling Tools (BioSTEAM/QSDsan-like)"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-01",
+      "title_only": false
+    },
+    {
+      "ts": "1791239997.656709",
+      "doi": "10.1016/j.jclepro.2026.149607",
+      "title": "Eco-friendly ultra-high performance concrete prepared with solid waste-based cementless binder and recycled coarse aggregate derived from demolished C30 concrete",
+      "journal": "Journal of Cleaner Production",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-01",
+      "title_only": false
+    },
+    {
+      "ts": "1791239997.823299",
+      "doi": "10.1016/j.jclepro.2026.149605",
+      "title": "When is carbonation-cured concrete actually cleaner? A systematic review, a net-benefit condition framework, and a proposed minimum reporting set for CO2 mineralization in cement-based products",
+      "journal": "Journal of Cleaner Production",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "openalex_journal",
+      "published": "2026-09-30",
+      "title_only": false
+    },
+    {
+      "ts": "1791239998.005469",
+      "doi": "10.1016/j.wasman.2026.115899",
+      "title": "Advancing quality of recycling assessment: a new multidimensional indicator streamlining computation and communication",
+      "journal": "Waste Management",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-02",
+      "title_only": false
+    },
+    {
+      "ts": "1791239998.147449",
+      "doi": "10.5281/zenodo.23140955",
+      "title": "Model code and data for: Carbon dioxide removal capacity of converting harmful macroalgal blooms in South Korea to biochar: a Monte Carlo assessment",
+      "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+      "topics": [
+        "Sargassum/Seaweed (HTL, AD, arrested AD)",
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-04",
+      "title_only": false
+    },
+    {
+      "ts": "1791239998.290699",
+      "doi": "10.31223/x5rr63",
+      "title": "Carbon dioxide removal capacity of converting harmful macroalgal blooms in South Korea to biochar: a Monte Carlo assessment",
+      "journal": "",
+      "topics": [
+        "Sargassum/Seaweed (HTL, AD, arrested AD)"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-04",
+      "title_only": false
+    },
+    {
+      "ts": "1791239998.423839",
+      "doi": "10.1016/j.rineng.2026.113279",
+      "title": "Multicriteria optimization and decision making of ultrasound-assisted hydrothermal liquefaction process of Cladophora glomerata macro-algae for biooil production",
+      "journal": "Results in Engineering",
+      "topics": [
+        "Sargassum/Seaweed (HTL, AD, arrested AD)"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "openalex_keyword",
+      "published": "2026-09-29",
+      "title_only": false
+    },
+    {
+      "ts": "1791239998.565859",
+      "doi": "10.1016/j.nexus.2026.100835",
+      "title": "Advances in modelling and optimization of hydrothermal liquefaction for sustainable biofuel production: A review",
+      "journal": "Energy Nexus",
+      "topics": [
+        "Sargassum/Seaweed (HTL, AD, arrested AD)"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "openalex_keyword",
+      "published": "2026-09-27",
+      "title_only": false
+    },
+    {
+      "ts": "1791239998.880759",
+      "doi": "10.5281/zenodo.23124935",
+      "title": "Project PISCES: Process Integration & Synthesis using Chemical Engineering Standards",
+      "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+      "topics": [
+        "Followed Authors"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "openalex_author",
+      "published": "2026-10-03",
+      "title_only": false,
+      "matched_authors": [
+        "Corinne D. Scown"
+      ]
+    },
+    {
+      "ts": "1791239999.033879",
+      "doi": "10.5281/zenodo.23124562",
+      "title": "Project PISCES: Hosted Tool Description",
+      "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+      "topics": [
+        "Followed Authors"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "openalex_author",
+      "published": "2026-10-03",
+      "title_only": false,
+      "matched_authors": [
+        "Corinne D. Scown"
+      ]
+    },
+    {
+      "ts": "1791239999.313019",
+      "doi": null,
+      "title": "Researchers need schools as much as schools need researchers",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1791239999.448749",
+      "doi": null,
+      "title": "Can we have class outside? Seven tips to breeze through outdoor lectures",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1791239999.596109",
+      "doi": null,
+      "title": "I turn up late to meetings to dodge small talk. Am I wrong?",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1791239999.751179",
+      "doi": null,
+      "title": "As a new assistant professor, I thought I needed to hide my family responsibilities",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1791239999.891539",
+      "doi": null,
+      "title": "Fed up with Brazil\u2019s politicians not listening, a climate scientist runs for office",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1791240000.029579",
+      "doi": null,
+      "title": "I thought \u2018I don\u2019t know\u2019 signaled scientific incompetence. Now, I know different",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-05",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
     }
   ],
   "runs": [
@@ -1485,6 +1860,31 @@
       "claude_input_tokens": 508104,
       "claude_output_tokens": 25811,
       "claude_cost_usd": 1.9115,
+      "empty_feeds": []
+    },
+    {
+      "date": "2026-10-05",
+      "collected": {
+        "rss": 48,
+        "openalex_journal": 328,
+        "openalex_keyword": 256,
+        "openalex_author": 2
+      },
+      "duplicates_removed": 113,
+      "already_posted_removed": 0,
+      "scored": 508,
+      "skipped_no_abstract": 11,
+      "relevant": 35,
+      "posted": 28,
+      "posted_by_lane": {
+        "rss": 9,
+        "openalex_journal": 10,
+        "openalex_keyword": 7,
+        "openalex_author": 2
+      },
+      "claude_input_tokens": 513158,
+      "claude_output_tokens": 26405,
+      "claude_cost_usd": 1.9355,
       "empty_feeds": []
     }
   ]
