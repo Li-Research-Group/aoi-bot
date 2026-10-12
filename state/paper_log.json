@@ -1716,6 +1716,317 @@
       "source_lane": "rss",
       "published": "",
       "title_only": false
+    },
+    {
+      "ts": "1791845995.357169",
+      "doi": "10.1021/acssusresmgt.6c00373",
+      "title": "Biochar-Enhanced Geopolymers from Construction and Demolition Waste: Toward Carbon-Negative Construction Materials",
+      "journal": "ACS Sustainable Resource Management",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "rss",
+      "published": "2026-10-07",
+      "title_only": false
+    },
+    {
+      "ts": "1791845995.592489",
+      "doi": "10.1016/j.eti.2026.105256",
+      "title": "Techno-economic assessment and system-level comparison of construction demolition waste-derived stormwater filter media with conventional alternatives",
+      "journal": "Environmental Technology & Innovation",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-05",
+      "title_only": false
+    },
+    {
+      "ts": "1791845995.834439",
+      "doi": "10.3389/fmats.2026.1973453",
+      "title": "Hydration, mechanical, and environmental performance of blended cements incorporating ground granulated blast furnace slag, ground waste bottle glass, and metakaolin",
+      "journal": "Frontiers in Materials",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-08",
+      "title_only": false
+    },
+    {
+      "ts": "1791845996.084439",
+      "doi": "10.1016/j.dibe.2026.101067",
+      "title": "Freeze\u2013thaw durable recycled aggregate concrete with basalt fiber\u2013calcium carbonate whisker hybrid reinforcement for cold-region built environment applications",
+      "journal": "Developments in the Built Environment",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-08",
+      "title_only": false
+    },
+    {
+      "ts": "1791845996.330569",
+      "doi": "10.1021/acsestwater.6c00817",
+      "title": "Drinking Water in Crisis\u2500the Next 50 Years: The Future Roles and Opportunities of Regulators and Public Drinking Water Suppliers",
+      "journal": "ACS ES&T Water",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-07",
+      "title_only": true
+    },
+    {
+      "ts": "1791845996.569439",
+      "doi": "10.1021/acsestwater.6c00736",
+      "title": "Dominance of Mass Transfer over Water Chemistry in Rapid PFAS Mobilization from a PFAS-Spiked Landfill-Impacted Soil: Drinking-Water Implications",
+      "journal": "ACS ES&T Water",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-06",
+      "title_only": false
+    },
+    {
+      "ts": "1791845996.816129",
+      "doi": "10.1021/acs.est.6c10068",
+      "title": "Capturing the Organic Fluorine in Aqueous Film-Forming Foam (AFFF)-Impacted Groundwater: Suspect Screening, Extractable Organofluorine, and the Total Oxidizable Precursor Assay",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-06",
+      "title_only": false
+    },
+    {
+      "ts": "1791845997.061439",
+      "doi": "10.1016/j.watres.2026.127083",
+      "title": "Global trifluoroacetic acid hotspots in aquatic environments: Drinking-water risk and supply-chain responsibility",
+      "journal": "Water Research",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-05",
+      "title_only": true
+    },
+    {
+      "ts": "1791845997.309409",
+      "doi": "10.1021/acssuschemeng.6c04701",
+      "title": "Integrated Valorization of Plastic Waste into Synthetic Fuels and Electricity via Multi-Stage Upgrading: Process Modeling and Techno-Economic Analysis",
+      "journal": "ACS Sustainable Chemistry & Engineering",
+      "topics": [
+        "New TEA/LCA Methods",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-05",
+      "title_only": false
+    },
+    {
+      "ts": "1791845997.568529",
+      "doi": "10.1021/acssuschemeng.6c04070",
+      "title": "Economic and Environmental Evaluation of Sequential vs Single-Reactor Tandem Catalytic Routes for Furan-Derived Amine Production",
+      "journal": "ACS Sustainable Chemistry & Engineering",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-05",
+      "title_only": false
+    },
+    {
+      "ts": "1791845997.804569",
+      "doi": "10.1016/j.resconrec.2026.109193",
+      "title": "MarILCA characterization factors for microplastics, tire particles and cellulosic fibers in life cycle assessment: the PEBBLE method for regionalized physical impacts in marine, freshwater and terrestrial ecosystems",
+      "journal": "Resources, Conservation and Recycling",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-10",
+      "title_only": false
+    },
+    {
+      "ts": "1791845998.055199",
+      "doi": "10.26434/chemrxiv.15010134/v1",
+      "title": "Process and Systems Modeling of Hydrothermal Liquefaction for Fuels and",
+      "journal": "ChemRxiv",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)",
+        "New TEA/LCA Methods",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-09",
+      "title_only": false
+    },
+    {
+      "ts": "1791845998.291919",
+      "doi": "10.1007/s11356-026-38286-7",
+      "title": "Comparative evaluation of pyrolysis oils derived from lignocellulosic biomass and municipal solid waste as potential bitumen modifiers",
+      "journal": "Environmental Science and Pollution Research",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-09",
+      "title_only": false
+    },
+    {
+      "ts": "1791845998.545919",
+      "doi": "10.1016/j.jaap.2026.108169",
+      "title": "Biomass and plastic waste-derived pyrolysis oils for asphalt pavement applications: A review of technology readiness levels and future perspectives",
+      "journal": "Journal of Analytical and Applied Pyrolysis",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-05",
+      "title_only": false
+    },
+    {
+      "ts": "1791845999.023949",
+      "doi": "10.64898/2026.10.08.757756",
+      "title": "Distinct Strategies for Engineering Bioenergy Traits in Sorghum Drive Divergent Functional Shifts in the Rhizosphere Microbiome",
+      "journal": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "topics": [
+        "Followed Authors"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "openalex_author",
+      "published": "2026-10-09",
+      "title_only": false,
+      "matched_authors": [
+        "Corinne D. Scown"
+      ]
+    },
+    {
+      "ts": "1791845999.270169",
+      "doi": "10.1021/acsaem.6c02202",
+      "title": "Thermocleavable Cobalt Phthalocyanine Precursors for Electrode-Immobilized Catalysts in CO2-to-Methanol Conversion",
+      "journal": "ACS Applied Energy Materials",
+      "topics": [
+        "Followed Authors"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "openalex_author",
+      "published": "2026-10-06",
+      "title_only": false,
+      "matched_authors": [
+        "Ling Tao"
+      ]
+    },
+    {
+      "ts": "1791845999.507089",
+      "doi": "10.21203/rs.3.rs-11088425/v1",
+      "title": "Production of Advanced Products from Sargassum through Integrated Conversion",
+      "journal": "Research Square",
+      "topics": [
+        "Followed Authors"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "openalex_author",
+      "published": "2026-10-07",
+      "title_only": false,
+      "matched_authors": [
+        "Lieve M. L. Laurens"
+      ]
+    },
+    {
+      "ts": "1791845999.984809",
+      "doi": null,
+      "title": "Keep medical doctors in academia \u2014 without them, health-care research will suffer",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1791846000.236009",
+      "doi": null,
+      "title": "Early-career balancing act: training, moving, relationships and language learning",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1791846000.501089",
+      "doi": null,
+      "title": "What does a PhD pay? Data reveal huge gaps across Europe",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1791846000.767789",
+      "doi": null,
+      "title": "Trump administration proposes $100,000 fee for work authorization for international students",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1791846001.030289",
+      "doi": null,
+      "title": "Why I\u2019m going back to academia",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1791846001.303459",
+      "doi": null,
+      "title": "NIH ends 2026 with a boost for early-career researchers, but new awards are down overall",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-12",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
     }
   ],
   "runs": [
@@ -1885,6 +2196,31 @@
       "claude_input_tokens": 513158,
       "claude_output_tokens": 26405,
       "claude_cost_usd": 1.9355,
+      "empty_feeds": []
+    },
+    {
+      "date": "2026-10-12",
+      "collected": {
+        "rss": 42,
+        "openalex_journal": 211,
+        "openalex_keyword": 242,
+        "openalex_author": 3
+      },
+      "duplicates_removed": 106,
+      "already_posted_removed": 1,
+      "scored": 377,
+      "skipped_no_abstract": 10,
+      "relevant": 19,
+      "posted": 23,
+      "posted_by_lane": {
+        "rss": 7,
+        "openalex_keyword": 6,
+        "openalex_journal": 7,
+        "openalex_author": 3
+      },
+      "claude_input_tokens": 373211,
+      "claude_output_tokens": 19272,
+      "claude_cost_usd": 1.4087,
       "empty_feeds": []
     }
   ]
