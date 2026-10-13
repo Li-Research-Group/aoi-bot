@@ -1,0 +1,40 @@
+name: Reaction count (manual, read-only)
+
+# Manual-only. Counts 👍/👎 on already-posted papers over a look-back window
+# you choose and prints the result to the run summary. Posts nothing to
+# Slack and writes nothing back to the repo.
+
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'Look-back in days (number), or "all" for every logged paper'
+        type: string
+        default: "all"
+
+permissions:
+  contents: read
+
+jobs:
+  count:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: Count reactions
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          DAYS: ${{ inputs.days }}
+        run: |
+          {
+            echo '### Reaction count'
+            echo '```'
+            python count_reactions.py --days "$DAYS" 2>&1
+            echo '```'
+          } | tee -a "$GITHUB_STEP_SUMMARY"

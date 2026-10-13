@@ -122,7 +122,7 @@ def summarize_runs(runs: list[dict], since: str) -> dict:
 def initials(name: str) -> str:
     """Reduce a display name to up to three uppercase initials, so the
     monthly report's participation section names no one outright.
-    'Zoe Li' -> 'ZL', 'zoe.yalin.li' -> 'ZYL'."""
+    'Maria Santos' -> 'MS', 'maria.k.santos' -> 'MKS'."""
     parts = [p for p in re.split(r"[\s._\-]+", name.strip()) if p]
     letters = "".join(p[0] for p in parts if p[0].isalpha())
     return letters[:3].upper() or "?"

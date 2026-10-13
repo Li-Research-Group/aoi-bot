@@ -144,9 +144,9 @@ def test_posted_stats_splits_title_only_from_abstract_cohort():
 
 def test_initials_reduces_names_to_letters():
     from stats import initials
-    assert initials("Zoe Li") == "ZL"
-    assert initials("zoe.yalin.li") == "ZYL"
-    assert initials("Zoe") == "Z"
+    assert initials("Maria Santos") == "MS"
+    assert initials("maria.k.santos") == "MKS"
+    assert initials("Maria") == "M"
     assert initials("   ") == "?"
 
 
