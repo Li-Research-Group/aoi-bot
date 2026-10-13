@@ -31,7 +31,7 @@ jobs:
       STATE_FILE: state/paper_log.dryrun.json
       SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-python@v6
         with:
