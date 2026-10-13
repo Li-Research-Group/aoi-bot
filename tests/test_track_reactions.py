@@ -4,6 +4,8 @@ funnel, the dead-feed warning, the cohort split, and participation."""
 
 import datetime
 
+import pytest
+
 import track_reactions
 
 
@@ -55,3 +57,33 @@ def test_build_report_renders_all_sections(monkeypatch):
     # followed authors: named in full (the section is about tuning follows)
     assert "*Followed authors*" in report
     assert "Jane Q. Smith: 1 paper, 100% upvoted" in report
+
+
+def test_get_message_reactions_normalizes_slack_names(monkeypatch):
+    monkeypatch.setenv("SLACK_BOT_TOKEN", "x")
+    payload = {"ok": True, "message": {"reactions": [
+        {"name": "+1", "count": 2, "users": ["U1", "U2"]},
+        {"name": "+1::skin-tone-3", "count": 1, "users": ["U3"]},
+        {"name": "-1", "count": 1, "users": ["U1"]},
+        {"name": "eyes", "count": 1, "users": ["U2"]},
+    ]}}
+
+    class R:
+        def json(self):
+            return payload
+
+    monkeypatch.setattr(track_reactions.requests, "get", lambda *a, **k: R())
+    reactions = track_reactions.get_message_reactions("1")
+    assert track_reactions._counts(reactions) == (3, 1)
+    assert {r["name"]: r["users"] for r in reactions}["thumbsup"] == ["U1", "U2", "U3"]
+
+
+def test_get_message_reactions_raises_on_real_errors(monkeypatch):
+    monkeypatch.setenv("SLACK_BOT_TOKEN", "x")
+    class R:
+        def json(self):
+            return {"ok": False, "error": "missing_scope"}
+
+    monkeypatch.setattr(track_reactions.requests, "get", lambda *a, **k: R())
+    with pytest.raises(RuntimeError):
+        track_reactions.get_message_reactions("1")

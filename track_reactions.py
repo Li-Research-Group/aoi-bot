@@ -42,10 +42,29 @@ def _headers() -> dict:
     return {"Authorization": f"Bearer {os.environ['SLACK_BOT_TOKEN']}"}
 
 
+# Slack's API reports 👍/👎 as "+1"/"-1" (thumbsup/thumbsdown are only UI
+# aliases) and appends "::skin-tone-N" for toned variants.
+_EMOJI_ALIASES = {"+1": UPVOTE_EMOJI, "-1": DOWNVOTE_EMOJI}
+
+
+def _normalize_reactions(reactions: list[dict]) -> list[dict]:
+    """Fold Slack's emoji names onto the names used here and merge variants
+    (e.g. "+1" and "+1::skin-tone-3" become one "thumbsup" entry)."""
+    merged: dict[str, dict] = {}
+    for r in reactions:
+        base = r["name"].split("::")[0]
+        name = _EMOJI_ALIASES.get(base, base)
+        m = merged.setdefault(name, {"name": name, "count": 0, "users": []})
+        m["count"] += r.get("count", 0)
+        m["users"] += [u for u in r.get("users", []) if u not in m["users"]]
+    return list(merged.values())
+
+
 def get_message_reactions(message_ts: str) -> list[dict]:
-    """Raw `reactions` array for one message: [{"name", "count", "users"}].
-    Empty list if the message has no reactions (Slack returns an error for
-    that case rather than an empty list)."""
+    """Normalized `reactions` array for one message: [{"name", "count",
+    "users"}]. Empty list if the message has no reactions or was deleted;
+    any other Slack error (missing scope, bot not in channel, ...) raises
+    so the report can't silently show zero reactions."""
     resp = requests.get(
         f"{SLACK_API}/reactions.get",
         headers=_headers(),
@@ -54,8 +73,10 @@ def get_message_reactions(message_ts: str) -> list[dict]:
     )
     data = resp.json()
     if not data.get("ok"):
-        return []
-    return data.get("message", {}).get("reactions", [])
+        if data.get("error") in ("message_not_found", "no_reaction"):
+            return []
+        raise RuntimeError(f"Slack reactions.get failed for {message_ts}: {data}")
+    return _normalize_reactions(data.get("message", {}).get("reactions", []))
 
 
 def _counts(reactions: list[dict]) -> tuple[int, int]:
