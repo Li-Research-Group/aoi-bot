@@ -1,8 +1,8 @@
-name: Reaction count (manual, read-only)
+name: Manual feedback report
 
 # Manual-only. Counts 👍/👎 on already-posted papers over a look-back window
-# you choose and prints the result to the run summary. Posts nothing to
-# Slack and writes nothing back to the repo.
+# you choose, posts the result to the Slack channel and prints it to the run
+# summary. Writes nothing back to the repo.
 
 on:
   workflow_dispatch:

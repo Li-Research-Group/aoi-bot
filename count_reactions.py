@@ -1,8 +1,9 @@
-"""On-demand, read-only reaction count over a chosen look-back window.
-Posts nothing to Slack. Run via the "Reaction count" workflow, or locally:
+"""On-demand reaction count over a chosen look-back window, posted to the
+Slack channel. Run via the "Reaction count" workflow, or locally:
 
-    python count_reactions.py            # all logged papers
-    python count_reactions.py --days 60  # papers posted in the last 60 days
+    python count_reactions.py                    # all logged papers
+    python count_reactions.py --days 60          # last 60 days
+    python count_reactions.py --days 60 --no-post  # print only
 
 Convention (see track_reactions.py): no reaction means no strong opinion,
 so the counts below are votes, not a response rate.
@@ -92,4 +93,9 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--days", type=_parse_days, default=None,
                     help='look-back in days; omit or "all" for every logged paper')
-    print(build_count(ap.parse_args().days))
+    ap.add_argument("--no-post", action="store_true", help="print the report without posting to Slack")
+    args = ap.parse_args()
+    report = build_count(args.days)
+    print(report)
+    if not args.no_post:
+        tr.post_report(report)
