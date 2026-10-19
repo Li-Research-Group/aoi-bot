@@ -2027,6 +2027,409 @@
       "source_lane": "rss",
       "published": "",
       "title_only": false
+    },
+    {
+      "ts": "1792444242.598999",
+      "doi": "10.1021/acs.est.6c07700",
+      "title": "Modeled Groundwater Decline is Associated with Lower Arsenic Concentrations in Hanoi",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "rss",
+      "published": "2026-10-18",
+      "title_only": false
+    },
+    {
+      "ts": "1792444242.788419",
+      "doi": "10.1021/acsestwater.6c00947",
+      "title": "Pilot-Scale Demonstration of Foam Fractionation and Hydrothermal Alkaline Treatment for PFAS Removal and Destruction in a Municipal Wastewater Stream",
+      "journal": "ACS ES&T Water",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-16",
+      "title_only": false
+    },
+    {
+      "ts": "1792444242.930579",
+      "doi": "10.1021/acsestwater.5c01117",
+      "title": "Microbial Community Dynamics and Filter Design: Implications for Point-of-Use Filters in Chloramine Water Systems",
+      "journal": "ACS ES&T Water",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-12",
+      "title_only": false
+    },
+    {
+      "ts": "1792444243.075829",
+      "doi": "10.1021/acs.est.6c07375",
+      "title": "Halogenated Nucleosides: Highly Toxic Biogenic Disinfection Byproducts Prevalent in Drinking Water",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-16",
+      "title_only": false
+    },
+    {
+      "ts": "1792444243.231039",
+      "doi": "10.1021/acssuschemeng.6c02432",
+      "title": "Leveraging Automation and Machine Learning To Bridge the Sustainability Data Gap",
+      "journal": "ACS Sustainable Chemistry & Engineering",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-14",
+      "title_only": false
+    },
+    {
+      "ts": "1792444243.373619",
+      "doi": "10.1021/acssuschemeng.6c05399",
+      "title": "Integrated CO2 Capture and Utilization for Methanol Production: Techno-Economic Trade-offs between Capture Savings and Purification Costs",
+      "journal": "ACS Sustainable Chemistry & Engineering",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-13",
+      "title_only": false
+    },
+    {
+      "ts": "1792444243.519829",
+      "doi": "10.1016/j.resconrec.2026.109198",
+      "title": "SCREEN-LCA: Ex-ante prioritization of bio-based pathways for chemicals and plastics under a climate-mitigation objective",
+      "journal": "Resources, Conservation and Recycling",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-17",
+      "title_only": false
+    },
+    {
+      "ts": "1792444243.663169",
+      "doi": "10.26434/chemrxiv.15010134/v2",
+      "title": "Process and Systems Modeling of Hydrothermal Liquefaction for Fuels and Bioproducts from Wet Organic Wastes",
+      "journal": "ChemRxiv",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)",
+        "New TEA/LCA Methods",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-12",
+      "title_only": false
+    },
+    {
+      "ts": "1792444243.805249",
+      "doi": "10.1016/j.conbuildmat.2026.148594",
+      "title": "Recursive reuse of recycled concrete powder with second-cycle performance retention through graphene oxide modification",
+      "journal": "Construction and Building Materials",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-17",
+      "title_only": false
+    },
+    {
+      "ts": "1792444243.960579",
+      "doi": "10.1186/s40069-026-00981-7",
+      "title": "Quantifying the Relationship Between Environmental\u2013Mechanical Parameters of Structural Concrete Incorporating Recycled Materials: A Decision Framework for Optimized Selection",
+      "journal": "International Journal of Concrete Structures and Materials",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-18",
+      "title_only": false
+    },
+    {
+      "ts": "1792444244.115309",
+      "doi": "10.1080/19648189.2026.2746480",
+      "title": "High-performance self-compacting geopolymer concrete synthesised from black tea ash, waste-glass-derived activator, and recycled construction and demolition waste",
+      "journal": "European Journal of Environmental and Civil engineering",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-15",
+      "title_only": false
+    },
+    {
+      "ts": "1792444244.273659",
+      "doi": null,
+      "title": "\u00c9valuation environnementale d'un panneau de construction pour une construction circulaire fabriqu\u00e9 \u00e0 partir de mat\u00e9riaux recycl\u00e9s",
+      "journal": "ORBi (University of Li\u00e8ge)",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-18",
+      "title_only": false
+    },
+    {
+      "ts": "1792444244.411719",
+      "doi": "10.1002/bit.70410",
+      "title": "Synergistic Co\u2010Fermentation of Ulva and Waste Activated Sludge for Sustainable Resource Recovery: Mechanistic Insights From Dissolved Organic Matter Transformation and Multi\u2010Omics Analysis",
+      "journal": "Biotechnology and Bioengineering",
+      "topics": [
+        "Sargassum/Seaweed (HTL, AD, arrested AD)"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-12",
+      "title_only": false
+    },
+    {
+      "ts": "1792444244.580319",
+      "doi": "10.1021/bk-2026-1534.ch003",
+      "title": "Anaerobic Digestion of Marine Biomass and Novel Feed Stocks",
+      "journal": "",
+      "topics": [
+        "Sargassum/Seaweed (HTL, AD, arrested AD)"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-13",
+      "title_only": false
+    },
+    {
+      "ts": "1792444244.743319",
+      "doi": "10.1021/bk-2026-1534",
+      "title": "Engineering Innovations in Anaerobic Digestion",
+      "journal": "",
+      "topics": [
+        "Sargassum/Seaweed (HTL, AD, arrested AD)"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-13",
+      "title_only": false
+    },
+    {
+      "ts": "1792444244.920549",
+      "doi": "10.1061/jmcee7.mteng-24067",
+      "title": "Pomegranate Molasses as a Novel Bio-Modifier for Asphalt Binder: An Experimental Investigation",
+      "journal": "Journal of Materials in Civil Engineering",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-12",
+      "title_only": false
+    },
+    {
+      "ts": "1792444245.066179",
+      "doi": "10.47869/tcsj.77.8.4",
+      "title": "Nghi\u00ean c\u1ee9u \u1ea3nh h\u01b0\u1edfng c\u1ee7a lignin chi\u1ebft t\u00e1ch t\u1eeb ch\u1ea5t th\u1ea3i nh\u00e0 m\u00e1y gi\u1ea5y B\u00e3i B\u1eb1ng \u0111\u1ebfn t\u00ednh ch\u1ea5t c\u01a1 l\u00fd c\u1ee7a nh\u1ef1a \u0111\u01b0\u1eddng 60/70",
+      "journal": "The Transport and Communications Science Journal",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-15",
+      "title_only": false
+    },
+    {
+      "ts": "1792444245.205199",
+      "doi": "10.1007/s11043-026-09930-z",
+      "title": "Performance-driven validation of a vegetable-oil-based asphalt binder in experimental pavement sections",
+      "journal": "Mechanics of Time-Dependent Materials",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-14",
+      "title_only": false
+    },
+    {
+      "ts": "1792444245.353399",
+      "doi": "10.1038/s41467-026-78873-3",
+      "title": "Size-dependent catalysis of Ru nanoparticles for selective reductive amination of PET plastic",
+      "journal": "Nature Communications",
+      "topics": [
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-17",
+      "title_only": false
+    },
+    {
+      "ts": "1792444245.497009",
+      "doi": "10.18623/rvd.v23.8626",
+      "title": "RECUPERA\u00c7\u00c3O DE RECURSOS E ECONOMIA CIRCULAR NO SANEAMENTO DESCENTRALIZADO: BALAN\u00c7O DE MASSA E LIMITES OPERACIONAIS EM UM MUNIC\u00cdPIO DO SEMI\u00c1RIDO BRASILEIRO",
+      "journal": "Veredas do Direito Direito Ambiental e Desenvolvimento Sustent\u00e1vel",
+      "topics": [
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-15",
+      "title_only": false
+    },
+    {
+      "ts": "1792444245.632419",
+      "doi": "10.66506/ed.14",
+      "title": "Techno-economic comparison of fossil, renewable-carbon and recycling pathways for polypropylene",
+      "journal": "Energy demand",
+      "topics": [
+        "New TEA/LCA Methods",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-15",
+      "title_only": false
+    },
+    {
+      "ts": "1792444245.940069",
+      "doi": "10.1038/s41467-026-78481-1",
+      "title": "Replacing anaerobic fermentation with reverse \u03b2-oxidation enables growth-coupled evolution for enhanced fatty-alcohol production",
+      "journal": "Nature Communications",
+      "topics": [
+        "Followed Authors"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_author",
+      "published": "2026-10-14",
+      "title_only": false,
+      "matched_authors": [
+        "Corinne D. Scown"
+      ]
+    },
+    {
+      "ts": "1792444246.097979",
+      "doi": "10.1111/gcbb.70179",
+      "title": "Reducing Uncertainty in Cradle\u2010to\u2010Farmgate Carbon Intensity for Feedstock Using Model\u2010Data Fusion",
+      "journal": "GCB Bioenergy",
+      "topics": [
+        "Followed Authors"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_author",
+      "published": "2026-10-12",
+      "title_only": false,
+      "matched_authors": [
+        "Jeremy S. Guest"
+      ]
+    },
+    {
+      "ts": "1792444246.239379",
+      "doi": "10.1021/acs.est.6c06045",
+      "title": "Putting Large Language Models into Environmental Context",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Followed Authors"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "openalex_author",
+      "published": "2026-10-13",
+      "title_only": false,
+      "matched_authors": [
+        "Jun\u2010Jie Zhu"
+      ]
+    },
+    {
+      "ts": "1792444246.536879",
+      "doi": null,
+      "title": "\u2018Fiercely stubborn\u2019: the US scientists continuing their research amid funding cuts",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1792444246.674999",
+      "doi": null,
+      "title": "Experienced researchers \u2018disrupt\u2019 less than rookie scientists \u2014 but their ideas last",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1792444246.810799",
+      "doi": null,
+      "title": "Why failure is a taboo topic in science",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1792444246.936659",
+      "doi": null,
+      "title": "Former baseball star Brad Lidge rolls the dice on second career as archaeologist",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1792444247.115149",
+      "doi": null,
+      "title": "How I learned to speak up with confidence",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1792444247.285569",
+      "doi": null,
+      "title": "For women academics, feeling devalued can be a fatal career blow",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-19",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
     }
   ],
   "runs": [
@@ -2221,6 +2624,31 @@
       "claude_input_tokens": 373211,
       "claude_output_tokens": 19272,
       "claude_cost_usd": 1.4087,
+      "empty_feeds": []
+    },
+    {
+      "date": "2026-10-19",
+      "collected": {
+        "rss": 62,
+        "openalex_journal": 269,
+        "openalex_keyword": 241,
+        "openalex_author": 3
+      },
+      "duplicates_removed": 118,
+      "already_posted_removed": 0,
+      "scored": 444,
+      "skipped_no_abstract": 9,
+      "relevant": 30,
+      "posted": 30,
+      "posted_by_lane": {
+        "rss": 7,
+        "openalex_journal": 7,
+        "openalex_keyword": 13,
+        "openalex_author": 3
+      },
+      "claude_input_tokens": 447731,
+      "claude_output_tokens": 22954,
+      "claude_cost_usd": 1.6875,
       "empty_feeds": []
     }
   ]
