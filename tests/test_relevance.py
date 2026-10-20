@@ -111,3 +111,15 @@ def test_heuristic_filter_scores_tracked_journal_on_title_alone():
     kept, acct = heuristic_filter(papers)
     assert len(kept) == 1
     assert kept[0]["title_only"] is True
+
+
+def test_system_prompt_requires_english_text():
+    client = _FakeClient([_FakeResponse({"relevant": False, "topics": [], "reason": "not in English"})])
+    filter_relevant(
+        [{"title": "Eliminación de contaminantes", "journal": "Algal Research",
+          "abstract": "Estudio de la eliminación de contaminantes emergentes."}],
+        client=client,
+    )
+    system = client.calls[0]["system"]
+    assert "English" in system
+    assert "title is not in English" in system

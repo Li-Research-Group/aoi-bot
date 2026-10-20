@@ -43,6 +43,12 @@ other text, in this exact shape:
 
 If "relevant" is false, "topics" should be an empty list.
 
+Only papers written in English qualify. If the title is not in English, mark \
+the paper not relevant regardless of topic, with the reason "not in English" \
+-- even when the abstract is in English (some repositories attach an English \
+abstract to a French, Vietnamese, etc. paper). The same goes for a non-English \
+abstract under an English title.
+
 Some papers have no abstract (the publisher does not release one). For those, \
 judge from the title and journal alone and be conservative -- only mark it \
 relevant if the title clearly and specifically points to one of the topics.
