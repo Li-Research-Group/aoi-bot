@@ -2430,6 +2430,317 @@
       "source_lane": "rss",
       "published": "",
       "title_only": false
+    },
+    {
+      "ts": "1793048909.723629",
+      "doi": "10.1021/acsenvironau.6c00246",
+      "title": "Precious or Base Metals? A Sustainability Assessment of Catalytic Strategies in Chemical Synthesis",
+      "journal": "ACS Environmental Au",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "rss",
+      "published": "2026-10-19",
+      "title_only": false
+    },
+    {
+      "ts": "1793048909.889349",
+      "doi": "10.1021/acssusresmgt.6c00430",
+      "title": "Life Cycle Assessment of Carbon Fiber Production at Laboratory Scale Made from Two Different Polymers: Expanded Polystyrene (EPS) and Organosolv Lignin",
+      "journal": "ACS Sustainable Resource Management",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "rss",
+      "published": "2026-10-25",
+      "title_only": false
+    },
+    {
+      "ts": "1793048910.039199",
+      "doi": "10.1021/acssusresmgt.6c00261",
+      "title": "Integrating Life Cycle Assessment and the Analytic Hierarchy Process for Sustainable Decision-Making in Silicon Recovery from Photovoltaic Panels",
+      "journal": "ACS Sustainable Resource Management",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "rss",
+      "published": "2026-10-25",
+      "title_only": false
+    },
+    {
+      "ts": "1793048910.207519",
+      "doi": "10.1021/acs.est.6c03200",
+      "title": "Electrification, Lightweighting, and Materials Supply: A Dynamic Life Cycle Assessment of the U.S. Light-Duty Vehicle Fleet",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-24",
+      "title_only": false
+    },
+    {
+      "ts": "1793048910.363499",
+      "doi": "10.1021/acsestwater.6c00435",
+      "title": "Organic Carbon Inputs from Lakes and Septic Systems Increase Manganese Exposure Risk in Lakeside Private Wells",
+      "journal": "ACS ES&T Water",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-20",
+      "title_only": false
+    },
+    {
+      "ts": "1793048910.529809",
+      "doi": "10.1021/acs.est.6c09190",
+      "title": "Monitoring Advanced Hydration Station (AHS) Water Quality in Flint, MI, School Buildings: Field Grab Sampling and Filter-Based Lead Assessment",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-23",
+      "title_only": false
+    },
+    {
+      "ts": "1793048910.722849",
+      "doi": "10.1080/29931509.2026.2726086",
+      "title": "From waste to resilience: the future of wastewater",
+      "journal": "Critical Insights in Environmental Science and Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-19",
+      "title_only": false
+    },
+    {
+      "ts": "1793048910.855039",
+      "doi": "10.5772/intechopen.1016369",
+      "title": "Groundwater Pollution: Sources and Consequences",
+      "journal": "IntechOpen eBooks",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-21",
+      "title_only": false
+    },
+    {
+      "ts": "1793048910.987179",
+      "doi": "10.1021/acs.est.6c01727",
+      "title": "Multi-Scale Multi-Indicator Assessment of Material Recovery Pathways: The Case of the United States Flat Glass Sector",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "New TEA/LCA Methods",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-23",
+      "title_only": false
+    },
+    {
+      "ts": "1793048911.124349",
+      "doi": "10.1016/j.resconrec.2026.109206",
+      "title": "An outlook of worldwide circular economy targets: scope, metrics, and portfolio patterns",
+      "journal": "Resources, Conservation and Recycling",
+      "topics": [
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-23",
+      "title_only": false
+    },
+    {
+      "ts": "1793048911.293359",
+      "doi": "10.3390/phycology6040113",
+      "title": "Cross-Island Transferability of Multi-Horizon Probabilistic Coastal Sargassum Occurrence Forecasts: A Frozen-Model Evaluation from Puerto Rico to the Dominican Republic",
+      "journal": "Phycology",
+      "topics": [
+        "Sargassum/Seaweed (HTL, AD, arrested AD)"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-25",
+      "title_only": false
+    },
+    {
+      "ts": "1793048911.459769",
+      "doi": "10.1177/03611981261487409",
+      "title": "Chemical Characterization and Field Aging Behavior of Bio- and Petroleum-Based Spray-on Rejuvenators on Asphalt Pavements",
+      "journal": "Transportation Research Record Journal of the Transportation Research Board",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-22",
+      "title_only": false
+    },
+    {
+      "ts": "1793048911.609289",
+      "doi": "10.5281/zenodo.23639441",
+      "title": "Integrated BioSTEAM\u2013LCA and Machine Learning Decision Support for Sustainable Oleamide Production from Waste Cooking Oil",
+      "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+      "topics": [
+        "Process Modeling Tools (BioSTEAM/QSDsan-like)",
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-25",
+      "title_only": false
+    },
+    {
+      "ts": "1793048911.762029",
+      "doi": "10.55084/grinrey/rte/978-81-996627-6-6_1",
+      "title": "Techno-Economic Perspectives on CCUS Deployment for Reducing Process-Related CO\u2082 Emissions in Cement-Based Construction",
+      "journal": "",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-22",
+      "title_only": false
+    },
+    {
+      "ts": "1793048912.061879",
+      "doi": "10.1016/j.apenergy.2026.129139",
+      "title": "Economic and emissions analysis of natural gas power with high-efficiency CO2 capture",
+      "journal": "Applied Energy",
+      "topics": [
+        "Followed Authors"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "openalex_author",
+      "published": "2026-10-23",
+      "title_only": false,
+      "matched_authors": [
+        "Corinne D. Scown"
+      ]
+    },
+    {
+      "ts": "1793048912.236239",
+      "doi": "10.1093/ismeco/ycag305",
+      "title": "Distinct Strategies for Engineering Bioenergy Traits in Sorghum Drive Divergent Functional Shifts in the Rhizosphere Microbiome",
+      "journal": "ISME Communications",
+      "topics": [
+        "Followed Authors"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "openalex_author",
+      "published": "2026-10-21",
+      "title_only": false,
+      "matched_authors": [
+        "Corinne D. Scown"
+      ]
+    },
+    {
+      "ts": "1793048912.386209",
+      "doi": "10.1007/s12155-026-11065-5",
+      "title": "Field Testing of Sorghum Lines with Stacked Coproduct and Low-Lignin Traits",
+      "journal": "BioEnergy Research",
+      "topics": [
+        "Followed Authors"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "openalex_author",
+      "published": "2026-10-20",
+      "title_only": false,
+      "matched_authors": [
+        "Corinne D. Scown"
+      ]
+    },
+    {
+      "ts": "1793048912.653749",
+      "doi": null,
+      "title": "Are salaries getting worse? Many scientists think so",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1793048912.818889",
+      "doi": null,
+      "title": "Mentoring a lab colleague? Share your \u2018CV of failures\u2019 with them",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1793048912.949489",
+      "doi": null,
+      "title": "I\u2019m expected to work excessive hours in the lab. Should I speak up about my disability?",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1793048913.113629",
+      "doi": null,
+      "title": "I used to be homeless. That experience shapes my science",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1793048913.243859",
+      "doi": null,
+      "title": "Could your chatbot tip off a scientific rival? It\u2019s possible, researchers say",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1793048913.365529",
+      "doi": null,
+      "title": "",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-10-26",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
     }
   ],
   "runs": [
@@ -2649,6 +2960,31 @@
       "claude_input_tokens": 447731,
       "claude_output_tokens": 22954,
       "claude_cost_usd": 1.6875,
+      "empty_feeds": []
+    },
+    {
+      "date": "2026-10-26",
+      "collected": {
+        "rss": 38,
+        "openalex_journal": 308,
+        "openalex_keyword": 145,
+        "openalex_author": 3
+      },
+      "duplicates_removed": 69,
+      "already_posted_removed": 0,
+      "scored": 408,
+      "skipped_no_abstract": 14,
+      "relevant": 15,
+      "posted": 23,
+      "posted_by_lane": {
+        "rss": 9,
+        "openalex_journal": 5,
+        "openalex_keyword": 6,
+        "openalex_author": 3
+      },
+      "claude_input_tokens": 405773,
+      "claude_output_tokens": 19686,
+      "claude_cost_usd": 1.5126,
       "empty_feeds": []
     }
   ]
