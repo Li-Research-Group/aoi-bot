@@ -2741,6 +2741,337 @@
       "source_lane": "rss",
       "published": "",
       "title_only": false
+    },
+    {
+      "ts": "1793662562.045079",
+      "doi": "10.1021/acsestwater.6c01012",
+      "title": "Water Quality Changes along the South Platte River in the Denver Metro Area: PFAS, Organic, and Select Inorganic Constituents",
+      "journal": "ACS ES&T Water",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-28",
+      "title_only": false
+    },
+    {
+      "ts": "1793662562.132839",
+      "doi": "10.1021/acs.est.6c07214",
+      "title": "Unregulated Disinfection Byproducts from de facto Water Reuse: Molecular Evidence for EfOM-Induced Redirection of Chlorination Pathways",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-29",
+      "title_only": false
+    },
+    {
+      "ts": "1793662562.222559",
+      "doi": "10.1021/acs.est.6c13101",
+      "title": "Nontargeted Identification and Prioritization of Organic Contaminants in Biosolid-Amended Soils across the United States",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-28",
+      "title_only": false
+    },
+    {
+      "ts": "1793662562.307439",
+      "doi": "10.1021/acs.est.6c08811",
+      "title": "Microplastics Are Prevalent in Striped Bass and Shiner Surfperch Tissues across San Francisco Bay, California",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-26",
+      "title_only": false
+    },
+    {
+      "ts": "1793662562.391649",
+      "doi": "10.1021/acssuschemeng.6c08596",
+      "title": "Primer-Independent Synechococcus Cyanophycin Synthetase Enables Cell-Free Synthesis of Cyanophycin and Its Homoarginine-Substituted Analogue via Adenosine Triphosphate Regeneration",
+      "journal": "ACS Sustainable Chemistry & Engineering",
+      "topics": [
+        "Cell-Free Systems Market Analysis/TEA"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-26",
+      "title_only": false
+    },
+    {
+      "ts": "1793662562.474499",
+      "doi": "10.1021/acssusresmgt.6c00520",
+      "title": "Living in a World with Plastics: A Chemistry-Informed Perspective",
+      "journal": "ACS Sustainable Resource Management",
+      "topics": [
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-26",
+      "title_only": false
+    },
+    {
+      "ts": "1793662562.551549",
+      "doi": "10.1021/acs.est.6c09991",
+      "title": "Industrial Solid Wastes Recycling from Steel and Power Sectors Delivers Climate and Net Societal Benefits",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-29",
+      "title_only": false
+    },
+    {
+      "ts": "1793662562.638969",
+      "doi": "10.1016/j.jclepro.2026.149831",
+      "title": "Environmental, circularity, and criticality assessment of end-of-life lithium-ion batteries: Implications for management strategies in Mexico",
+      "journal": "Journal of Cleaner Production",
+      "topics": [
+        "New TEA/LCA Methods",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "openalex_journal",
+      "published": "2026-11-01",
+      "title_only": false
+    },
+    {
+      "ts": "1793662562.721949",
+      "doi": "10.58257/ijprems55154",
+      "title": "MICROPLASTIC WASTE TO FUNCTIONAL CARBON MATERIALS",
+      "journal": "International Journal of Progressive Research in Engineering Management and Science",
+      "topics": [
+        "Hydrothermal Microplastic Degradation",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-28",
+      "title_only": false
+    },
+    {
+      "ts": "1793662562.799089",
+      "doi": "10.1021/acs.est.6c06868",
+      "title": "A Framework for Time-Explicit Life Cycle Optimization",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-29",
+      "title_only": false
+    },
+    {
+      "ts": "1793662562.880969",
+      "doi": "10.1016/j.jclepro.2026.149826",
+      "title": "Centralized versus conventional anaerobic digestion of sewage sludge: An environmental and economic assessment",
+      "journal": "Journal of Cleaner Production",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-31",
+      "title_only": false
+    },
+    {
+      "ts": "1793662562.991679",
+      "doi": "10.1021/acs.est.6c10880",
+      "title": "Near-Complete Decomposition of Soil Microplastics over Transient Electrical Heating and Associated Benefits",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Hydrothermal Microplastic Degradation"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-26",
+      "title_only": false
+    },
+    {
+      "ts": "1793662563.077489",
+      "doi": "10.1016/j.conbuildmat.2026.148680",
+      "title": "Strengthening multi-generation recycled aggregate concrete for sustainability, mechanical strength and chloride resistance: Experimental and numerical studies",
+      "journal": "Construction and Building Materials",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "openalex_journal",
+      "published": "2026-10-29",
+      "title_only": true
+    },
+    {
+      "ts": "1793662563.167109",
+      "doi": null,
+      "title": "Accelerated carbonation of Municipal Solid Waste Incinerated Bottom Ash (MSWI-BA) for the design of concrete",
+      "journal": "ORBi (University of Li\u00e8ge)",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "openalex_keyword",
+      "published": "2026-11-05",
+      "title_only": false
+    },
+    {
+      "ts": "1793662563.249999",
+      "doi": "10.3390/ma19214556",
+      "title": "Pyrolysis Bio-Oil as a Partial Substitute for Conventional Bitumen in More Sustainable Asphalt Mixtures",
+      "journal": "Materials",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-28",
+      "title_only": false
+    },
+    {
+      "ts": "1793662563.336429",
+      "doi": "10.3389/fmats.2026.1987666",
+      "title": "Rheological performance and modification mechanism of corn stover oil/polyphosphoric acid composite-modified asphalt",
+      "journal": "Frontiers in Materials",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-30",
+      "title_only": false
+    },
+    {
+      "ts": "1793662563.418049",
+      "doi": "10.82135/tno-1036814",
+      "title": "Exploring the Potential of Microalgae as an Alternative Aged Bitumen Rejuvenator",
+      "journal": "TNO Repository",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-29",
+      "title_only": false
+    },
+    {
+      "ts": "1793662563.500269",
+      "doi": "10.26434/chemrxiv.15011322/v1",
+      "title": "Global potential of decentralized waste biomass to solid carbon for scalable carbon removal",
+      "journal": "ChemRxiv",
+      "topics": [
+        "Sargassum/Seaweed (HTL, AD, arrested AD)",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "openalex_keyword",
+      "published": "2026-10-30",
+      "title_only": false
+    },
+    {
+      "ts": "1793662563.660409",
+      "doi": "10.1111/pbi.70771",
+      "title": "Lessons From CABBI : Advancing Vegetative Oil Production in C 4 Crops Through a Vertically Integrated DBTL Framework",
+      "journal": "Plant Biotechnology Journal",
+      "topics": [
+        "Followed Authors"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "openalex_author",
+      "published": "2026-10-28",
+      "title_only": false,
+      "matched_authors": [
+        "Jeremy S. Guest"
+      ]
+    },
+    {
+      "ts": "1793662563.824399",
+      "doi": null,
+      "title": "Careers in physics",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1793662563.912339",
+      "doi": null,
+      "title": "From curiosity to impact",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1793662563.994279",
+      "doi": null,
+      "title": "Leading a research group with curiosity and collaboration",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1793662564.077169",
+      "doi": null,
+      "title": "Early-career researchers\u2019 right to unionize at NIH is upheld, against agency\u2019s petition",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1793662564.156469",
+      "doi": null,
+      "title": "A colleague hated my AI-polished emails\u2014so he set a trap",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1793662564.246599",
+      "doi": null,
+      "title": "I used to be homeless. That experience shapes my science",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-02",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
     }
   ],
   "runs": [
@@ -2985,6 +3316,31 @@
       "claude_input_tokens": 405773,
       "claude_output_tokens": 19686,
       "claude_cost_usd": 1.5126,
+      "empty_feeds": []
+    },
+    {
+      "date": "2026-11-02",
+      "collected": {
+        "rss": 47,
+        "openalex_journal": 327,
+        "openalex_keyword": 240,
+        "openalex_author": 1
+      },
+      "duplicates_removed": 99,
+      "already_posted_removed": 3,
+      "scored": 502,
+      "skipped_no_abstract": 9,
+      "relevant": 21,
+      "posted": 25,
+      "posted_by_lane": {
+        "openalex_journal": 12,
+        "openalex_keyword": 6,
+        "openalex_author": 1,
+        "rss": 6
+      },
+      "claude_input_tokens": 508357,
+      "claude_output_tokens": 24041,
+      "claude_cost_usd": 1.8857,
       "empty_feeds": []
     }
   ]
