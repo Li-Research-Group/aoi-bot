@@ -3072,6 +3072,332 @@
       "source_lane": "rss",
       "published": "",
       "title_only": false
+    },
+    {
+      "ts": "1794269446.053999",
+      "doi": "10.1021/acsenvironau.6c00200",
+      "title": "Per- and Polyfluoroalkyl Substances as Emerging Pollutants in the Global South: Occurrence, Distribution, and Challenges in Latin America",
+      "journal": "ACS Environmental Au",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "rss",
+      "published": "2026-11-05",
+      "title_only": false
+    },
+    {
+      "ts": "1794269446.185439",
+      "doi": "10.1021/acsestwater.6c00920",
+      "title": "Microbial and Water Quality Dynamics in a Utilidor-Housed Subsurface Drinking Water Distribution System under Low-Use Conditions",
+      "journal": "ACS ES&T Water",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "openalex_journal",
+      "published": "2026-11-02",
+      "title_only": false
+    },
+    {
+      "ts": "1794269446.313499",
+      "doi": "10.1021/acs.est.6c06150",
+      "title": "From Nontargeted Analysis to Toxicity: Revealing the Disinfection Byproduct Exposome",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "openalex_journal",
+      "published": "2026-11-05",
+      "title_only": false
+    },
+    {
+      "ts": "1794269446.432909",
+      "doi": "10.1016/j.watres.2026.127265",
+      "title": "Global occurrence and monitoring coverage of PFAS pesticides in surface waters: ecological risks and persistent transformation-product concerns",
+      "journal": "Water Research",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "openalex_journal",
+      "published": "2026-11-02",
+      "title_only": true
+    },
+    {
+      "ts": "1794269446.556609",
+      "doi": "10.1021/acssusresmgt.6c00693",
+      "title": "Waste-Derived Products Need a Contaminant Budget, Not Just a Carbon Footprint",
+      "journal": "ACS Sustainable Resource Management",
+      "topics": [
+        "Cross-Cutting / High-Impact",
+        "New TEA/LCA Methods",
+        "Hydrothermal Microplastic Degradation"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "rss",
+      "published": "2026-11-03",
+      "title_only": false
+    },
+    {
+      "ts": "1794269446.687549",
+      "doi": "10.1021/acssuschemeng.6c11361",
+      "title": "Trojan Horse Strategy for Sustainable PET Plastics: A Comparative Evaluation of Techno-Economic and Lifecycle Impacts",
+      "journal": "ACS Sustainable Chemistry & Engineering",
+      "topics": [
+        "New TEA/LCA Methods",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "openalex_journal",
+      "published": "2026-11-02",
+      "title_only": false
+    },
+    {
+      "ts": "1794269446.822329",
+      "doi": "10.1021/acs.est.6c07560",
+      "title": "Energy Supply and Demand Coordination Can Advance Both Climate Goals and Sustainable Development in the Global South",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "openalex_journal",
+      "published": "2026-11-06",
+      "title_only": false
+    },
+    {
+      "ts": "1794269447.226579",
+      "doi": "10.1007/s44498-026-00187-w",
+      "title": "Mathematical unification of methods for hybrid life cycle assessment",
+      "journal": "Journal of Industrial Ecology",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "rss",
+      "published": "2026-11-07",
+      "title_only": false
+    },
+    {
+      "ts": "1794269447.396229",
+      "doi": "10.1007/s44498-026-00196-9",
+      "title": "Evaluation criteria for AI-assisted product carbon footprinting systems: the cases of mapping and supply chain modeling",
+      "journal": "Journal of Industrial Ecology",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "rss",
+      "published": "2026-11-05",
+      "title_only": false
+    },
+    {
+      "ts": "1794269447.520779",
+      "doi": "10.1021/acsestengg.6c00798",
+      "title": "Scalable Sludge-Biochar Matrix Relieves Ammonia and Foaming in the Anaerobic Treatment of Dairy Wastewater: Experiments and Mass\u2013Energy\u2013Economic Evaluation",
+      "journal": "ACS ES&T Engineering",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "openalex_journal",
+      "published": "2026-11-03",
+      "title_only": false
+    },
+    {
+      "ts": "1794269447.643249",
+      "doi": "10.1002/pi.70221",
+      "title": "Biobased poly(butadiene\u2010 co \u2010myrcene) elastomers reinforced with treated sargassum: tailoring filler\u2013rubber interactions through myrcene content",
+      "journal": "Polymer International",
+      "topics": [
+        "Sargassum/Seaweed (HTL, AD, arrested AD)"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "openalex_keyword",
+      "published": "2026-11-06",
+      "title_only": false
+    },
+    {
+      "ts": "1794269447.767359",
+      "doi": "10.9734/bji/2026/v30i6925",
+      "title": "Assessment of the Methanogenic Potential of Biogas Produced by Anaerobic Co-digestion of Three Mixing Ratios of Seaweed Waste (Sargassum spp.) and Pig Manure",
+      "journal": "Biotechnology Journal International",
+      "topics": [
+        "Sargassum/Seaweed (HTL, AD, arrested AD)"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "openalex_keyword",
+      "published": "2026-11-02",
+      "title_only": false
+    },
+    {
+      "ts": "1794269447.893379",
+      "doi": "10.1007/s44290-026-00616-6",
+      "title": "A comparative review and parametric carbon footprint framework for soil stabilization binders in road earthworks",
+      "journal": "Discover Civil Engineering",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)",
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "openalex_keyword",
+      "published": "2026-11-02",
+      "title_only": false
+    },
+    {
+      "ts": "1794269448.023489",
+      "doi": "10.1016/j.sftr.2026.102286",
+      "title": "Life cycle assessment in recycling systems: trends, challenges, and gaps",
+      "journal": "Sustainable Futures",
+      "topics": [
+        "New TEA/LCA Methods",
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "openalex_keyword",
+      "published": "2026-11-07",
+      "title_only": false
+    },
+    {
+      "ts": "1794269448.164429",
+      "doi": "10.1002/aic.70752",
+      "title": "Integrating recycled concrete carbonation and calciner electrification for low\u2010carbon cement: Techno\u2010economic assessment",
+      "journal": "AIChE Journal",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "openalex_keyword",
+      "published": "2026-11-06",
+      "title_only": false
+    },
+    {
+      "ts": "1794269448.430619",
+      "doi": "10.5281/zenodo.24026141",
+      "title": "EXBYCost: a techno-economic modeling tool for estimating extraction costs from food processing byproducts",
+      "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+      "topics": [
+        "Followed Authors"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "openalex_author",
+      "published": "2026-11-07",
+      "title_only": false,
+      "matched_authors": [
+        "Corinne D. Scown"
+      ]
+    },
+    {
+      "ts": "1794269448.556759",
+      "doi": "10.26434/chemrxiv.15011481/v1",
+      "title": "Coupling kinetic and techno-economic models reveals hidden biodesign targets",
+      "journal": "ChemRxiv",
+      "topics": [
+        "Followed Authors"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "openalex_author",
+      "published": "2026-11-02",
+      "title_only": false,
+      "matched_authors": [
+        "Corinne D. Scown"
+      ]
+    },
+    {
+      "ts": "1794269448.685659",
+      "doi": "10.1021/acsestengg.6c00704",
+      "title": "Systematic Comparisons between Long-Read- and Short-Read-Based Amplicon Sequencing to Characterize Mixed Microalgal Communities",
+      "journal": "ACS ES&T Engineering",
+      "topics": [
+        "Followed Authors"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "openalex_author",
+      "published": "2026-11-04",
+      "title_only": false,
+      "matched_authors": [
+        "Jeremy S. Guest"
+      ]
+    },
+    {
+      "ts": "1794269448.940929",
+      "doi": null,
+      "title": "High school science ambitions",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1794269449.063279",
+      "doi": null,
+      "title": "How to make failure your friend and teacher in science",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1794269449.184439",
+      "doi": null,
+      "title": "Recognition and celebration of technical staff in geoscience",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1794269449.321349",
+      "doi": null,
+      "title": "Harvard grad students strike again, citing inadequate harassment protections",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1794269449.446869",
+      "doi": null,
+      "title": "Life felt dark as an international researcher in the U.S., but I\u2019m finding breaks in the clouds",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1794269449.584589",
+      "doi": null,
+      "title": "For early-career scientists, the cost of AI can be a problem",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-10",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
     }
   ],
   "runs": [
@@ -3341,6 +3667,31 @@
       "claude_input_tokens": 508357,
       "claude_output_tokens": 24041,
       "claude_cost_usd": 1.8857,
+      "empty_feeds": []
+    },
+    {
+      "date": "2026-11-10",
+      "collected": {
+        "rss": 41,
+        "openalex_journal": 185,
+        "openalex_keyword": 141,
+        "openalex_author": 3
+      },
+      "duplicates_removed": 59,
+      "already_posted_removed": 0,
+      "scored": 300,
+      "skipped_no_abstract": 6,
+      "relevant": 17,
+      "posted": 24,
+      "posted_by_lane": {
+        "rss": 10,
+        "openalex_journal": 6,
+        "openalex_keyword": 5,
+        "openalex_author": 3
+      },
+      "claude_input_tokens": 318551,
+      "claude_output_tokens": 14902,
+      "claude_cost_usd": 1.1792,
       "empty_feeds": []
     }
   ]
