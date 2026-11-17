@@ -3398,6 +3398,285 @@
       "source_lane": "rss",
       "published": "",
       "title_only": false
+    },
+    {
+      "ts": "1794874452.421539",
+      "doi": "10.1021/acsestengg.6c00168",
+      "title": "Steering Anaerobic Digestion toward Coproduction of Biomethane and Short-Chain Carboxylic Acids",
+      "journal": "ACS ES&T Engineering",
+      "topics": [
+        "Sargassum/Seaweed (HTL, AD, arrested AD)",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-11-17",
+      "source_lane": "rss",
+      "published": "2026-11-13",
+      "title_only": false
+    },
+    {
+      "ts": "1794874452.642049",
+      "doi": "10.1021/acs.est.6c08458",
+      "title": "A Substitution Paradox in China\u2019s Plastics Sector: Climate Benefits of Degradable Materials Are Conditional on Energy-System Decarbonization",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "New TEA/LCA Methods",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-11-17",
+      "source_lane": "openalex_journal",
+      "published": "2026-11-13",
+      "title_only": false
+    },
+    {
+      "ts": "1794874452.866759",
+      "doi": "10.1021/acsestwater.6c01560",
+      "title": "From Sources to Solutions: The San Francisco Bay\u2013Delta System as a Microcosm for Microplastic Science",
+      "journal": "ACS ES&T Water",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-11-17",
+      "source_lane": "rss",
+      "published": "2026-11-13",
+      "title_only": false
+    },
+    {
+      "ts": "1794874453.099919",
+      "doi": "10.1021/acs.est.6c05090",
+      "title": "Impacts of Biological Filtration on Disinfection Byproduct Control during Drinking Water Purification: A Critical Review",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-11-17",
+      "source_lane": "openalex_journal",
+      "published": "2026-11-12",
+      "title_only": false
+    },
+    {
+      "ts": "1794874453.329869",
+      "doi": "10.1021/acs.est.6c08746",
+      "title": "Tire-Derived Organic Pollutants across Urban Land Uses: Associations with Traffic Exposure",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-11-17",
+      "source_lane": "openalex_journal",
+      "published": "2026-11-11",
+      "title_only": false
+    },
+    {
+      "ts": "1794874453.557999",
+      "doi": "10.1021/acs.est.6c09935",
+      "title": "Non-Targeted Characterization and Hazard-Based Prioritization of Disinfection Byproducts and Co-Contaminants in U.S. Drinking Water Distribution Systems",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-11-17",
+      "source_lane": "openalex_journal",
+      "published": "2026-11-11",
+      "title_only": false
+    },
+    {
+      "ts": "1794874453.785399",
+      "doi": "10.1038/s44286-026-00466-0",
+      "title": "Using industrial ecology to avoid burden shifting",
+      "journal": "Nature Chemical Engineering",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-11-17",
+      "source_lane": "rss",
+      "published": "2026-11-11",
+      "title_only": false
+    },
+    {
+      "ts": "1794874454.026439",
+      "doi": "10.1007/s44498-026-00206-w",
+      "title": "Reassessing global carbon footprints of co-produced metals using Shapley values: a portfolio-based allocation approach",
+      "journal": "Journal of Industrial Ecology",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-11-17",
+      "source_lane": "rss",
+      "published": "2026-11-11",
+      "title_only": false
+    },
+    {
+      "ts": "1794874454.510519",
+      "doi": "10.1007/s44498-026-00184-z",
+      "title": "A stock-and-flow model of biofuels and carbon",
+      "journal": "Journal of Industrial Ecology",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-11-17",
+      "source_lane": "rss",
+      "published": "2026-11-09",
+      "title_only": false
+    },
+    {
+      "ts": "1794874454.753119",
+      "doi": "10.1021/acssuschemeng.6c08717",
+      "title": "New Vistas into Intensified Production Alternatives for Food Waste-Derived Novel Proteins",
+      "journal": "ACS Sustainable Chemistry & Engineering",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-11-17",
+      "source_lane": "openalex_journal",
+      "published": "2026-11-11",
+      "title_only": false
+    },
+    {
+      "ts": "1794874454.977269",
+      "doi": "10.1002/bbb.70240",
+      "title": "Hydrothermal liquefaction of microalgae: Aspen Plus modeling improvement, product distribution, and energy analysis for biocrude production",
+      "journal": "Biofuels Bioproducts and Biorefining",
+      "topics": [
+        "Process Modeling Tools (BioSTEAM/QSDsan-like)"
+      ],
+      "posted_date": "2026-11-17",
+      "source_lane": "openalex_keyword",
+      "published": "2026-11-13",
+      "title_only": false
+    },
+    {
+      "ts": "1794874455.205089",
+      "doi": "10.1002/aic.70758",
+      "title": "Integrating rigorous techno\u2010economic analysis into generative process synthesis for economic optimization",
+      "journal": "AIChE Journal",
+      "topics": [
+        "New TEA/LCA Methods",
+        "Process Modeling Tools (BioSTEAM/QSDsan-like)"
+      ],
+      "posted_date": "2026-11-17",
+      "source_lane": "openalex_keyword",
+      "published": "2026-11-13",
+      "title_only": false
+    },
+    {
+      "ts": "1794874455.448969",
+      "doi": "10.21203/rs.3.rs-11443410/v1",
+      "title": "Mechanical and early age performance of CO2 mineralized recycled fines from real waste stream sources compared to low calcium blends with traditional SCMs",
+      "journal": "Research Square",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-11-17",
+      "source_lane": "openalex_keyword",
+      "published": "2026-11-13",
+      "title_only": false
+    },
+    {
+      "ts": "1794874455.665559",
+      "doi": "10.1108/sasbe-06-2026-0623",
+      "title": "Exploring stakeholders' perceptions of public opposition to C&D waste recycling facilities in Victoria, Australia: towards a circular economy in the construction industry",
+      "journal": "Smart and Sustainable Built Environment",
+      "topics": [
+        "Cement/Concrete Recycling TEA/LCA"
+      ],
+      "posted_date": "2026-11-17",
+      "source_lane": "openalex_keyword",
+      "published": "2026-11-12",
+      "title_only": false
+    },
+    {
+      "ts": "1794874456.114969",
+      "doi": "10.1021/acs.est.6c05063",
+      "title": "Missed Opportunities Forgo One-Third of Mass Timber\u2019s Carbon Storage Potential",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Followed Authors"
+      ],
+      "posted_date": "2026-11-17",
+      "source_lane": "openalex_author",
+      "published": "2026-11-11",
+      "title_only": false,
+      "matched_authors": [
+        "Corinne D. Scown"
+      ]
+    },
+    {
+      "ts": "1794874456.563299",
+      "doi": null,
+      "title": "Chinese graduate students are now choosing to stay closer to home",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-17",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1794874456.774499",
+      "doi": null,
+      "title": "How I balance my life as a professional surfer and a university researcher",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-17",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1794874457.005689",
+      "doi": null,
+      "title": "Author or just \u2018acknowledged\u2019? How women are not gaining full credit for research",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-17",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1794874457.235429",
+      "doi": null,
+      "title": "",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-17",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1794874457.451299",
+      "doi": null,
+      "title": "Early-career researchers\u2019 right to unionize at NIH is upheld, against agency\u2019s petition",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-17",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1794874457.679939",
+      "doi": null,
+      "title": "Harvard grad students strike again, citing inadequate harassment protections",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-17",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
     }
   ],
   "runs": [
@@ -3692,6 +3971,31 @@
       "claude_input_tokens": 318551,
       "claude_output_tokens": 14902,
       "claude_cost_usd": 1.1792,
+      "empty_feeds": []
+    },
+    {
+      "date": "2026-11-17",
+      "collected": {
+        "rss": 63,
+        "openalex_journal": 218,
+        "openalex_keyword": 240,
+        "openalex_author": 1
+      },
+      "duplicates_removed": 121,
+      "already_posted_removed": 0,
+      "scored": 385,
+      "skipped_no_abstract": 14,
+      "relevant": 18,
+      "posted": 21,
+      "posted_by_lane": {
+        "rss": 11,
+        "openalex_journal": 5,
+        "openalex_keyword": 4,
+        "openalex_author": 1
+      },
+      "claude_input_tokens": 408263,
+      "claude_output_tokens": 18683,
+      "claude_cost_usd": 1.505,
       "empty_feeds": []
     }
   ]
