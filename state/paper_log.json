@@ -3677,6 +3677,297 @@
       "source_lane": "rss",
       "published": "",
       "title_only": false
+    },
+    {
+      "ts": "1795489237.811759",
+      "doi": "10.1039/d6gc04906k",
+      "title": "Valorizing soybean coproducts as feedstocks for microbial lipid production by Rhodosporidium toruloides",
+      "journal": "Green Chemistry",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "rss",
+      "published": "2026-11-19",
+      "title_only": false
+    },
+    {
+      "ts": "1795489238.030599",
+      "doi": "10.1007/s44498-026-00221-x",
+      "title": "On the defining requirements of attributional life cycle assessment: response to Brander (2026)",
+      "journal": "Journal of Industrial Ecology",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "rss",
+      "published": "2026-11-20",
+      "title_only": false
+    },
+    {
+      "ts": "1795489238.253649",
+      "doi": "10.1021/acs.est.6c10718",
+      "title": "Product Formation Dynamics and Sustainability in Chain Elongation Systems: A Cross-Study Analysis",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "New TEA/LCA Methods",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "openalex_journal",
+      "published": "2026-11-21",
+      "title_only": false
+    },
+    {
+      "ts": "1795489238.470419",
+      "doi": "10.1021/acs.est.6c07336",
+      "title": "Meta Life Cycle Assessment, Techno-Economic Analysis, and Risk Assessment of Carbon Mineralization Pathways to Inform Policy Frameworks",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "New TEA/LCA Methods"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "openalex_journal",
+      "published": "2026-11-20",
+      "title_only": false
+    },
+    {
+      "ts": "1795489238.674379",
+      "doi": "10.1021/acsestengg.6c00830",
+      "title": "Removing Microplastics from Drinking Water through Spin-Down Filtration",
+      "journal": "ACS ES&T Engineering",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "rss",
+      "published": "2026-11-21",
+      "title_only": false
+    },
+    {
+      "ts": "1795489238.889549",
+      "doi": "10.1021/acs.est.6c11500",
+      "title": "Landfills Act as Persistent Reservoirs of Rubber-Derived Chemicals, Driving Widespread Subsurface Migration and Groundwater Contamination",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "openalex_journal",
+      "published": "2026-11-18",
+      "title_only": false
+    },
+    {
+      "ts": "1795489239.099049",
+      "doi": "10.1021/acs.est.6c02499",
+      "title": "Mind the Leak: Challenges of Riverbank Filtration for Highly Mobile Chemical Pollutants",
+      "journal": "Environmental Science & Technology",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "openalex_journal",
+      "published": "2026-11-18",
+      "title_only": false
+    },
+    {
+      "ts": "1795489239.312929",
+      "doi": "10.52293/wes.1206.1112",
+      "title": "Assessment of Pump- Based Drinking Water Quality Compliance with World Health Organization Standards in Central Gondar, Ethiopia.",
+      "journal": "Water and Environmental Sustainability",
+      "topics": [
+        "Water/Wastewater Treatment (teaching)"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "openalex_keyword",
+      "published": "2027-06-30",
+      "title_only": false
+    },
+    {
+      "ts": "1795489239.521989",
+      "doi": "10.1016/j.resconrec.2026.109208",
+      "title": "Streamlined sustainability assessment for regional bioeconomy transition: High-value lignin valorization pathways in the Finnish pulp sector",
+      "journal": "Resources, Conservation and Recycling",
+      "topics": [
+        "New TEA/LCA Methods",
+        "Cross-Cutting / High-Impact"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "openalex_journal",
+      "published": "2026-11-17",
+      "title_only": false
+    },
+    {
+      "ts": "1795489239.730389",
+      "doi": "10.1016/j.biortech.2026.136294",
+      "title": "Arrested anaerobic digestion of animal manure for producing volatile fatty acid: Process optimization and bioaugmentation",
+      "journal": "Bioresource Technology",
+      "topics": [
+        "Sargassum/Seaweed (HTL, AD, arrested AD)"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "openalex_journal",
+      "published": "2026-11-19",
+      "title_only": true
+    },
+    {
+      "ts": "1795489239.947159",
+      "doi": "10.1016/j.biortech.2026.136283",
+      "title": "Enhanced methane and hydrogen production from mezcal vinasse in a two-stage anaerobic co-digestion using sugarcane filter cake and sargassum biochar",
+      "journal": "Bioresource Technology",
+      "topics": [
+        "Sargassum/Seaweed (HTL, AD, arrested AD)"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "openalex_journal",
+      "published": "2026-11-16",
+      "title_only": true
+    },
+    {
+      "ts": "1795489240.164329",
+      "doi": "10.1007/978-3-032-36101-1_91",
+      "title": "Development of Eco-Designed Asphalt Mixtures Formulations Incorporating a New Bio-Binder from Tall Oil Pitch and Reclaimed Asphalt",
+      "journal": "Lecture notes in mobility",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "openalex_keyword",
+      "published": "2026-11-18",
+      "title_only": false
+    },
+    {
+      "ts": "1795489240.370309",
+      "doi": "10.1007/978-3-032-36101-1_86",
+      "title": "Susceptibility to Stripping of an Innovative and Sustainable Bio-bitumen",
+      "journal": "Lecture notes in mobility",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "openalex_keyword",
+      "published": "2026-11-18",
+      "title_only": false
+    },
+    {
+      "ts": "1795489240.586179",
+      "doi": "10.21203/rs.3.rs-11394331/v1",
+      "title": "Experimental Assessment of the Fatigue Behavior of Conventional and Bio-Based Bituminous Mixtures at Different Temperatures",
+      "journal": "Research Square",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "openalex_keyword",
+      "published": "2026-11-20",
+      "title_only": false
+    },
+    {
+      "ts": "1795489240.808339",
+      "doi": "10.1007/978-3-032-36101-1_102",
+      "title": "Use of Bio Binder in High Content RAP Mixtures \u2013 A Case Study",
+      "journal": "Lecture notes in mobility",
+      "topics": [
+        "Biobinder (TEA/LCA/supply chain)"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "openalex_keyword",
+      "published": "2026-11-18",
+      "title_only": false
+    },
+    {
+      "ts": "1795489241.231259",
+      "doi": "10.13012/b2idb-4585804_v1",
+      "title": "Data for A Unifying Equation for Fermentation Sustainability Across the Titer-Rate-Yield Landscape",
+      "journal": "Illinois Data Bank",
+      "topics": [
+        "Followed Authors"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "openalex_author",
+      "published": "2026-11-18",
+      "title_only": false,
+      "matched_authors": [
+        "Jeremy S. Guest"
+      ]
+    },
+    {
+      "ts": "1795489241.656039",
+      "doi": null,
+      "title": "It\u2019s our duty to promote ourselves: even to other scientists. Am I wrong?",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1795489241.871339",
+      "doi": null,
+      "title": "Is trust in science falling, or does it just feel that way?",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1795489242.083089",
+      "doi": null,
+      "title": "How AI is affecting science careers",
+      "journal": "Nature Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1795489242.294489",
+      "doi": null,
+      "title": "myIDP: Creating a career plan by you for you",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1795489242.500689",
+      "doi": null,
+      "title": "myIDP: Successful scientists need both technical and professional skills",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
+    },
+    {
+      "ts": "1795489242.716789",
+      "doi": null,
+      "title": "myIDP: Interests",
+      "journal": "Science Careers",
+      "topics": [
+        "Broader Reading"
+      ],
+      "posted_date": "2026-11-24",
+      "source_lane": "rss",
+      "published": "",
+      "title_only": false
     }
   ],
   "runs": [
@@ -3996,6 +4287,31 @@
       "claude_input_tokens": 408263,
       "claude_output_tokens": 18683,
       "claude_cost_usd": 1.505,
+      "empty_feeds": []
+    },
+    {
+      "date": "2026-11-24",
+      "collected": {
+        "rss": 57,
+        "openalex_journal": 308,
+        "openalex_keyword": 245,
+        "openalex_author": 1
+      },
+      "duplicates_removed": 103,
+      "already_posted_removed": 0,
+      "scored": 502,
+      "skipped_no_abstract": 5,
+      "relevant": 24,
+      "posted": 22,
+      "posted_by_lane": {
+        "rss": 9,
+        "openalex_journal": 7,
+        "openalex_keyword": 5,
+        "openalex_author": 1
+      },
+      "claude_input_tokens": 505236,
+      "claude_output_tokens": 24355,
+      "claude_cost_usd": 1.881,
       "empty_feeds": []
     }
   ]
